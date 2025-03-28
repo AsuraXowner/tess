@@ -7786,6 +7786,7 @@ AsuraX_Instances.additional_features.BackgroundTransparency = 1
 AsuraX_Instances.additional_features.BorderColor3 = Color3.fromRGB(0, 0, 0)
 AsuraX_Instances.additional_features.BorderSizePixel = 0
 AsuraX_Instances.additional_features.LayoutOrder = 3
+AsuraX_Instances.additional_features.Visible = false
 AsuraX_Instances.additional_features.Size = UDim2.new(1, 0, 0, 150)
 
 AsuraX_Instances.title1.Name = "title"
