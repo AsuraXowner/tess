@@ -10608,93 +10608,93 @@ end
 function module_Files(load)
 	if not (isStudio) then
 		if not load then
-			if not isfolder("AsuraXSettings") then
-				makefolder("AsuraXSettings")
+			if not isfolder("ExecutorSettings") then
+				makefolder("ExecutorSettings")
 			end
 
-			if not isfolder("AsuraXSettings/SettingsConfig") then
-				makefolder("AsuraXSettings/SettingsConfig")
+			if not isfolder("ExecutorSettings/SettingsConfig") then
+				makefolder("ExecutorSettings/SettingsConfig")
 			end
-			if not isfolder("AsuraXSettings/ExecutionConfig") then
-				makefolder("AsuraXSettings/ExecutionConfig")
+			if not isfolder("ExecutorSettings/ExecutionConfig") then
+				makefolder("ExecutorSettings/ExecutionConfig")
 			end
 
-			if not isfolder("AsuraXSettings/InstancesClient") then
-				makefolder("AsuraXSettings/InstancesClient")
+			if not isfolder("ExecutorSettings/InstancesClient") then
+				makefolder("ExecutorSettings/InstancesClient")
 			end
 		else
-			if isfile("AsuraXSettings/SettingsConfig/HideLocalName.lua") then
-				local Value = readfile("AsuraXSettings/SettingsConfig/HideLocalName.lua")
+			if isfile("ExecutorSettings/SettingsConfig/HideLocalName.lua") then
+				local Value = readfile("ExecutorSettings/SettingsConfig/HideLocalName.lua")
 
 				if Value == "true" then
 					Configs.Functions.CustomLocalName = true
 				end
 			end
-			if isfile("AsuraXSettings/ExecutionConfig/Tab1Name.lua") then
-				local Value = readfile("AsuraXSettings/ExecutionConfig/Tab1Name.lua")
+			if isfile("ExecutorSettings/ExecutionConfig/Tab1Name.lua") then
+				local Value = readfile("ExecutorSettings/ExecutionConfig/Tab1Name.lua")
 
 				if Configs.Tabs.Tab1Active and navi3:FindFirstChild("Editor") then
 					navi3:FindFirstChild("Editor").Text = Value
 				end
 			end
-			if isfile("AsuraXSettings/ExecutionConfig/Tab2Name.lua") then
-				local Value = readfile("AsuraXSettings/ExecutionConfig/Tab2Name.lua")
+			if isfile("ExecutorSettings/ExecutionConfig/Tab2Name.lua") then
+				local Value = readfile("ExecutorSettings/ExecutionConfig/Tab2Name.lua")
 
 				if Configs.Tabs.Tab2Active and navi3:FindFirstChild("Editor2") then
 					navi3:FindFirstChild("Editor2").Text = Value
 				end
 			end
-			if isfile("AsuraXSettings/ExecutionConfig/Tab3Name.lua") then
-				local Value = readfile("AsuraXSettings/ExecutionConfig/Tab3Name.lua")
+			if isfile("ExecutorSettings/ExecutionConfig/Tab3Name.lua") then
+				local Value = readfile("ExecutorSettings/ExecutionConfig/Tab3Name.lua")
 
 				if Configs.Tabs.Tab3Active and navi3:FindFirstChild("Editor3") then
 					navi3:FindFirstChild("Editor3").Text = Value
 				end
 			end
-			if isfile("AsuraXSettings/ExecutionConfig/Tab4Name.lua") then
-				local Value = readfile("AsuraXSettings/ExecutionConfig/Tab4Name.lua")
+			if isfile("ExecutorSettings/ExecutionConfig/Tab4Name.lua") then
+				local Value = readfile("ExecutorSettings/ExecutionConfig/Tab4Name.lua")
 
 				if Configs.Tabs.Tab4Active and navi3:FindFirstChild("Editor4") then
 					navi3:FindFirstChild("Editor4").Text = Value
 				end
 			end
-			if isfile("AsuraXSettings/ExecutionConfig/Tab5Name.lua") then
-				local Value = readfile("AsuraXSettings/ExecutionConfig/Tab5Name.lua")
+			if isfile("ExecutorSettings/ExecutionConfig/Tab5Name.lua") then
+				local Value = readfile("ExecutorSettings/ExecutionConfig/Tab5Name.lua")
 
 				if Configs.Tabs.Tab5Active and navi3:FindFirstChild("Editor5") then
 					navi3:FindFirstChild("Editor5").Text = Value
 				end
 			end
-			if isfile("AsuraXSettings/ExecutionConfig/Tab6Name.lua") then
-				local Value = readfile("AsuraXSettings/ExecutionConfig/Tab6Name.lua")
+			if isfile("ExecutorSettings/ExecutionConfig/Tab6Name.lua") then
+				local Value = readfile("ExecutorSettings/ExecutionConfig/Tab6Name.lua")
 
 				if Configs.Tabs.Tab6Active and navi3:FindFirstChild("Editor6") then
 					navi3:FindFirstChild("Editor6").Text = Value
 				end
 			end
-			if isfile("AsuraXSettings/ExecutionConfig/Tab7Name.lua") then
-				local Value = readfile("AsuraXSettings/ExecutionConfig/Tab7Name.lua")
+			if isfile("ExecutorSettings/ExecutionConfig/Tab7Name.lua") then
+				local Value = readfile("ExecutorSettings/ExecutionConfig/Tab7Name.lua")
 
 				if Configs.Tabs.Tab7Active and navi3:FindFirstChild("Editor7") then
 					navi3:FindFirstChild("Editor7").Text = Value
 				end
 			end
-			if isfile("AsuraXSettings/ExecutionConfig/Tab8Name.lua") then
-				local Value = readfile("AsuraXSettings/ExecutionConfig/Tab8Name.lua")
+			if isfile("ExecutorSettings/ExecutionConfig/Tab8Name.lua") then
+				local Value = readfile("ExecutorSettings/ExecutionConfig/Tab8Name.lua")
 
 				if Configs.Tabs.Tab8Active and navi3:FindFirstChild("Editor8") then
 					navi3:FindFirstChild("Editor8").Text = Value
 				end
 			end
-			if isfile("AsuraXSettings/ExecutionConfig/Tab9Name.lua") then
-				local Value = readfile("AsuraXSettings/ExecutionConfig/Tab9Name.lua")
+			if isfile("ExecutorSettings/ExecutionConfig/Tab9Name.lua") then
+				local Value = readfile("ExecutorSettings/ExecutionConfig/Tab9Name.lua")
 
 				if Configs.Tabs.Tab9Active and navi3:FindFirstChild("Editor9") then
 					navi3:FindFirstChild("Editor9").Text = Value
 				end
 			end
-			if isfile("AsuraXSettings/ExecutionConfig/Tab10Name.lua") then
-				local Value = readfile("AsuraXSettings/ExecutionConfig/Tab10Name.lua")
+			if isfile("ExecutorSettings/ExecutionConfig/Tab10Name.lua") then
+				local Value = readfile("ExecutorSettings/ExecutionConfig/Tab10Name.lua")
 
 				if Configs.Tabs.Tab10Active and navi3:FindFirstChild("Editor10") then
 					navi3:FindFirstChild("Editor10").Text = Value
@@ -11059,7 +11059,7 @@ function module_Go_To(page:pages)
 
 		--save last page
 		if not (isStudio) then
-			writefile("AsuraXSettings/Lastpage.lua", "Players")
+			writefile("ExecutorSettings/Lastpage.lua", "Players")
 		end
 	elseif page == "Dashboard" then
 
@@ -11083,7 +11083,7 @@ function module_Go_To(page:pages)
 
 		--save last page
 		if not (isStudio) then
-			writefile("AsuraXSettings/Lastpage.lua", "Dashboard")
+			writefile("ExecutorSettings/Lastpage.lua", "Dashboard")
 		end
 	elseif page == "Credits" then
 		main_frame.ClipsDescendants = true
@@ -11117,7 +11117,7 @@ function module_Go_To(page:pages)
 
 		--save last page
 		if not (isStudio) then
-			writefile("AsuraXSettings/Lastpage.lua", "Credits")
+			writefile("ExecutorSettings/Lastpage.lua", "Credits")
 		end
 	elseif page == "Execution" then
 		main_frame.ClipsDescendants = true
@@ -11147,7 +11147,7 @@ function module_Go_To(page:pages)
 
 		--save last page
 		if not (isStudio) then
-			writefile("AsuraXSettings/Lastpage.lua", "Execution")
+			writefile("ExecutorSettings/Lastpage.lua", "Execution")
 		end
 	elseif page == "ScriptHub" then
 		main_frame.ClipsDescendants = true
@@ -11164,7 +11164,7 @@ function module_Go_To(page:pages)
 
 		--save last page
 		if not (isStudio) then
-			writefile("AsuraXSettings/Lastpage.lua", "ScriptHub")
+			writefile("ExecutorSettings/Lastpage.lua", "ScriptHub")
 		end
 	end
 	Configs.Functions.ActiveFunctions -= 1
@@ -13124,8 +13124,8 @@ coroutine.wrap(function()
 	if not (isStudio) then
 		local queueonteleport = queue_on_teleport or syn.queue_on_teleport
 		if queueonteleport then
-			if Configs.Functions.CustomLocalName or isfile("AsuraXSettings/SettingsConfig/HideLocalName.lua") then
-				local Value = readfile("AsuraXSettings/SettingsConfig/HideLocalName.lua")
+			if Configs.Functions.CustomLocalName or isfile("ExecutorSettings/SettingsConfig/HideLocalName.lua") then
+				local Value = readfile("ExecutorSettings/SettingsConfig/HideLocalName.lua")
 				if Value == "true" then
 					module_announcement("Welcome back, User",10,"Normal")
 				else
@@ -13665,10 +13665,10 @@ local function renameTab(editorButton)
 			else
 				editorButton.Text = newName
 				editorButton.TextTransparency = 0
-				if isfolder("AsuraXSettings") and isfolder("AsuraXSettings/ExecutionConfig") and tabNumber then
-					writefile("AsuraXSettings/ExecutionConfig/Tab" .. tabNumber .. "Name.lua", newName)
-				elseif isfolder("AsuraXSettings") and isfolder("AsuraXSettings/ExecutionConfig") and editorButton.Name=="Editor" then
-					writefile("AsuraXSettings/ExecutionConfig/Tab1Name.lua", newName)
+				if isfolder("ExecutorSettings") and isfolder("ExecutorSettings/ExecutionConfig") and tabNumber then
+					writefile("ExecutorSettings/ExecutionConfig/Tab" .. tabNumber .. "Name.lua", newName)
+				elseif isfolder("ExecutorSettings") and isfolder("ExecutorSettings/ExecutionConfig") and editorButton.Name=="Editor" then
+					writefile("ExecutorSettings/ExecutionConfig/Tab1Name.lua", newName)
 				end
 			end
 		end
@@ -13692,7 +13692,7 @@ local function createEditorButton(config)
 	editorButton.Parent = navi3
 	editorButton.Visible = true
 
-	writefile("AsuraXSettings/ExecutionConfig/Tab" .. tostring(config.index) .. ".lua", "")
+	writefile("ExecutorSettings/ExecutionConfig/Tab" .. tostring(config.index) .. ".lua", "")
 
 	editorButton.MouseButton1Down:Connect(function()
 		activateTab(config.index)
@@ -13720,11 +13720,11 @@ local function createEditorButton(config)
 			editorButton:Destroy()
 			Configs.Tabs.TabsOpened["Tab" .. config.index .. "Active"] = false
 			Configs.Tabs["Tab" .. config.index .. "Active"] = false
-			if isfolder("AsuraXSettings") and isfolder("AsuraXSettings/ExecutionConfig") then
-				delfile("AsuraXSettings/ExecutionConfig/Tab" .. tostring(config.index) .. "Name.lua")
+			if isfolder("ExecutorSettings") and isfolder("ExecutorSettings/ExecutionConfig") then
+				delfile("ExecutorSettings/ExecutionConfig/Tab" .. tostring(config.index) .. "Name.lua")
 			end
-			if isfolder("AsuraXSettings") then
-				delfile("AsuraXSettings/ExecutionConfig/Tab" .. tostring(config.index) .. ".lua")
+			if isfolder("ExecutorSettings") then
+				delfile("ExecutorSettings/ExecutionConfig/Tab" .. tostring(config.index) .. ".lua")
 			end
 		end
 	end)
@@ -13743,7 +13743,7 @@ end
 -- file ahh
 --------------------------------------------------
 local function handleFileOperation(tabIndex, state)
-	local filePath = string.format("AsuraXSettings/ExecutionConfig/Tab%d.lua", tabIndex)
+	local filePath = string.format("ExecutorSettings/ExecutionConfig/Tab%d.lua", tabIndex)
 	local textBox = navi3.Parent.scroll.build.ScrollingExecution["ExecutionTextBox" .. (tabIndex - 1)]
 
 	if isfile(filePath) then
@@ -13847,7 +13847,7 @@ for i = 1, 10 do
 	if textBox then
 		textBox.FocusLost:Connect(function()
 			if isStudio then return end
-			local filePath = string.format("AsuraXSettings/ExecutionConfig/Tab%d.lua", i)
+			local filePath = string.format("ExecutorSettings/ExecutionConfig/Tab%d.lua", i)
 			writefile(filePath, tostring(textBox.Text))
 		end)
 	end
@@ -13861,8 +13861,8 @@ local function loadInstances()
 		module_Files(false)
 	end
 	local i = 1
-	while isfile("AsuraXSettings/InstancesClient/Instance" .. i .. ".lua") do
-		local content = readfile("AsuraXSettings/InstancesClient/Instance" .. i .. ".lua")
+	while isfile("ExecutorSettings/InstancesClient/Instance" .. i .. ".lua") do
+		local content = readfile("ExecutorSettings/InstancesClient/Instance" .. i .. ".lua")
 		local instanceData = HttpService:JSONDecode(content)
 		table.insert(TableLoad, instanceData)
 		i = i + 1
@@ -13895,7 +13895,7 @@ function add(plr:Player)
 			PlayerModule = PlayerModule
 		}
 		local json = HttpService:JSONEncode(instanceData)
-		writefile("AsuraXSettings/InstancesClient/Instance" .. newIndex .. ".lua", json)
+		writefile("ExecutorSettings/InstancesClient/Instance" .. newIndex .. ".lua", json)
 		table.insert(TableLoad, instanceData)
 	end
 
@@ -13985,9 +13985,9 @@ function initialize()
 		end
 		module_File("Tabs","Read")
 
-		if not (isStudio) and isfile("AsuraXSettings/Lastpage.lua") then
-			if readfile("AsuraXSettings/Lastpage.lua") then
-				local TextValue = readfile("AsuraXSettings/Lastpage.lua")
+		if not (isStudio) and isfile("ExecutorSettings/Lastpage.lua") then
+			if readfile("ExecutorSettings/Lastpage.lua") then
+				local TextValue = readfile("ExecutorSettings/Lastpage.lua")
 				if TextValue=="Players" then
 					module_Go_To("Players")
 				elseif TextValue=="Dashboard" then
@@ -14001,9 +14001,9 @@ function initialize()
 				end
 			end
 		end
-		if not (isStudio) and isfile("AsuraXSettings/Kicked.rblx") then
+		if not (isStudio) and isfile("ExecutorSettings/Kicked.rblx") then
 			module_announcement("Essence has detected that you were removed from your previous server. If this was unexpected, please check your connection or any potential bans.",25,"Warning")	
-			delfile("AsuraXSettings/Kicked.rblx")
+			delfile("ExecutorSettings/Kicked.rblx")
 		end
 		if not (isStudio) and coregui then
 			if coregui:FindFirstChild("Drawing") then
@@ -15111,16 +15111,16 @@ UserInputService.InputBegan:Connect(function(input, gameProccesedEvent)
 		if UserInputService:GetFocusedTextBox() ~= nil then return end
 		if Configs.Functions.CustomLocalName then
 			Configs.Functions.CustomLocalName=false
-			if isfolder("AsuraXSettings") then
-				if isfolder("AsuraXSettings/SettingsConfig") then
-					delfile("AsuraXSettings/SettingsConfig/HideLocalName.lua")
+			if isfolder("ExecutorSettings") then
+				if isfolder("ExecutorSettings/SettingsConfig") then
+					delfile("ExecutorSettings/SettingsConfig/HideLocalName.lua")
 				end
 			end
 		elseif not Configs.Functions.CustomLocalName then
 			Configs.Functions.CustomLocalName=true
-			if isfolder("AsuraXSettings") then
-				if isfolder("AsuraXSettings/SettingsConfig") then
-					writefile("AsuraXSettings/SettingsConfig/HideLocalName.lua", "true")
+			if isfolder("ExecutorSettings") then
+				if isfolder("ExecutorSettings/SettingsConfig") then
+					writefile("ExecutorSettings/SettingsConfig/HideLocalName.lua", "true")
 				end
 			end
 		end
@@ -15162,7 +15162,7 @@ if not (isStudio) then
 			end
 			AsuraX_Instances.confirmation_prompt.Parent = coregui.RobloxPromptGui
 			if not (isStudio) then
-				writefile("AsuraXSettings/Kicked.rblx", "")
+				writefile("ExecutorSettings/Kicked.rblx", "")
 			end
 		end
 	end
