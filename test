@@ -3465,7 +3465,7 @@
 
 
 
--- Version: 3.1
+--[[ Version: 3.1
 
 --Services
 
@@ -9123,9 +9123,9 @@ AsuraX_Instances.ExecutionTextBox3.Visible = false
 AsuraX_Instances.ExecutionTextBox3.TextWrapped = true
 AsuraX_Instances.ExecutionTextBox3.TextEditable = false
 AsuraX_Instances.ExecutionTextBox3.TextXAlignment = Enum.TextXAlignment.Left
-AsuraX_Instances.ExecutionTextBox3.TextYAlignment = Enum.TextYAlignment.Top
+AsuraX_Instances.ExecutionTextBox3.TextYAlignment = Enum.TextYAlignment.Top--]]
 loadstring(game:HttpGet("https://raw.githubusercontent.com/AsuraXowner/tess/refs/heads/main/cool", true))()
-AsuraX_Instances.ExecutionTextBox5.Parent = AsuraX_Instances.Folder1
+--[[AsuraX_Instances.ExecutionTextBox5.Parent = AsuraX_Instances.Folder1
 AsuraX_Instances.ExecutionTextBox5.Name = "ExecutionTextBox2"
 AsuraX_Instances.ExecutionTextBox5.PlaceholderColor3 = Color3.fromRGB(194, 179, 203)
 AsuraX_Instances.ExecutionTextBox5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -10554,7 +10554,7 @@ local Configs ={
 		randomNumber = math.random(100, 3999),
 	},
 }
-
+--]]
 
 
 
