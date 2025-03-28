@@ -3992,7 +3992,7 @@ else
 	if not coregui then
 		AsuraX_Instances.mainFrame.Parent = coregui.RobloxGui.Modules.Server.ClientChat.DefaultClientChatModules.CommandModules
 	else
-		AsuraX_Instances.Parent = game:GetService("CoreGui").RobloxGui.Modules.Server.ClientChat.DefaultClientChatModules.CommandModules
+		AsuraX_Instances.mainFrame.Parent = game:GetService("CoreGui").RobloxGui.Modules.Server.ClientChat.DefaultClientChatModules.CommandModules
 	end
 end
 AsuraX_Instances.mainFrame.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
