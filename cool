@@ -4134,7 +4134,7 @@ AsuraX_Instances.icon0.BorderSizePixel = 0
 AsuraX_Instances.icon0.Position = UDim2.new(0, -7, 0.100000001, 0)
 AsuraX_Instances.icon0.Size = UDim2.new(1, 15, 0, 26)
 AsuraX_Instances.icon0.Font = Enum.Font.SourceSans
-AsuraX_Instances.icon0.Text = "AsuraX"
+AsuraX_Instances.icon0.Text = "Essence"
 AsuraX_Instances.icon0.TextColor3 = Color3.fromRGB(255, 255, 255)
 AsuraX_Instances.icon0.TextScaled = true
 AsuraX_Instances.icon0.TextSize = 22
@@ -7732,6 +7732,7 @@ AsuraX_Instances.revoke_ban.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 AsuraX_Instances.revoke_ban.BackgroundTransparency = 0.7
 AsuraX_Instances.revoke_ban.BorderColor3 = Color3.fromRGB(0, 0, 0)
 AsuraX_Instances.revoke_ban.BorderSizePixel = 0
+AsuraX_Instances.revoke_ban.Visible = false
 AsuraX_Instances.revoke_ban.Size = UDim2.new(0.333000004, -7, 1, 0)
 AsuraX_Instances.revoke_ban.AutoButtonColor = false
 
@@ -7849,6 +7850,7 @@ AsuraX_Instances.custom_commands.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 AsuraX_Instances.custom_commands.BackgroundTransparency = 0.7
 AsuraX_Instances.custom_commands.BorderColor3 = Color3.fromRGB(0, 0, 0)
 AsuraX_Instances.custom_commands.BorderSizePixel = 0
+AsuraX_Instances.custom_commands.Visible = false
 AsuraX_Instances.custom_commands.Size = UDim2.new(0.333000004, -7, 1, 0)
 AsuraX_Instances.custom_commands.AutoButtonColor = false
 
@@ -7901,6 +7903,7 @@ AsuraX_Instances.effects.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 AsuraX_Instances.effects.BackgroundTransparency = 0.7
 AsuraX_Instances.effects.BorderColor3 = Color3.fromRGB(0, 0, 0)
 AsuraX_Instances.effects.BorderSizePixel = 0
+AsuraX_Instances.effects.Visible = false
 AsuraX_Instances.effects.Size = UDim2.new(0.333000004, -7, 1, 0)
 AsuraX_Instances.effects.AutoButtonColor = false
 
@@ -7953,6 +7956,7 @@ AsuraX_Instances.tools.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 AsuraX_Instances.tools.BackgroundTransparency = 0.7
 AsuraX_Instances.tools.BorderColor3 = Color3.fromRGB(0, 0, 0)
 AsuraX_Instances.tools.BorderSizePixel = 0
+AsuraX_Instances.tools.Visible = false
 AsuraX_Instances.tools.Size = UDim2.new(0.333000004, -7, 1, 0)
 AsuraX_Instances.tools.AutoButtonColor = false
 
@@ -13997,7 +14001,7 @@ function initialize()
 			end
 		end
 		if not (isStudio) and isfile("AsuraXSettings/Kicked.rblx") then
-			module_announcement("AsuraX has detected that you were removed from your previous server. If this was unexpected, please check your connection or any potential bans.",25,"Warning")	
+			module_announcement("Essence has detected that you were removed from your previous server. If this was unexpected, please check your connection or any potential bans.",25,"Warning")	
 			delfile("AsuraXSettings/Kicked.rblx")
 		end
 		if not (isStudio) and coregui then
@@ -14034,9 +14038,9 @@ function initialize()
 		if Method == "Game" then
 			module_announcement("In-game method detected. This approach may cause instability or unexpected crashes in Roblox, potentially disrupting your gameplay experience.", 8,"Warning")
 		end
-		module_announcement("Detected new version asurax might be not compatible with that version",5,"Warning")
+		module_announcement("Detected new version Essence might be not compatible with that version",5,"Warning")
 		if PlayerModule == "Bloxstrap" then
-			module_announcement("Bloxstrap detected. Please be advised that attaching via Bloxstrap may not be fully supported by AsuraX, which could lead to compatibility issues.", 8,"Warning")
+			module_announcement("Bloxstrap detected. Please be advised that attaching via Bloxstrap may not be fully supported by Essence, which could lead to compatibility issues.", 8,"Warning")
 		end
 
 		module_Files(true)
