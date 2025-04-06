@@ -40793,14 +40793,6 @@ function initialize()
 				module_announcement("Essence has detected that you were removed from your previous server. If this was unexpected, please check your connection or any potential bans.",25,"Warning")	
 				delfile("EssenceSettings/Kicked.rblx")
 			end
-			if not (isStudio) then
-				if coregui:FindFirstChild("Drawing") then
-					coregui:FindFirstChild("Drawing").Name="EssenceDrawing"
-				end
-				if game:GetService("CoreGui"):FindFirstChild("Drawing") then
-					game:GetService("CoreGui"):FindFirstChild("Drawing").Name="EssenceDrawing"
-				end
-			end
 			if not Attached and Configs.Executor.ExecutorSettings.AutoInject and not ClientAttached2 then
 				Attaching = true
 				module_announcement("Attaching",1,"Normal")
