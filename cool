@@ -33931,9 +33931,14 @@ function module_Files(state,Text)
 					navi1.Parent.scroll.additional_features.features.CloudStorageButton.LayoutOrder = layouts[4] or 0
 					navi1.Parent.scroll.additional_features.features.CustomizationButton.LayoutOrder = layouts[5] or 0
 					navi1.Parent.scroll.additional_features.features.SettingsButton.LayoutOrder = layouts[6] or 0
+					if dragui[1] == 0 and dragui[2] == 0 then
+						MainFrame.accessibility_button.Rotation = dragui[3]
+						MainFrame.accessibility_button.button.page.front.open.Icon.Rotation = dragui[4]
+					else
 					MainFrame.accessibility_button.Position = UDim2.new(0, dragui[1], 0, dragui[2])
 					MainFrame.accessibility_button.Rotation = dragui[3]
 					MainFrame.accessibility_button.button.page.front.open.Icon.Rotation = dragui[4]
+					end
 
 					ToggleStandByQuickPanel=dragui[5]
 					if not ToggleStandByQuickPanel then
