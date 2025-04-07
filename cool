@@ -23878,6 +23878,7 @@ Essence_Instances.CloudStorageButton.BackgroundTransparency = 0.700
 Essence_Instances.CloudStorageButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Essence_Instances.CloudStorageButton.BorderSizePixel = 0
 Essence_Instances.CloudStorageButton.LayoutOrder = 1
+Essence_Instances.CloudStorageButton.Visible = false
 Essence_Instances.CloudStorageButton.Size = UDim2.new(0.333000004, -7, 1, 0)
 Essence_Instances.CloudStorageButton.AutoButtonColor = false
 
@@ -23931,6 +23932,7 @@ Essence_Instances.CustomizationButton.BackgroundTransparency = 0.700
 Essence_Instances.CustomizationButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Essence_Instances.CustomizationButton.BorderSizePixel = 0
 Essence_Instances.CustomizationButton.LayoutOrder = 2
+Essence_Instances.CustomizationButton.Visible = false
 Essence_Instances.CustomizationButton.Size = UDim2.new(0.333000004, -7, 1, 0)
 Essence_Instances.CustomizationButton.AutoButtonColor = false
 
@@ -25507,6 +25509,7 @@ Essence_Instances.TextButton1.Position = UDim2.new(0.812, 0,0, 0)
 Essence_Instances.TextButton1.Size = UDim2.new(0, 200, 0, 50)
 Essence_Instances.TextButton1.Font = Enum.Font.Arial
 Essence_Instances.TextButton1.Text = "Attach"
+Essence_Instances.TextButton1.Visible = false
 Essence_Instances.TextButton1.TextColor3 = Color3.fromRGB(255, 255, 255)
 Essence_Instances.TextButton1.TextSize = 15.000
 
