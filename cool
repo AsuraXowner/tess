@@ -37719,7 +37719,7 @@ function Insane()
 		if Configs.BanwaveGames[game.PlaceId] then
 			module_announcement("This game is flagged as part of the current Roblox Hunt event banwave. Your account may be at risk of restrictions. Please proceed with caution.", 10,"Warning")
 		end
-                module_announcement("The Essence module is outdated. Please update to the latest version.", 5, "Normal")
+                module_announcement("The Essence UI is outdated. Please update to the latest version.", 15, "Warning")
 
 		--
 
