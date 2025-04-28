@@ -1,0 +1,10518 @@
+--[[
+ .____                  ________ ___.    _____                           __                
+ |    |    __ _______   \_____  \\_ |___/ ____\_ __  ______ ____ _____ _/  |_  ___________ 
+ |    |   |  |  \__  \   /   |   \| __ \   __\  |  \/  ___// ___\\__  \\   __\/  _ \_  __ \
+ |    |___|  |  // __ \_/    |    \ \_\ \  | |  |  /\___ \\  \___ / __ \|  | (  <_> )  | \/
+ |_______ \____/(____  /\_______  /___  /__| |____//____  >\___  >____  /__|  \____/|__|   
+         \/          \/         \/    \/                \/     \/     \/                   
+          \_Welcome to LuaObfuscator.com   (Alpha 0.10.8) ~  Much Love, Ferib 
+
+]]--
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                       --Services
+local tween_service = game:GetService("TweenService")
+local coregui = game:GetService("CoreGui")
+local HttpService = game:GetService("HttpService")
+local workspace_service = game:GetService("Workspace")
+local player_service = game:GetService("Players")
+local UserInputService = game:GetService("UserInputService")
+local input_service = game:GetService("UserInputService")
+local lighting = game:GetService("Lighting")
+local replicated_storage = game:GetService("ReplicatedStorage")
+local teleportService = game:GetService("TeleportService")
+local runService = game:GetService("RunService")
+local isStudio = game:GetService("RunService"):IsStudio()
+local CurrentVersion = "v0.24"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+local DynamicUnc20 = {
+	DynamicUnc20 = Instance.new("ScreenGui"),
+	License = Instance.new("Frame"),
+	UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint"),
+	Shadow = Instance.new("ImageLabel"),
+	UIScale = Instance.new("UIScale"),
+	MainFrame = Instance.new("CanvasGroup"),
+	UIListLayout = Instance.new("UIListLayout"),
+	Section = Instance.new("Frame"),
+	Shadow_2 = Instance.new("Frame"),
+	UIGradient = Instance.new("UIGradient"),
+	Frame = Instance.new("Frame"),
+	UIListLayout_2 = Instance.new("UIListLayout"),
+	UIPadding = Instance.new("UIPadding"),
+	Title = Instance.new("TextLabel"),
+	UIPadding_2 = Instance.new("UIPadding"),
+	Content = Instance.new("Frame"),
+	UICorner = Instance.new("UICorner"),
+	UIStroke =  Instance.new("UIStroke"),
+	UIStroke2 =  Instance.new("UIStroke"),
+	UIStroke3 =  Instance.new("UIStroke"),
+	ScrollingFrame = Instance.new("ScrollingFrame"),
+	UIListLayout_3 = Instance.new("UIListLayout"),
+	UIPadding_3 = Instance.new("UIPadding"),
+	TextLabel = Instance.new("TextLabel"),
+	UIPadding_4 = Instance.new("UIPadding"),
+	TextLabel_2 = Instance.new("TextLabel"),
+	UIPadding_5 = Instance.new("UIPadding"),
+	TextLabel_3 = Instance.new("TextLabel"),
+	UIPadding_6 = Instance.new("UIPadding"),
+	TextLabel_4 = Instance.new("TextLabel"),
+	UIPadding_7 = Instance.new("UIPadding"),
+	TextLabel_5 = Instance.new("TextLabel"),
+	UIPadding_8 = Instance.new("UIPadding"),
+	TextLabel_6 = Instance.new("TextLabel"),
+	UIPadding_9 = Instance.new("UIPadding"),
+	TextLabel_7 = Instance.new("TextLabel"),
+	UIPadding_10 = Instance.new("UIPadding"),
+	TextLabel_8 = Instance.new("TextLabel"),
+	UIPadding_11 = Instance.new("UIPadding"),
+	TextLabel_9 = Instance.new("TextLabel"),
+	UIPadding_12 = Instance.new("UIPadding"),
+	TextLabel_10 = Instance.new("TextLabel"),
+	UIPadding_13 = Instance.new("UIPadding"),
+	TextLabel_11 = Instance.new("TextLabel"),
+	UIPadding_14 = Instance.new("UIPadding"),
+	TextLabel_12 = Instance.new("TextLabel"),
+	UIPadding_15 = Instance.new("UIPadding"),
+	TextLabel_13 = Instance.new("TextLabel"),
+	UIPadding_16 = Instance.new("UIPadding"),
+	TextLabel_14 = Instance.new("TextLabel"),
+	UIPadding_17 = Instance.new("UIPadding"),
+	TextLabel_15 = Instance.new("TextLabel"),
+	UIPadding_18 = Instance.new("UIPadding"),
+	TextLabel_16 = Instance.new("TextLabel"),
+	UIPadding_19 = Instance.new("UIPadding"),
+	TextLabel_17 = Instance.new("TextLabel"),
+	UIPadding_20 = Instance.new("UIPadding"),
+	TextLabel_18 = Instance.new("TextLabel"),
+	UIPadding_21 = Instance.new("UIPadding"),
+	TextLabel_19 = Instance.new("TextLabel"),
+	UIPadding_22 = Instance.new("UIPadding"),
+	TextLabel_20 = Instance.new("TextLabel"),
+	UIPadding_23 = Instance.new("UIPadding"),
+	TextLabel_21 = Instance.new("TextLabel"),
+	UIPadding_24 = Instance.new("UIPadding"),
+	TextLabel_22 = Instance.new("TextLabel"),
+	UIPadding_25 = Instance.new("UIPadding"),
+	TextLabel_23 = Instance.new("TextLabel"),
+	UIPadding_26 = Instance.new("UIPadding"),
+	TextLabel_24 = Instance.new("TextLabel"),
+	UIPadding_27 = Instance.new("UIPadding"),
+	TextLabel_25 = Instance.new("TextLabel"),
+	UIPadding_28 = Instance.new("UIPadding"),
+	TextLabel_26 = Instance.new("TextLabel"),
+	UIPadding_29 = Instance.new("UIPadding"),
+	TextLabel_27 = Instance.new("TextLabel"),
+	UIPadding_30 = Instance.new("UIPadding"),
+	Checkbox = Instance.new("Frame"),
+	UIListLayout_4 = Instance.new("UIListLayout"),
+	TextLabel_28 = Instance.new("TextLabel"),
+	TextButton = Instance.new("TextButton"),
+	UICorner_2 = Instance.new("UICorner"),
+	Actions = Instance.new("Frame"),
+	UIListLayout_5 = Instance.new("UIListLayout"),
+	UIPadding_31 = Instance.new("UIPadding"),
+	Next = Instance.new("TextButton"),
+	UICorner_3 = Instance.new("UICorner"),
+	UIPadding_32 = Instance.new("UIPadding"),
+	Top = Instance.new("Frame"),
+	Border = Instance.new("Frame"),
+	Left = Instance.new("Frame"),
+	Center = Instance.new("Frame"),
+	Right = Instance.new("Frame"),
+	UIListLayout_6 = Instance.new("UIListLayout"),
+	Close = Instance.new("TextButton"),
+	UIAspectRatioConstraint_2 = Instance.new("UIAspectRatioConstraint"),
+	ImageLabel = Instance.new("ImageLabel"),
+	UICorner_4 = Instance.new("UICorner"),
+	CheckFrame = Instance.new("Frame"),
+	UIAspectRatioConstraint_3 = Instance.new("UIAspectRatioConstraint"),
+	Shadow_3 = Instance.new("ImageLabel"),
+	UIScale_2 = Instance.new("UIScale"),
+	MainFrame_2 = Instance.new("CanvasGroup"),
+	UIListLayout_7 = Instance.new("UIListLayout"),
+	Section_2 = Instance.new("Frame"),
+	Shadow_4 = Instance.new("Frame"),
+	UIGradient_2 = Instance.new("UIGradient"),
+	ScrollingFrame_2 = Instance.new("ScrollingFrame"),
+	UIPadding_33 = Instance.new("UIPadding"),
+	API = Instance.new("TextLabel"),
+	Finishing = Instance.new("TextLabel"),
+	Http = Instance.new("TextLabel"),
+	Parent = Instance.new("TextLabel"),
+	Sales = Instance.new("TextLabel"),
+	Status = Instance.new("TextLabel"),
+	UIPadding_34 = Instance.new("UIPadding"),
+	Teleports = Instance.new("TextLabel"),
+	Title_2 = Instance.new("TextLabel"),
+	UIPadding_35 = Instance.new("UIPadding"),
+	UIListLayout_8 = Instance.new("UIListLayout"),
+	Top_2 = Instance.new("Frame"),
+	Border_2 = Instance.new("Frame"),
+	Left_2 = Instance.new("Frame"),
+	Center_2 = Instance.new("Frame"),
+	Right_2 = Instance.new("Frame"),
+	UIListLayout_9 = Instance.new("UIListLayout"),
+	Close_2 = Instance.new("TextButton"),
+	UIAspectRatioConstraint_4 = Instance.new("UIAspectRatioConstraint"),
+	ImageLabel_2 = Instance.new("ImageLabel"),
+	UICorner_5 = Instance.new("UICorner"),
+	GettingReadyFrame = Instance.new("Frame"),
+	UIAspectRatioConstraint_5 = Instance.new("UIAspectRatioConstraint"),
+	Shadow_5 = Instance.new("ImageLabel"),
+	UIScale_3 = Instance.new("UIScale"),
+	MainFrame_3 = Instance.new("CanvasGroup"),
+	UIListLayout_10 = Instance.new("UIListLayout"),
+	Section_3 = Instance.new("Frame"),
+	Shadow_6 = Instance.new("Frame"),
+	UIGradient_3 = Instance.new("UIGradient"),
+	Frame_2 = Instance.new("Frame"),
+	Title_3 = Instance.new("TextLabel"),
+	Description = Instance.new("TextLabel"),
+	T1 = Instance.new("ImageLabel"),
+	T2 = Instance.new("ImageLabel"),
+	T3 = Instance.new("ImageLabel"),
+	Alt = Instance.new("TextLabel"),
+	Top_3 = Instance.new("Frame"),
+	Border_3 = Instance.new("Frame"),
+	Left_3 = Instance.new("Frame"),
+	Center_3 = Instance.new("Frame"),
+	Right_3 = Instance.new("Frame"),
+	UIListLayout_11 = Instance.new("UIListLayout"),
+	Close_3 = Instance.new("TextButton"),
+	UIAspectRatioConstraint_6 = Instance.new("UIAspectRatioConstraint"),
+	ImageLabel_3 = Instance.new("ImageLabel"),
+	UICorner_6 = Instance.new("UICorner"),
+	BootingUp = Instance.new("Frame"),
+	UIAspectRatioConstraint_7 = Instance.new("UIAspectRatioConstraint"),
+	Shadow_7 = Instance.new("ImageLabel"),
+	UIScale_4 = Instance.new("UIScale"),
+	MainFrame_4 = Instance.new("CanvasGroup"),
+	UIListLayout_12 = Instance.new("UIListLayout"),
+	Section_4 = Instance.new("Frame"),
+	Shadow_8 = Instance.new("Frame"),
+	UIGradient_4 = Instance.new("UIGradient"),
+	Frame_3 = Instance.new("Frame"),
+	Title_4 = Instance.new("TextLabel"),
+	Description_2 = Instance.new("TextLabel"),
+	T1_2 = Instance.new("ImageLabel"),
+	T2_2 = Instance.new("ImageLabel"),
+	T3_2 = Instance.new("ImageLabel"),
+	Alt_2 = Instance.new("TextLabel"),
+	Top_4 = Instance.new("Frame"),
+	Border_4 = Instance.new("Frame"),
+	Left_4 = Instance.new("Frame"),
+	Center_4 = Instance.new("Frame"),
+	Right_4 = Instance.new("Frame"),
+	UIListLayout_13 = Instance.new("UIListLayout"),
+	Close_4 = Instance.new("TextButton"),
+	UIAspectRatioConstraint_8 = Instance.new("UIAspectRatioConstraint"),
+	ImageLabel_4 = Instance.new("ImageLabel"),
+	UICorner_7 = Instance.new("UICorner"),
+	ResultsFrame = Instance.new("Frame"),
+	UIAspectRatioConstraint_9 = Instance.new("UIAspectRatioConstraint"),
+	Shadow_9 = Instance.new("ImageLabel"),
+	UIScale_5 = Instance.new("UIScale"),
+	MainFrame_5 = Instance.new("CanvasGroup"),
+	UIListLayout_14 = Instance.new("UIListLayout"),
+	Section_5 = Instance.new("Frame"),
+	Shadow_10 = Instance.new("Frame"),
+	UIGradient_5 = Instance.new("UIGradient"),
+	Frame_4 = Instance.new("Frame"),
+	UIListLayout_15 = Instance.new("UIListLayout"),
+	UIPadding_36 = Instance.new("UIPadding"),
+	Title_5 = Instance.new("TextLabel"),
+	Description_3 = Instance.new("TextLabel"),
+	UIPadding_37 = Instance.new("UIPadding"),
+	Content_2 = Instance.new("Frame"),
+	UICorner_8 = Instance.new("UICorner"),
+	ScrollingFrame_3 = Instance.new("ScrollingFrame"),
+	UIListLayout_16 = Instance.new("UIListLayout"),
+	New = Instance.new("Frame"),
+	UIPadding_38 = Instance.new("UIPadding"),
+	Button = Instance.new("TextButton"),
+	UIPadding_39 = Instance.new("UIPadding"),
+	UICorner_9 = Instance.new("UICorner"),
+	Frame_5 = Instance.new("Frame"),
+	Frame_6 = Instance.new("Frame"),
+	UIListLayout_17 = Instance.new("UIListLayout"),
+	UIPadding_40 = Instance.new("UIPadding"),
+	Name = Instance.new("TextLabel"),
+	Rank = Instance.new("TextLabel"),
+	Warnings = Instance.new("Frame"),
+	UIListLayout_18 = Instance.new("UIListLayout"),
+	Icon = Instance.new("ImageLabel"),
+	Label = Instance.new("TextLabel"),
+	UIPadding_41 = Instance.new("UIPadding"),
+	Errors = Instance.new("Frame"),
+	UIListLayout_19 = Instance.new("UIListLayout"),
+	Icon_2 = Instance.new("ImageLabel"),
+	Label_2 = Instance.new("TextLabel"),
+	UIPadding_42 = Instance.new("UIPadding"),
+	Type = Instance.new("TextLabel"),
+	UIPadding_43 = Instance.new("UIPadding"),
+	Frame_7 = Instance.new("Frame"),
+	Frame_8 = Instance.new("Frame"),
+	UIListLayout_20 = Instance.new("UIListLayout"),
+	UIPadding_44 = Instance.new("UIPadding"),
+	Warnings_2 = Instance.new("Frame"),
+	UIListLayout_21 = Instance.new("UIListLayout"),
+	Icon_3 = Instance.new("ImageLabel"),
+	Label_3 = Instance.new("TextLabel"),
+	UIPadding_45 = Instance.new("UIPadding"),
+	Errors_2 = Instance.new("Frame"),
+	UIListLayout_22 = Instance.new("UIListLayout"),
+	Icon_4 = Instance.new("ImageLabel"),
+	Label_4 = Instance.new("TextLabel"),
+	UIPadding_46 = Instance.new("UIPadding"),
+	Type_2 = Instance.new("TextLabel"),
+	UIPadding_47 = Instance.new("UIPadding"),
+	Errors_3 = Instance.new("Frame"),
+	UIListLayout_23 = Instance.new("UIListLayout"),
+	Icon_5 = Instance.new("ImageLabel"),
+	Label_5 = Instance.new("TextLabel"),
+	UIPadding_48 = Instance.new("UIPadding"),
+	Type_3 = Instance.new("TextLabel"),
+	UIPadding_49 = Instance.new("UIPadding"),
+	Errors_4 = Instance.new("Frame"),
+	UIListLayout_24 = Instance.new("UIListLayout"),
+	Icon_6 = Instance.new("ImageLabel"),
+	Label_6 = Instance.new("TextLabel"),
+	UIPadding_50 = Instance.new("UIPadding"),
+	Type_4 = Instance.new("TextLabel"),
+	UIPadding_51 = Instance.new("UIPadding"),
+	Frame_9 = Instance.new("Frame"),
+	UICorner_10 = Instance.new("UICorner"),
+	Frame_10 = Instance.new("Frame"),
+	Frame_11 = Instance.new("Frame"),
+	UIListLayout_25 = Instance.new("UIListLayout"),
+	UIPadding_52 = Instance.new("UIPadding"),
+	TextLabel_29 = Instance.new("TextLabel"),
+	TextLabel_30 = Instance.new("TextLabel"),
+	UIPadding_53 = Instance.new("UIPadding"),
+	TextLabel_31 = Instance.new("TextLabel"),
+	Actions_2 = Instance.new("Frame"),
+	UIListLayout_26 = Instance.new("UIListLayout"),
+	UIPadding_54 = Instance.new("UIPadding"),
+	Next_2 = Instance.new("TextButton"),
+	UICorner_11 = Instance.new("UICorner"),
+	UIPadding_55 = Instance.new("UIPadding"),
+	Top_5 = Instance.new("Frame"),
+	Border_5 = Instance.new("Frame"),
+	Left_5 = Instance.new("Frame"),
+	Center_5 = Instance.new("Frame"),
+	Right_5 = Instance.new("Frame"),
+	UIListLayout_27 = Instance.new("UIListLayout"),
+	Close_5 = Instance.new("TextButton"),
+	UIAspectRatioConstraint_10 = Instance.new("UIAspectRatioConstraint"),
+	ImageLabel_5 = Instance.new("ImageLabel"),
+	UICorner_12 = Instance.new("UICorner"),
+	CanvasGroup = Instance.new("CanvasGroup"),
+	UIListLayout_28 = Instance.new("UIListLayout"),
+	Action = Instance.new("Frame"),
+	UIListLayout_29 = Instance.new("UIListLayout"),
+	UIPadding_56 = Instance.new("UIPadding"),
+	ButtonA = Instance.new("TextButton"),
+	UICorner_13 = Instance.new("UICorner"),
+	ButtonB = Instance.new("TextButton"),
+	UICorner_14 = Instance.new("UICorner"),
+	Content_3 = Instance.new("Frame"),
+	UIListLayout_30 = Instance.new("UIListLayout"),
+	Content_4 = Instance.new("Frame"),
+	UIListLayout_31 = Instance.new("UIListLayout"),
+	UIPadding_57 = Instance.new("UIPadding"),
+	Title_6 = Instance.new("TextLabel"),
+	Description_4 = Instance.new("TextLabel"),
+	Frame_12 = Instance.new("Frame"),
+	Alt_3 = Instance.new("TextLabel"),
+	Frame_13 = Instance.new("Frame"),
+	UICorner_15 = Instance.new("UICorner"),
+	HoverInfo = Instance.new("Frame"),
+	HoverTextInfo = Instance.new("TextLabel"),
+	UIScale3 = Instance.new("UIScale"),
+	UIAspectRatioConstraint3 = Instance.new("UIAspectRatioConstraint"),
+	UICorner3 = Instance.new("UICorner"),
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DynamicUnc20.DynamicUnc20.Name = "DynamicUnc2.0"
+DynamicUnc20.DynamicUnc20.Parent = coregui--game.Players.LocalPlayer:WaitForChild("PlayerGui")
+DynamicUnc20.DynamicUnc20.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+DynamicUnc20.DynamicUnc20.IgnoreGuiInset = true
+DynamicUnc20.DynamicUnc20.ResetOnSpawn = false
+
+DynamicUnc20.CheckFrame.Name = "CheckFrame"
+DynamicUnc20.CheckFrame.Parent = DynamicUnc20.DynamicUnc20
+DynamicUnc20.CheckFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+DynamicUnc20.CheckFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.CheckFrame.BackgroundTransparency = 1.000
+DynamicUnc20.CheckFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.CheckFrame.BorderSizePixel = 0
+DynamicUnc20.CheckFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
+DynamicUnc20.CheckFrame.Size = UDim2.new(0, 822, 0, 566)
+DynamicUnc20.CheckFrame.Visible = false
+
+DynamicUnc20.UIAspectRatioConstraint_3.Parent = DynamicUnc20.CheckFrame
+DynamicUnc20.UIAspectRatioConstraint_3.AspectRatio = 1.453
+
+DynamicUnc20.Shadow_3.Name = "Shadow"
+DynamicUnc20.Shadow_3.Parent = DynamicUnc20.CheckFrame
+DynamicUnc20.Shadow_3.AnchorPoint = Vector2.new(0.5, 0.5)
+DynamicUnc20.Shadow_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.Shadow_3.BackgroundTransparency = 1.000
+DynamicUnc20.Shadow_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Shadow_3.BorderSizePixel = 0
+DynamicUnc20.Shadow_3.Position = UDim2.new(0.5, 0, 0.5, 0)
+DynamicUnc20.Shadow_3.Size = UDim2.new(1.05900002, 0, 1.08800006, 0)
+DynamicUnc20.Shadow_3.ZIndex = -1
+DynamicUnc20.Shadow_3.Image = "rbxassetid://15298624572"
+
+DynamicUnc20.UIScale_2.Parent = DynamicUnc20.CheckFrame
+
+DynamicUnc20.MainFrame_2.Name = "MainFrame"
+DynamicUnc20.MainFrame_2.AnchorPoint = Vector2.new(0.5, 0.5)
+DynamicUnc20.MainFrame_2.BackgroundTransparency = 1
+DynamicUnc20.MainFrame_2.Interactable = true
+DynamicUnc20.MainFrame_2.Visible = true
+DynamicUnc20.MainFrame_2.Parent = DynamicUnc20.CheckFrame
+DynamicUnc20.MainFrame_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.MainFrame_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.MainFrame_2.BorderSizePixel = 0
+DynamicUnc20.MainFrame_2.Position = UDim2.new(0.5, 0,0.5, 0)
+DynamicUnc20.MainFrame_2.Size = UDim2.new(1, 0,1, 0)
+
+DynamicUnc20.UIListLayout_7.Parent = DynamicUnc20.MainFrame_2
+DynamicUnc20.UIListLayout_7.SortOrder = Enum.SortOrder.LayoutOrder
+
+DynamicUnc20.Section_2.Name = "Section"
+DynamicUnc20.Section_2.Parent = DynamicUnc20.MainFrame_2
+DynamicUnc20.Section_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.Section_2.BackgroundTransparency = 1.000
+DynamicUnc20.Section_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Section_2.BorderSizePixel = 0
+DynamicUnc20.Section_2.LayoutOrder = 3
+DynamicUnc20.Section_2.Size = UDim2.new(1, 0, 1, 0)
+
+DynamicUnc20.Shadow_4.Name = "Shadow"
+DynamicUnc20.Shadow_4.Parent = DynamicUnc20.Section_2
+DynamicUnc20.Shadow_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.Shadow_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Shadow_4.BorderSizePixel = 0
+DynamicUnc20.Shadow_4.Size = UDim2.new(1, 0, 0, 10)
+DynamicUnc20.Shadow_4.ZIndex = 100
+
+DynamicUnc20.UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 0, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 0, 0))}
+DynamicUnc20.UIGradient_2.Rotation = 90
+DynamicUnc20.UIGradient_2.Transparency = NumberSequence.new{NumberSequenceKeypoint.new(0.00, 0.76), NumberSequenceKeypoint.new(1.00, 1.00)}
+DynamicUnc20.UIGradient_2.Parent = DynamicUnc20.Shadow_4
+
+DynamicUnc20.ScrollingFrame_2.Parent = DynamicUnc20.Section_2
+DynamicUnc20.ScrollingFrame_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.ScrollingFrame_2.BackgroundTransparency = 1.000
+DynamicUnc20.ScrollingFrame_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.ScrollingFrame_2.BorderSizePixel = 0
+DynamicUnc20.ScrollingFrame_2.ScrollBarImageColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.ScrollingFrame_2.AutomaticCanvasSize = Enum.AutomaticSize.Y
+DynamicUnc20.ScrollingFrame_2.ScrollBarThickness = 6
+DynamicUnc20.ScrollingFrame_2.Size = UDim2.new(1, 0, 1, 0)
+
+DynamicUnc20.UIPadding_33.Parent = DynamicUnc20.ScrollingFrame_2
+DynamicUnc20.UIPadding_33.PaddingLeft = UDim.new(0, 50)
+DynamicUnc20.UIPadding_33.PaddingRight = UDim.new(0, 50)
+DynamicUnc20.UIPadding_33.PaddingTop = UDim.new(0, 50)
+
+DynamicUnc20.Finishing.Name = "Finishing"
+DynamicUnc20.Finishing.Parent = DynamicUnc20.ScrollingFrame_2
+DynamicUnc20.Finishing.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.Finishing.BackgroundTransparency = 1.000
+DynamicUnc20.Finishing.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Finishing.BorderSizePixel = 0
+DynamicUnc20.Finishing.LayoutOrder = 5
+DynamicUnc20.Finishing.Text = ""
+DynamicUnc20.Finishing.Position = UDim2.new(-0.75999999, 0, -4.67999983, 0)
+DynamicUnc20.Finishing.Size = UDim2.new(1, 0, 0, 0)
+DynamicUnc20.Finishing.FontFace = Font.new("rbxasset://fonts/families/Montserrat.json", Enum.FontWeight.SemiBold, Enum.FontStyle.Normal)
+
+
+
+DynamicUnc20.Status.Name = "Status"
+DynamicUnc20.Status.Parent = DynamicUnc20.ScrollingFrame_2
+DynamicUnc20.Status.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.Status.BackgroundTransparency = 1.000
+DynamicUnc20.Status.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Status.BorderSizePixel = 0
+DynamicUnc20.Status.LayoutOrder = 1
+DynamicUnc20.Status.Position = UDim2.new(-0.75999999, 0, -1.96000004, 0)
+DynamicUnc20.Status.FontFace = Font.new("rbxasset://fonts/families/Montserrat.json", Enum.FontWeight.SemiBold, Enum.FontStyle.Normal)
+
+DynamicUnc20.Status.AutomaticSize = Enum.AutomaticSize.XY
+DynamicUnc20.Status.Text = "Status"
+DynamicUnc20.Status.TextColor3 = Color3.fromRGB(215, 215, 215)
+DynamicUnc20.Status.TextSize = 16.000
+
+DynamicUnc20.UIPadding_34.Parent = DynamicUnc20.Status
+DynamicUnc20.UIPadding_34.PaddingBottom = UDim.new(0, 16)
+
+DynamicUnc20.Title_2.Name = "Title"
+DynamicUnc20.Title_2.Parent = DynamicUnc20.ScrollingFrame_2
+DynamicUnc20.Title_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.Title_2.BackgroundTransparency = 1.000
+DynamicUnc20.Title_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Title_2.BorderSizePixel = 0
+DynamicUnc20.Title_2.Position = UDim2.new(-0.75999999, 0, -0.0399999991, 0)
+DynamicUnc20.Title_2.FontFace = Font.new("rbxasset://fonts/families/Montserrat.json", Enum.FontWeight.SemiBold, Enum.FontStyle.Normal)
+
+DynamicUnc20.Title_2.RichText = true
+DynamicUnc20.Title_2.AutomaticSize = Enum.AutomaticSize.XY
+DynamicUnc20.Title_2.Text = "Checking Environment"
+DynamicUnc20.Title_2.TextColor3 = Color3.fromRGB(215, 215, 215)
+DynamicUnc20.Title_2.TextSize = 40.000
+
+DynamicUnc20.UIPadding_35.Parent = DynamicUnc20.Title_2
+DynamicUnc20.UIPadding_35.PaddingBottom = UDim.new(0, 16)
+
+DynamicUnc20.UIListLayout_8.Parent = DynamicUnc20.ScrollingFrame_2
+DynamicUnc20.UIListLayout_8.SortOrder = Enum.SortOrder.LayoutOrder
+DynamicUnc20.UIListLayout_8.Padding = UDim.new(0, 12)
+
+DynamicUnc20.Top_2.Name = "Top"
+DynamicUnc20.Top_2.Parent = DynamicUnc20.MainFrame_2
+DynamicUnc20.Top_2.BackgroundColor3 = Color3.fromRGB(22, 22, 26)
+DynamicUnc20.Top_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Top_2.BorderSizePixel = 0
+DynamicUnc20.Top_2.LayoutOrder = 1
+DynamicUnc20.Top_2.Size = UDim2.new(1, 0, 0, 38)
+DynamicUnc20.Top_2.ZIndex = 3
+
+DynamicUnc20.Border_2.Name = "Border"
+DynamicUnc20.Border_2.Parent = DynamicUnc20.Top_2
+DynamicUnc20.Border_2.AnchorPoint = Vector2.new(0, 1)
+DynamicUnc20.Border_2.BackgroundColor3 = Color3.fromRGB(33, 33, 37)
+DynamicUnc20.Border_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Border_2.BorderSizePixel = 0
+DynamicUnc20.Border_2.Position = UDim2.new(0, 0, 1, 0)
+DynamicUnc20.Border_2.Size = UDim2.new(1, 0, 0, 1)
+
+DynamicUnc20.Left_2.Name = "Left"
+DynamicUnc20.Left_2.Parent = DynamicUnc20.Top_2
+DynamicUnc20.Left_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.Left_2.BackgroundTransparency = 1.000
+DynamicUnc20.Left_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Left_2.BorderSizePixel = 0
+DynamicUnc20.Left_2.Size = UDim2.new(1, 0, 1, 0)
+
+DynamicUnc20.Center_2.Name = "Center"
+DynamicUnc20.Center_2.Parent = DynamicUnc20.Top_2
+DynamicUnc20.Center_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.Center_2.BackgroundTransparency = 1.000
+DynamicUnc20.Center_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Center_2.BorderSizePixel = 0
+DynamicUnc20.Center_2.Size = UDim2.new(1, 0, 1, 0)
+
+DynamicUnc20.Right_2.Name = "Right"
+DynamicUnc20.Right_2.Parent = DynamicUnc20.Top_2
+DynamicUnc20.Right_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.Right_2.BackgroundTransparency = 1.000
+DynamicUnc20.Right_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Right_2.BorderSizePixel = 0
+DynamicUnc20.Right_2.Size = UDim2.new(1, 0, 1, 0)
+
+DynamicUnc20.UIListLayout_9.Parent = DynamicUnc20.Right_2
+DynamicUnc20.UIListLayout_9.FillDirection = Enum.FillDirection.Horizontal
+DynamicUnc20.UIListLayout_9.HorizontalAlignment = Enum.HorizontalAlignment.Right
+DynamicUnc20.UIListLayout_9.SortOrder = Enum.SortOrder.LayoutOrder
+DynamicUnc20.UIListLayout_9.VerticalAlignment = Enum.VerticalAlignment.Center
+
+DynamicUnc20.Close_2.Name = "Close"
+DynamicUnc20.Close_2.Parent = DynamicUnc20.Right_2
+DynamicUnc20.Close_2.BackgroundColor3 = Color3.fromRGB(255, 42, 42)
+DynamicUnc20.Close_2.BackgroundTransparency = 1.000
+DynamicUnc20.Close_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Close_2.BorderSizePixel = 0
+DynamicUnc20.Close_2.Size = UDim2.new(1, 0, 1, 0)
+DynamicUnc20.Close_2.AutoButtonColor = false
+DynamicUnc20.Close_2.Font = Enum.Font.SourceSans
+DynamicUnc20.Close_2.Text = ""
+DynamicUnc20.Close_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Close_2.TextSize = 14.000
+
+DynamicUnc20.UIAspectRatioConstraint_4.Parent = DynamicUnc20.Close_2
+DynamicUnc20.UIAspectRatioConstraint_4.DominantAxis = Enum.DominantAxis.Height
+
+DynamicUnc20.ImageLabel_2.Parent = DynamicUnc20.Close_2
+DynamicUnc20.ImageLabel_2.AnchorPoint = Vector2.new(0.5, 0.5)
+DynamicUnc20.ImageLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.ImageLabel_2.BackgroundTransparency = 1.000
+DynamicUnc20.ImageLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.ImageLabel_2.BorderSizePixel = 0
+DynamicUnc20.ImageLabel_2.Position = UDim2.new(0.5, 0, 0.5, 0)
+DynamicUnc20.ImageLabel_2.Size = UDim2.new(0, 18, 0, 18)
+DynamicUnc20.ImageLabel_2.Image = "rbxassetid://76543842866264"
+DynamicUnc20.ImageLabel_2.ImageColor3 = Color3.fromRGB(215, 215, 215)
+DynamicUnc20.ImageLabel_2.ImageRectOffset = Vector2.new(284, 4)
+DynamicUnc20.ImageLabel_2.ImageRectSize = Vector2.new(24, 24)
+
+DynamicUnc20.UICorner_5.CornerRadius = UDim.new(0, 10)
+DynamicUnc20.UICorner_5.Parent = DynamicUnc20.MainFrame_2
+
+DynamicUnc20.GettingReadyFrame.Name = "GettingReadyFrame"
+DynamicUnc20.GettingReadyFrame.Parent = DynamicUnc20.DynamicUnc20
+DynamicUnc20.GettingReadyFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+DynamicUnc20.GettingReadyFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.GettingReadyFrame.BackgroundTransparency = 1.000
+DynamicUnc20.GettingReadyFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.GettingReadyFrame.BorderSizePixel = 0
+DynamicUnc20.GettingReadyFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
+DynamicUnc20.GettingReadyFrame.Size = UDim2.new(0, 822, 0, 566)
+DynamicUnc20.GettingReadyFrame.Visible = false
+
+DynamicUnc20.UIAspectRatioConstraint_5.Parent = DynamicUnc20.GettingReadyFrame
+DynamicUnc20.UIAspectRatioConstraint_5.AspectRatio = 1.453
+
+DynamicUnc20.Shadow_5.Name = "Shadow"
+DynamicUnc20.Shadow_5.Parent = DynamicUnc20.GettingReadyFrame
+DynamicUnc20.Shadow_5.AnchorPoint = Vector2.new(0.5, 0.5)
+DynamicUnc20.Shadow_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.Shadow_5.BackgroundTransparency = 1.000
+DynamicUnc20.Shadow_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Shadow_5.BorderSizePixel = 0
+DynamicUnc20.Shadow_5.Position = UDim2.new(0.5, 0, 0.5, 0)
+DynamicUnc20.Shadow_5.Size = UDim2.new(1.05900002, 0, 1.08800006, 0)
+DynamicUnc20.Shadow_5.ZIndex = -1
+DynamicUnc20.Shadow_5.Image = "rbxassetid://15298624572"
+
+DynamicUnc20.UIScale_3.Parent = DynamicUnc20.GettingReadyFrame
+
+DynamicUnc20.MainFrame_3.Name = "MainFrame"
+DynamicUnc20.MainFrame_3.AnchorPoint = Vector2.new(0.5, 0.5)
+DynamicUnc20.MainFrame_3.BackgroundTransparency = 1
+DynamicUnc20.MainFrame_3.Interactable = true
+DynamicUnc20.MainFrame_3.Visible = true
+DynamicUnc20.MainFrame_3.Parent = DynamicUnc20.GettingReadyFrame
+DynamicUnc20.MainFrame_3.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.MainFrame_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.MainFrame_3.BorderSizePixel = 0
+DynamicUnc20.MainFrame_3.Position = UDim2.new(0.5, 0,0.5, 0)
+DynamicUnc20.MainFrame_3.Size = UDim2.new(1, 0,1, 0)
+
+DynamicUnc20.UIListLayout_10.Parent = DynamicUnc20.MainFrame_3
+DynamicUnc20.UIListLayout_10.SortOrder = Enum.SortOrder.LayoutOrder
+
+DynamicUnc20.Section_3.Name = "Section"
+DynamicUnc20.Section_3.Parent = DynamicUnc20.MainFrame_3
+DynamicUnc20.Section_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.Section_3.BackgroundTransparency = 1.000
+DynamicUnc20.Section_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Section_3.BorderSizePixel = 0
+DynamicUnc20.Section_3.LayoutOrder = 3
+DynamicUnc20.Section_3.Size = UDim2.new(1, 0, 1, 0)
+
+DynamicUnc20.Shadow_6.Name = "Shadow"
+DynamicUnc20.Shadow_6.Parent = DynamicUnc20.Section_3
+DynamicUnc20.Shadow_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.Shadow_6.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Shadow_6.BorderSizePixel = 0
+DynamicUnc20.Shadow_6.Size = UDim2.new(1, 0, 0, 10)
+DynamicUnc20.Shadow_6.ZIndex = 100
+
+DynamicUnc20.UIGradient_3.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 0, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 0, 0))}
+DynamicUnc20.UIGradient_3.Rotation = 90
+DynamicUnc20.UIGradient_3.Transparency = NumberSequence.new{NumberSequenceKeypoint.new(0.00, 0.76), NumberSequenceKeypoint.new(1.00, 1.00)}
+DynamicUnc20.UIGradient_3.Parent = DynamicUnc20.Shadow_6
+
+DynamicUnc20.Frame_2.Parent = DynamicUnc20.Section_3
+DynamicUnc20.Frame_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.Frame_2.BackgroundTransparency = 1.000
+DynamicUnc20.Frame_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Frame_2.BorderSizePixel = 0
+DynamicUnc20.Frame_2.Size = UDim2.new(1, 0, 1, 0)
+
+DynamicUnc20.Title_3.Name = "Title"
+DynamicUnc20.Title_3.Parent = DynamicUnc20.Frame_2
+DynamicUnc20.Title_3.AnchorPoint = Vector2.new(0.5, 0)
+DynamicUnc20.Title_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.Title_3.BackgroundTransparency = 1.000
+DynamicUnc20.Title_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Title_3.BorderSizePixel = 0
+DynamicUnc20.Title_3.Position = UDim2.new(0.5, 0, 0.224999994, 0)
+DynamicUnc20.Title_3.FontFace = Font.new("rbxasset://fonts/families/Montserrat.json", Enum.FontWeight.SemiBold, Enum.FontStyle.Normal)
+
+DynamicUnc20.Title_3.Text = "DynamicUnc"
+DynamicUnc20.Title_3.TextColor3 = Color3.fromRGB(215, 215, 215)
+DynamicUnc20.Title_3.TextSize = 50.000
+
+DynamicUnc20.Description.Name = "Description"
+DynamicUnc20.Description.Parent = DynamicUnc20.Frame_2
+DynamicUnc20.Description.AnchorPoint = Vector2.new(0.5, 0)
+DynamicUnc20.Description.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.Description.BackgroundTransparency = 1.000
+DynamicUnc20.Description.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Description.BorderSizePixel = 0
+DynamicUnc20.Description.Position = UDim2.new(0.5, 0, 0.324999988, 0)
+DynamicUnc20.Description.FontFace = Font.new("rbxasset://fonts/families/Montserrat.json", Enum.FontWeight.SemiBold, Enum.FontStyle.Normal)
+DynamicUnc20.Description.TextWrapped = true
+DynamicUnc20.Description.AutomaticSize = Enum.AutomaticSize.XY
+DynamicUnc20.Description.Text = "DynamicUnc performs rigorous validation tests with absolute advanced tests specifically designed to detect fake functions and find any form of faked results."
+DynamicUnc20.Description.TextColor3 = Color3.fromRGB(215, 215, 215)
+DynamicUnc20.Description.TextSize = 16.000
+DynamicUnc20.Description.TextTransparency = 0.42
+
+DynamicUnc20.T1.Name = "T1"
+DynamicUnc20.T1.Parent = DynamicUnc20.Frame_2
+DynamicUnc20.T1.AnchorPoint = Vector2.new(0.5, 0.5)
+DynamicUnc20.T1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.T1.BackgroundTransparency = 1.000
+DynamicUnc20.T1.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.T1.BorderSizePixel = 0
+DynamicUnc20.T1.Position = UDim2.new(0.5, 0, 0.75, 0)
+DynamicUnc20.T1.Rotation = 0
+DynamicUnc20.T1.Size = UDim2.new(0, 75, 0, 75)
+DynamicUnc20.T1.Image = "rbxassetid://76188912702252"
+
+DynamicUnc20.T2.Name = "T2"
+DynamicUnc20.T2.Parent = DynamicUnc20.Frame_2
+DynamicUnc20.T2.AnchorPoint = Vector2.new(0.5, 0.5)
+DynamicUnc20.T2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.T2.BackgroundTransparency = 1.000
+DynamicUnc20.T2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.T2.BorderSizePixel = 0
+DynamicUnc20.T2.Position = UDim2.new(0.5, 0, 0.75, 0)
+DynamicUnc20.T2.Rotation = 0
+DynamicUnc20.T2.Size = UDim2.new(0, 75, 0, 75)
+DynamicUnc20.T2.Image = "rbxassetid://93899498595709"
+
+DynamicUnc20.T3.Name = "T3"
+DynamicUnc20.T3.Parent = DynamicUnc20.Frame_2
+DynamicUnc20.T3.AnchorPoint = Vector2.new(0.5, 0.5)
+DynamicUnc20.T3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.T3.BackgroundTransparency = 1.000
+DynamicUnc20.T3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.T3.BorderSizePixel = 0
+DynamicUnc20.T3.Position = UDim2.new(0.5, 0, 0.75, 0)
+DynamicUnc20.T3.Rotation = 0
+DynamicUnc20.T3.Size = UDim2.new(0, 75, 0, 75)
+DynamicUnc20.T3.Image = "rbxassetid://83452082795879"
+
+DynamicUnc20.Alt.Name = "Alt"
+DynamicUnc20.Alt.Parent = DynamicUnc20.Frame_2
+DynamicUnc20.Alt.AnchorPoint = Vector2.new(0.5, 0)
+DynamicUnc20.Alt.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.Alt.BackgroundTransparency = 1.000
+DynamicUnc20.Alt.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Alt.BorderSizePixel = 0
+DynamicUnc20.Alt.Position = UDim2.new(0.5, 0, 0.899999976, 0)
+DynamicUnc20.Alt.FontFace = Font.new("rbxasset://fonts/families/Montserrat.json", Enum.FontWeight.SemiBold, Enum.FontStyle.Normal)
+
+DynamicUnc20.Alt.Text = "Saving Files"
+DynamicUnc20.Alt.TextColor3 = Color3.fromRGB(215, 215, 215)
+DynamicUnc20.Alt.TextSize = 18.000
+
+DynamicUnc20.Top_3.Name = "Top"
+DynamicUnc20.Top_3.Parent = DynamicUnc20.MainFrame_3
+DynamicUnc20.Top_3.BackgroundColor3 = Color3.fromRGB(22, 22, 26)
+DynamicUnc20.Top_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Top_3.BorderSizePixel = 0
+DynamicUnc20.Top_3.LayoutOrder = 1
+DynamicUnc20.Top_3.Size = UDim2.new(1, 0, 0, 38)
+DynamicUnc20.Top_3.ZIndex = 3
+
+DynamicUnc20.Border_3.Name = "Border"
+DynamicUnc20.Border_3.Parent = DynamicUnc20.Top_3
+DynamicUnc20.Border_3.AnchorPoint = Vector2.new(0, 1)
+DynamicUnc20.Border_3.BackgroundColor3 = Color3.fromRGB(33, 33, 37)
+DynamicUnc20.Border_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Border_3.BorderSizePixel = 0
+DynamicUnc20.Border_3.Position = UDim2.new(0, 0, 1, 0)
+DynamicUnc20.Border_3.Size = UDim2.new(1, 0, 0, 1)
+
+DynamicUnc20.Left_3.Name = "Left"
+DynamicUnc20.Left_3.Parent = DynamicUnc20.Top_3
+DynamicUnc20.Left_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.Left_3.BackgroundTransparency = 1.000
+DynamicUnc20.Left_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Left_3.BorderSizePixel = 0
+DynamicUnc20.Left_3.Size = UDim2.new(1, 0, 1, 0)
+
+DynamicUnc20.Center_3.Name = "Center"
+DynamicUnc20.Center_3.Parent = DynamicUnc20.Top_3
+DynamicUnc20.Center_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.Center_3.BackgroundTransparency = 1.000
+DynamicUnc20.Center_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Center_3.BorderSizePixel = 0
+DynamicUnc20.Center_3.Size = UDim2.new(1, 0, 1, 0)
+
+DynamicUnc20.Right_3.Name = "Right"
+DynamicUnc20.Right_3.Parent = DynamicUnc20.Top_3
+DynamicUnc20.Right_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.Right_3.BackgroundTransparency = 1.000
+DynamicUnc20.Right_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Right_3.BorderSizePixel = 0
+DynamicUnc20.Right_3.Size = UDim2.new(1, 0, 1, 0)
+
+DynamicUnc20.UIListLayout_11.Parent = DynamicUnc20.Right_3
+DynamicUnc20.UIListLayout_11.FillDirection = Enum.FillDirection.Horizontal
+DynamicUnc20.UIListLayout_11.HorizontalAlignment = Enum.HorizontalAlignment.Right
+DynamicUnc20.UIListLayout_11.SortOrder = Enum.SortOrder.LayoutOrder
+DynamicUnc20.UIListLayout_11.VerticalAlignment = Enum.VerticalAlignment.Center
+
+DynamicUnc20.Close_3.Name = "Close"
+DynamicUnc20.Close_3.Parent = DynamicUnc20.Right_3
+DynamicUnc20.Close_3.BackgroundColor3 = Color3.fromRGB(255, 42, 42)
+DynamicUnc20.Close_3.BackgroundTransparency = 1.000
+DynamicUnc20.Close_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Close_3.BorderSizePixel = 0
+DynamicUnc20.Close_3.Size = UDim2.new(1, 0, 1, 0)
+DynamicUnc20.Close_3.AutoButtonColor = false
+DynamicUnc20.Close_3.Font = Enum.Font.SourceSans
+DynamicUnc20.Close_3.Text = ""
+DynamicUnc20.Close_3.TextColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Close_3.TextSize = 14.000
+
+DynamicUnc20.UIAspectRatioConstraint_6.Parent = DynamicUnc20.Close_3
+DynamicUnc20.UIAspectRatioConstraint_6.DominantAxis = Enum.DominantAxis.Height
+
+DynamicUnc20.ImageLabel_3.Parent = DynamicUnc20.Close_3
+DynamicUnc20.ImageLabel_3.AnchorPoint = Vector2.new(0.5, 0.5)
+DynamicUnc20.ImageLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.ImageLabel_3.BackgroundTransparency = 1.000
+DynamicUnc20.ImageLabel_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.ImageLabel_3.BorderSizePixel = 0
+DynamicUnc20.ImageLabel_3.Position = UDim2.new(0.5, 0, 0.5, 0)
+DynamicUnc20.ImageLabel_3.Size = UDim2.new(0, 18, 0, 18)
+DynamicUnc20.ImageLabel_3.Image = "rbxassetid://76543842866264"
+DynamicUnc20.ImageLabel_3.ImageColor3 = Color3.fromRGB(215, 215, 215)
+DynamicUnc20.ImageLabel_3.ImageRectOffset = Vector2.new(284, 4)
+DynamicUnc20.ImageLabel_3.ImageRectSize = Vector2.new(24, 24)
+
+DynamicUnc20.UICorner_6.CornerRadius = UDim.new(0, 10)
+DynamicUnc20.UICorner_6.Parent = DynamicUnc20.MainFrame_3
+
+DynamicUnc20.BootingUp.Name = "BootingUp"
+DynamicUnc20.BootingUp.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.BootingUp.Parent = DynamicUnc20.DynamicUnc20
+DynamicUnc20.BootingUp.AnchorPoint = Vector2.new(0.5, 0.5)
+DynamicUnc20.BootingUp.BackgroundTransparency = 1.000
+DynamicUnc20.BootingUp.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.BootingUp.BorderSizePixel = 0
+DynamicUnc20.BootingUp.Position = UDim2.new(0.5, 0, 0.5, 0)
+DynamicUnc20.BootingUp.Size = UDim2.new(0, 822, 0, 566)
+DynamicUnc20.BootingUp.Visible = false
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DynamicUnc20.UIAspectRatioConstraint_7.Parent = DynamicUnc20.BootingUp
+DynamicUnc20.UIAspectRatioConstraint_7.AspectRatio = 1.453
+
+DynamicUnc20.Shadow_7.Name = "Shadow"
+DynamicUnc20.Shadow_7.Parent = DynamicUnc20.BootingUp
+DynamicUnc20.Shadow_7.AnchorPoint = Vector2.new(0.5, 0.5)
+DynamicUnc20.Shadow_7.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.Shadow_7.BackgroundTransparency = 1.000
+DynamicUnc20.Shadow_7.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Shadow_7.BorderSizePixel = 0
+DynamicUnc20.Shadow_7.Position = UDim2.new(0.5, 0, 0.5, 0)
+DynamicUnc20.Shadow_7.Size = UDim2.new(1.05900002, 0, 1.08800006, 0)
+DynamicUnc20.Shadow_7.ZIndex = -1
+DynamicUnc20.Shadow_7.Image = "rbxassetid://15298624572"
+
+DynamicUnc20.UIScale_4.Parent = DynamicUnc20.BootingUp
+
+DynamicUnc20.MainFrame_4.Name = "MainFrame"
+DynamicUnc20.MainFrame_4.AnchorPoint = Vector2.new(0.5, 0.5)
+DynamicUnc20.MainFrame_4.BackgroundTransparency = 1
+DynamicUnc20.MainFrame_4.Interactable = true
+DynamicUnc20.MainFrame_4.Visible = true
+DynamicUnc20.MainFrame_4.Parent = DynamicUnc20.BootingUp
+DynamicUnc20.MainFrame_4.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.MainFrame_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.MainFrame_4.BorderSizePixel = 0
+DynamicUnc20.MainFrame_4.Position = UDim2.new(0.5, 0,0.5, 0)
+DynamicUnc20.MainFrame_4.Size = UDim2.new(1, 0,1, 0)
+
+DynamicUnc20.UIListLayout_12.Parent = DynamicUnc20.MainFrame_4
+DynamicUnc20.UIListLayout_12.SortOrder = Enum.SortOrder.LayoutOrder
+
+DynamicUnc20.Section_4.Name = "Section"
+DynamicUnc20.Section_4.Parent = DynamicUnc20.MainFrame_4
+DynamicUnc20.Section_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.Section_4.BackgroundTransparency = 1.000
+DynamicUnc20.Section_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Section_4.BorderSizePixel = 0
+DynamicUnc20.Section_4.LayoutOrder = 3
+DynamicUnc20.Section_4.Size = UDim2.new(1, 0, 1, 0)
+
+DynamicUnc20.Shadow_8.Name = "Shadow"
+DynamicUnc20.Shadow_8.Parent = DynamicUnc20.Section_4
+DynamicUnc20.Shadow_8.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.Shadow_8.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Shadow_8.BorderSizePixel = 0
+DynamicUnc20.Shadow_8.Size = UDim2.new(1, 0, 0, 10)
+DynamicUnc20.Shadow_8.ZIndex = 100
+
+DynamicUnc20.UIGradient_4.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 0, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 0, 0))}
+DynamicUnc20.UIGradient_4.Rotation = 90
+DynamicUnc20.UIGradient_4.Transparency = NumberSequence.new{NumberSequenceKeypoint.new(0.00, 0.76), NumberSequenceKeypoint.new(1.00, 1.00)}
+DynamicUnc20.UIGradient_4.Parent = DynamicUnc20.Shadow_8
+
+DynamicUnc20.Frame_3.Parent = DynamicUnc20.Section_4
+DynamicUnc20.Frame_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.Frame_3.BackgroundTransparency = 1.000
+DynamicUnc20.Frame_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Frame_3.BorderSizePixel = 0
+DynamicUnc20.Frame_3.Size = UDim2.new(1, 0, 1, 0)
+
+DynamicUnc20.Title_4.Name = "Title"
+DynamicUnc20.Title_4.Parent = DynamicUnc20.Frame_3
+DynamicUnc20.Title_4.AnchorPoint = Vector2.new(0.5, 0)
+DynamicUnc20.Title_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.Title_4.BackgroundTransparency = 1.000
+DynamicUnc20.Title_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Title_4.BorderSizePixel = 0
+DynamicUnc20.Title_4.Position = UDim2.new(0.5, 0, 0.224999994, 0)
+DynamicUnc20.Title_4.FontFace = Font.new("rbxasset://fonts/families/Montserrat.json", Enum.FontWeight.SemiBold, Enum.FontStyle.Normal)
+
+DynamicUnc20.Title_4.Text = "DynamicUnc"
+DynamicUnc20.Title_4.TextColor3 = Color3.fromRGB(215, 215, 215)
+DynamicUnc20.Title_4.TextSize = 50.000
+
+DynamicUnc20.Description_2.Name = "Description"
+DynamicUnc20.Description_2.Parent = DynamicUnc20.Frame_3
+DynamicUnc20.Description_2.AnchorPoint = Vector2.new(0.5, 0)
+DynamicUnc20.Description_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.Description_2.BackgroundTransparency = 1.000
+DynamicUnc20.Description_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Description_2.BorderSizePixel = 0
+DynamicUnc20.Description_2.Position = UDim2.new(0.5, 0, 0.324999988, 0)
+DynamicUnc20.Description_2.FontFace = Font.new("rbxasset://fonts/families/Montserrat.json", Enum.FontWeight.SemiBold, Enum.FontStyle.Normal)
+DynamicUnc20.Description_2.AutomaticSize = Enum.AutomaticSize.XY
+DynamicUnc20.Description_2.TextSize = 16.000
+DynamicUnc20.Description_2.TextTransparency = 0.42
+DynamicUnc20.Description_2.RichText = true
+DynamicUnc20.Description_2.TextWrapped = true
+DynamicUnc20.Description_2.Text = "You are running diagnostic tests on your executor specifically for this environment. These tests were custom-built to guarantee accurate, trustworthy results, providing you with full confidence in your executor's capabilities."
+DynamicUnc20.Description_2.TextColor3 = Color3.fromRGB(215, 215, 215)
+DynamicUnc20.Description_2.TextSize = 20.000
+
+DynamicUnc20.T1_2.Name = "T1"
+DynamicUnc20.T1_2.Parent = DynamicUnc20.Frame_3
+DynamicUnc20.T1_2.AnchorPoint = Vector2.new(0.5, 0.5)
+DynamicUnc20.T1_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.T1_2.BackgroundTransparency = 1.000
+DynamicUnc20.T1_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.T1_2.BorderSizePixel = 0
+DynamicUnc20.T1_2.Position = UDim2.new(0.5, 0, 0.75, 0)
+DynamicUnc20.T1_2.Rotation = -0
+DynamicUnc20.T1_2.Size = UDim2.new(0, 75, 0, 75)
+DynamicUnc20.T1_2.Image = "rbxassetid://76188912702252"
+
+DynamicUnc20.T2_2.Name = "T2"
+DynamicUnc20.T2_2.Parent = DynamicUnc20.Frame_3
+DynamicUnc20.T2_2.AnchorPoint = Vector2.new(0.5, 0.5)
+DynamicUnc20.T2_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.T2_2.BackgroundTransparency = 1.000
+DynamicUnc20.T2_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.T2_2.BorderSizePixel = 0
+DynamicUnc20.T2_2.Position = UDim2.new(0.5, 0, 0.75, 0)
+DynamicUnc20.T2_2.Rotation = 0
+DynamicUnc20.T2_2.Size = UDim2.new(0, 75, 0, 75)
+DynamicUnc20.T2_2.Image = "rbxassetid://93899498595709"
+
+DynamicUnc20.T3_2.Name = "T3"
+DynamicUnc20.T3_2.Parent = DynamicUnc20.Frame_3
+DynamicUnc20.T3_2.AnchorPoint = Vector2.new(0.5, 0.5)
+DynamicUnc20.T3_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.T3_2.BackgroundTransparency = 1.000
+DynamicUnc20.T3_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.T3_2.BorderSizePixel = 0
+DynamicUnc20.T3_2.Position = UDim2.new(0.5, 0, 0.75, 0)
+DynamicUnc20.T3_2.Rotation = -0
+DynamicUnc20.T3_2.Size = UDim2.new(0, 75, 0, 75)
+DynamicUnc20.T3_2.Image = "rbxassetid://83452082795879"
+
+DynamicUnc20.Alt_2.Name = "Alt"
+DynamicUnc20.Alt_2.Parent = DynamicUnc20.Frame_3
+DynamicUnc20.Alt_2.AnchorPoint = Vector2.new(0.5, 0)
+DynamicUnc20.Alt_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.Alt_2.BackgroundTransparency = 1.000
+DynamicUnc20.Alt_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Alt_2.BorderSizePixel = 0
+DynamicUnc20.Alt_2.Position = UDim2.new(0.5, 0, 0.899999976, 0)
+DynamicUnc20.Alt_2.FontFace = Font.new("rbxasset://fonts/families/Montserrat.json", Enum.FontWeight.SemiBold, Enum.FontStyle.Normal)
+
+DynamicUnc20.Alt_2.Text = "Booting up"
+DynamicUnc20.Alt_2.TextColor3 = Color3.fromRGB(215, 215, 215)
+DynamicUnc20.Alt_2.TextSize = 18.000
+
+DynamicUnc20.Top_4.Name = "Top"
+DynamicUnc20.Top_4.Parent = DynamicUnc20.MainFrame_4
+DynamicUnc20.Top_4.BackgroundColor3 = Color3.fromRGB(22, 22, 26)
+DynamicUnc20.Top_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Top_4.BorderSizePixel = 0
+DynamicUnc20.Top_4.LayoutOrder = 1
+DynamicUnc20.Top_4.Size = UDim2.new(1, 0, 0, 38)
+DynamicUnc20.Top_4.ZIndex = 3
+
+DynamicUnc20.Border_4.Name = "Border"
+DynamicUnc20.Border_4.Parent = DynamicUnc20.Top_4
+DynamicUnc20.Border_4.AnchorPoint = Vector2.new(0, 1)
+DynamicUnc20.Border_4.BackgroundColor3 = Color3.fromRGB(33, 33, 37)
+DynamicUnc20.Border_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Border_4.BorderSizePixel = 0
+DynamicUnc20.Border_4.Position = UDim2.new(0, 0, 1, 0)
+DynamicUnc20.Border_4.Size = UDim2.new(1, 0, 0, 1)
+
+DynamicUnc20.Left_4.Name = "Left"
+DynamicUnc20.Left_4.Parent = DynamicUnc20.Top_4
+DynamicUnc20.Left_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.Left_4.BackgroundTransparency = 1.000
+DynamicUnc20.Left_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Left_4.BorderSizePixel = 0
+DynamicUnc20.Left_4.Size = UDim2.new(1, 0, 1, 0)
+
+DynamicUnc20.Center_4.Name = "Center"
+DynamicUnc20.Center_4.Parent = DynamicUnc20.Top_4
+DynamicUnc20.Center_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.Center_4.BackgroundTransparency = 1.000
+DynamicUnc20.Center_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Center_4.BorderSizePixel = 0
+DynamicUnc20.Center_4.Size = UDim2.new(1, 0, 1, 0)
+
+DynamicUnc20.Right_4.Name = "Right"
+DynamicUnc20.Right_4.Parent = DynamicUnc20.Top_4
+DynamicUnc20.Right_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.Right_4.BackgroundTransparency = 1.000
+DynamicUnc20.Right_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Right_4.BorderSizePixel = 0
+DynamicUnc20.Right_4.Size = UDim2.new(1, 0, 1, 0)
+
+DynamicUnc20.UIListLayout_13.Parent = DynamicUnc20.Right_4
+DynamicUnc20.UIListLayout_13.FillDirection = Enum.FillDirection.Horizontal
+DynamicUnc20.UIListLayout_13.HorizontalAlignment = Enum.HorizontalAlignment.Right
+DynamicUnc20.UIListLayout_13.SortOrder = Enum.SortOrder.LayoutOrder
+DynamicUnc20.UIListLayout_13.VerticalAlignment = Enum.VerticalAlignment.Center
+
+DynamicUnc20.Close_4.Name = "Close"
+DynamicUnc20.Close_4.Parent = DynamicUnc20.Right_4
+DynamicUnc20.Close_4.BackgroundColor3 = Color3.fromRGB(255, 42, 42)
+DynamicUnc20.Close_4.BackgroundTransparency = 1.000
+DynamicUnc20.Close_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Close_4.BorderSizePixel = 0
+DynamicUnc20.Close_4.Size = UDim2.new(1, 0, 1, 0)
+DynamicUnc20.Close_4.AutoButtonColor = false
+DynamicUnc20.Close_4.Font = Enum.Font.SourceSans
+DynamicUnc20.Close_4.Text = ""
+DynamicUnc20.Close_4.TextColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Close_4.TextSize = 14.000
+
+DynamicUnc20.UIAspectRatioConstraint_8.Parent = DynamicUnc20.Close_4
+DynamicUnc20.UIAspectRatioConstraint_8.DominantAxis = Enum.DominantAxis.Height
+
+DynamicUnc20.ImageLabel_4.Parent = DynamicUnc20.Close_4
+DynamicUnc20.ImageLabel_4.AnchorPoint = Vector2.new(0.5, 0.5)
+DynamicUnc20.ImageLabel_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.ImageLabel_4.BackgroundTransparency = 1.000
+DynamicUnc20.ImageLabel_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.ImageLabel_4.BorderSizePixel = 0
+DynamicUnc20.ImageLabel_4.Position = UDim2.new(0.5, 0, 0.5, 0)
+DynamicUnc20.ImageLabel_4.Size = UDim2.new(0, 18, 0, 18)
+DynamicUnc20.ImageLabel_4.Image = "rbxassetid://76543842866264"
+DynamicUnc20.ImageLabel_4.ImageColor3 = Color3.fromRGB(215, 215, 215)
+DynamicUnc20.ImageLabel_4.ImageRectOffset = Vector2.new(284, 4)
+DynamicUnc20.ImageLabel_4.ImageRectSize = Vector2.new(24, 24)
+
+DynamicUnc20.UICorner_7.CornerRadius = UDim.new(0, 10)
+DynamicUnc20.UICorner_7.Parent = DynamicUnc20.MainFrame_4
+
+DynamicUnc20.ResultsFrame.Name = "ResultsFrame"
+DynamicUnc20.ResultsFrame.Parent = DynamicUnc20.DynamicUnc20
+DynamicUnc20.ResultsFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+DynamicUnc20.ResultsFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.ResultsFrame.BackgroundTransparency = 1.000
+DynamicUnc20.ResultsFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.ResultsFrame.BorderSizePixel = 0
+DynamicUnc20.ResultsFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
+DynamicUnc20.ResultsFrame.Size = UDim2.new(0, 822, 0, 566)
+DynamicUnc20.ResultsFrame.Visible = false
+
+DynamicUnc20.UIAspectRatioConstraint_9.Parent = DynamicUnc20.ResultsFrame
+DynamicUnc20.UIAspectRatioConstraint_9.AspectRatio = 1.453
+
+DynamicUnc20.Shadow_9.Name = "Shadow"
+DynamicUnc20.Shadow_9.Parent = DynamicUnc20.ResultsFrame
+DynamicUnc20.Shadow_9.AnchorPoint = Vector2.new(0.5, 0.5)
+DynamicUnc20.Shadow_9.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.Shadow_9.BackgroundTransparency = 1.000
+DynamicUnc20.Shadow_9.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Shadow_9.BorderSizePixel = 0
+DynamicUnc20.Shadow_9.Position = UDim2.new(0.5, 0, 0.5, 0)
+DynamicUnc20.Shadow_9.Size = UDim2.new(1.05900002, 0, 1.08800006, 0)
+DynamicUnc20.Shadow_9.ZIndex = -1
+DynamicUnc20.Shadow_9.Image = "rbxassetid://15298624572"
+
+DynamicUnc20.UIScale_5.Parent = DynamicUnc20.ResultsFrame
+
+DynamicUnc20.MainFrame_5.Name = "MainFrame"
+DynamicUnc20.MainFrame_5.AnchorPoint = Vector2.new(0.5, 0.5)
+DynamicUnc20.MainFrame_5.BackgroundTransparency = 1
+DynamicUnc20.MainFrame_5.Interactable = true
+DynamicUnc20.MainFrame_5.Visible = true
+DynamicUnc20.MainFrame_5.Parent = DynamicUnc20.ResultsFrame
+DynamicUnc20.MainFrame_5.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.MainFrame_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.MainFrame_5.BorderSizePixel = 0
+DynamicUnc20.MainFrame_5.Position = UDim2.new(0.5, 0,0.5, 0)
+DynamicUnc20.MainFrame_5.Size = UDim2.new(1, 0,1, 0)
+
+DynamicUnc20.UIListLayout_14.Parent = DynamicUnc20.MainFrame_5
+DynamicUnc20.UIListLayout_14.VerticalFlex = "Fill"
+DynamicUnc20.UIListLayout_14.SortOrder = Enum.SortOrder.LayoutOrder
+
+DynamicUnc20.Section_5.Name = "Section"
+DynamicUnc20.Section_5.Parent = DynamicUnc20.MainFrame_5
+DynamicUnc20.Section_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.Section_5.BackgroundTransparency = 1.000
+DynamicUnc20.Section_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Section_5.BorderSizePixel = 0
+DynamicUnc20.Section_5.LayoutOrder = 3
+DynamicUnc20.Section_5.Size = UDim2.new(1, 0, 1, 0)
+
+DynamicUnc20.Shadow_10.Name = "Shadow"
+DynamicUnc20.Shadow_10.Parent = DynamicUnc20.Section_5
+DynamicUnc20.Shadow_10.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.Shadow_10.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Shadow_10.BorderSizePixel = 0
+DynamicUnc20.Shadow_10.Size = UDim2.new(1, 0, 0, 10)
+DynamicUnc20.Shadow_10.ZIndex = 100
+
+DynamicUnc20.UIGradient_5.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 0, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 0, 0))}
+DynamicUnc20.UIGradient_5.Rotation = 90
+DynamicUnc20.UIGradient_5.Transparency = NumberSequence.new{NumberSequenceKeypoint.new(0.00, 0.76), NumberSequenceKeypoint.new(1.00, 1.00)}
+DynamicUnc20.UIGradient_5.Parent = DynamicUnc20.Shadow_10
+
+DynamicUnc20.Frame_4.Parent = DynamicUnc20.Section_5
+DynamicUnc20.Frame_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.Frame_4.BackgroundTransparency = 1.000
+DynamicUnc20.Frame_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Frame_4.BorderSizePixel = 0
+DynamicUnc20.Frame_4.Size = UDim2.new(1, 0, 1, 0)
+
+DynamicUnc20.UIListLayout_15.Parent = DynamicUnc20.Frame_4
+DynamicUnc20.UIListLayout_15.SortOrder = Enum.SortOrder.LayoutOrder
+DynamicUnc20.UIListLayout_15.Padding = UDim.new(0, 12)
+
+DynamicUnc20.UIPadding_36.Parent = DynamicUnc20.Frame_4
+DynamicUnc20.UIPadding_36.PaddingLeft = UDim.new(0, 50)
+DynamicUnc20.UIPadding_36.PaddingRight = UDim.new(0, 50)
+DynamicUnc20.UIPadding_36.PaddingTop = UDim.new(0, 50)
+
+DynamicUnc20.Title_5.Name = "Title"
+DynamicUnc20.Title_5.Parent = DynamicUnc20.Frame_4
+DynamicUnc20.Title_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.Title_5.BackgroundTransparency = 1.000
+DynamicUnc20.Title_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Title_5.BorderSizePixel = 0
+DynamicUnc20.Title_5.LayoutOrder = 1
+DynamicUnc20.Title_5.Position = UDim2.new(0.5, 0, 0.224999994, 0)
+DynamicUnc20.Title_5.FontFace = Font.new("rbxasset://fonts/families/Montserrat.json", Enum.FontWeight.SemiBold, Enum.FontStyle.Normal)
+
+DynamicUnc20.Title_5.AutomaticSize = Enum.AutomaticSize.XY
+DynamicUnc20.Title_5.Text = "Result"
+DynamicUnc20.Title_5.TextColor3 = Color3.fromRGB(215, 215, 215)
+DynamicUnc20.Title_5.TextSize = 40.000
+
+DynamicUnc20.Description_3.Name = "Description"
+DynamicUnc20.Description_3.Parent = DynamicUnc20.Frame_4
+DynamicUnc20.Description_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.Description_3.BackgroundTransparency = 1.000
+DynamicUnc20.Description_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Description_3.BorderSizePixel = 0
+DynamicUnc20.Description_3.LayoutOrder = 1
+DynamicUnc20.Description_3.Position = UDim2.new(0.5, 0, 0.224999994, 0)
+DynamicUnc20.Description_3.FontFace = Font.new("rbxasset://fonts/families/Montserrat.json", Enum.FontWeight.SemiBold, Enum.FontStyle.Normal)
+
+DynamicUnc20.Description_3.AutomaticSize = Enum.AutomaticSize.XY
+DynamicUnc20.Description_3.Text = "nil"
+DynamicUnc20.Description_3.TextColor3 = Color3.fromRGB(215, 215, 215)
+DynamicUnc20.Description_3.TextSize = 16.000
+
+DynamicUnc20.UIPadding_37.Parent = DynamicUnc20.Description_3
+DynamicUnc20.UIPadding_37.PaddingBottom = UDim.new(0, 16)
+
+DynamicUnc20.Content_2.Name = "Content"
+DynamicUnc20.Content_2.Parent = DynamicUnc20.Frame_4
+DynamicUnc20.Content_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.Content_2.BackgroundTransparency = 1.000
+DynamicUnc20.Content_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Content_2.BorderSizePixel = 0
+DynamicUnc20.Content_2.LayoutOrder = 2
+DynamicUnc20.Content_2.Size = UDim2.new(1, 0, 0, 264)
+
+DynamicUnc20.UICorner_8.Parent = DynamicUnc20.Content_2
+
+DynamicUnc20.ScrollingFrame_3.Parent = DynamicUnc20.Content_2
+DynamicUnc20.ScrollingFrame_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.ScrollingFrame_3.BackgroundTransparency = 1.000
+DynamicUnc20.ScrollingFrame_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.ScrollingFrame_3.BorderSizePixel = 0
+DynamicUnc20.ScrollingFrame_3.Position = UDim2.new(0, 0, 0, 25)
+DynamicUnc20.ScrollingFrame_3.Size = UDim2.new(1, 0, 0.800000012, -25)
+DynamicUnc20.ScrollingFrame_3.CanvasSize = UDim2.new(0, 0, 0, 0)
+DynamicUnc20.ScrollingFrame_3.ScrollBarImageColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.ScrollingFrame_3.AutomaticCanvasSize = Enum.AutomaticSize.Y
+DynamicUnc20.ScrollingFrame_3.ScrollBarThickness = 6
+DynamicUnc20.ScrollingFrame_3.ScrollBarThickness = 0
+
+DynamicUnc20.UIListLayout_16.Parent = DynamicUnc20.ScrollingFrame_3
+DynamicUnc20.UIListLayout_16.SortOrder = Enum.SortOrder.LayoutOrder
+
+DynamicUnc20.New.Name = "New"
+DynamicUnc20.New.Parent = DynamicUnc20.ScrollingFrame_3
+DynamicUnc20.New.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.New.BackgroundTransparency = 1.000
+DynamicUnc20.New.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.New.BorderSizePixel = 0
+DynamicUnc20.New.LayoutOrder = 9999
+DynamicUnc20.New.AutomaticSize = Enum.AutomaticSize.Y
+DynamicUnc20.New.Size = UDim2.new(1, 0, 0, 0)
+
+DynamicUnc20.UIPadding_38.Parent = DynamicUnc20.New
+DynamicUnc20.UIPadding_38.PaddingLeft = UDim.new(0, 8)
+DynamicUnc20.UIPadding_38.PaddingTop = UDim.new(0, 12)
+
+DynamicUnc20.Button.Name = "Button"
+DynamicUnc20.Button.Parent = DynamicUnc20.New
+DynamicUnc20.Button.BackgroundColor3 = Color3.fromRGB(48, 176, 255)
+DynamicUnc20.Button.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Button.BorderSizePixel = 0
+DynamicUnc20.Button.AutoButtonColor = false
+DynamicUnc20.Button.FontFace = Font.new("rbxasset://fonts/families/Montserrat.json", Enum.FontWeight.SemiBold, Enum.FontStyle.Normal)
+DynamicUnc20.Button.Text = "New"
+DynamicUnc20.Button.AutomaticSize = Enum.AutomaticSize.XY
+DynamicUnc20.Button.TextColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Button.TextSize = 16.000
+DynamicUnc20.Button.TextXAlignment = Enum.TextXAlignment.Left
+
+DynamicUnc20.UIPadding_39.Parent = DynamicUnc20.Button
+DynamicUnc20.UIPadding_39.PaddingBottom = UDim.new(0, 6)
+DynamicUnc20.UIPadding_39.PaddingLeft = UDim.new(0, 6)
+DynamicUnc20.UIPadding_39.PaddingRight = UDim.new(0, 6)
+DynamicUnc20.UIPadding_39.PaddingTop = UDim.new(0, 6)
+
+DynamicUnc20.UICorner_9.CornerRadius = UDim.new(0, 4)
+DynamicUnc20.UICorner_9.Parent = DynamicUnc20.Button
+
+DynamicUnc20.Frame_5.Parent = DynamicUnc20.ScrollingFrame_3
+DynamicUnc20.Frame_5.BackgroundColor3 = Color3.fromRGB(22, 22, 26)
+DynamicUnc20.Frame_5.BackgroundTransparency = 0.500
+DynamicUnc20.Frame_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Frame_5.BorderSizePixel = 0
+DynamicUnc20.Frame_5.Size = UDim2.new(1, 0, 0, 25)
+
+DynamicUnc20.Frame_6.Parent = DynamicUnc20.Frame_5
+DynamicUnc20.Frame_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.Frame_6.BackgroundTransparency = 1.000
+DynamicUnc20.Frame_6.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Frame_6.BorderSizePixel = 0
+DynamicUnc20.Frame_6.Size = UDim2.new(1, 0, 1, 0)
+
+DynamicUnc20.UIListLayout_17.Parent = DynamicUnc20.Frame_6
+DynamicUnc20.UIListLayout_17.FillDirection = Enum.FillDirection.Horizontal
+DynamicUnc20.UIListLayout_17.SortOrder = Enum.SortOrder.LayoutOrder
+DynamicUnc20.UIListLayout_17.HorizontalFlex = "Fill"
+DynamicUnc20.UIListLayout_17.VerticalAlignment = Enum.VerticalAlignment.Center
+DynamicUnc20.UIListLayout_17.Padding = UDim.new(0, 16)
+
+DynamicUnc20.UIPadding_40.Parent = DynamicUnc20.Frame_6
+DynamicUnc20.UIPadding_40.PaddingLeft = UDim.new(0, 12)
+
+DynamicUnc20.Name.Name = "Name"
+DynamicUnc20.Name.Parent = DynamicUnc20.Frame_6
+DynamicUnc20.Name.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.Name.BackgroundTransparency = 1.000
+DynamicUnc20.Name.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Name.BorderSizePixel = 0
+DynamicUnc20.Name.LayoutOrder = 1
+DynamicUnc20.Name.Size = UDim2.new(1, 0, 1, 0)
+DynamicUnc20.Name.FontFace = Font.new("rbxasset://fonts/families/Montserrat.json", Enum.FontWeight.SemiBold, Enum.FontStyle.Normal)
+
+DynamicUnc20.Name.Text = "Unknown"
+DynamicUnc20.Name.TextColor3 = Color3.fromRGB(215, 215, 215)
+DynamicUnc20.Name.TextSize = 16.000
+DynamicUnc20.Name.TextXAlignment = Enum.TextXAlignment.Left
+
+DynamicUnc20.Rank.Name = "Rank"
+DynamicUnc20.Rank.Parent = DynamicUnc20.Frame_6
+DynamicUnc20.Rank.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.Rank.BackgroundTransparency = 1.000
+DynamicUnc20.Rank.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Rank.BorderSizePixel = 0
+DynamicUnc20.Rank.LayoutOrder = 3
+DynamicUnc20.Rank.Size = UDim2.new(1, 0, 1, 0)
+DynamicUnc20.Rank.FontFace = Font.new("rbxasset://fonts/families/Montserrat.json", Enum.FontWeight.SemiBold, Enum.FontStyle.Normal)
+
+DynamicUnc20.Rank.Text = CurrentVersion
+DynamicUnc20.Rank.TextColor3 = Color3.fromRGB(215, 215, 215)
+DynamicUnc20.Rank.TextSize = 16.000
+DynamicUnc20.Rank.TextXAlignment = Enum.TextXAlignment.Left
+
+DynamicUnc20.Warnings.Name = "Warnings"
+DynamicUnc20.Warnings.Parent = DynamicUnc20.Frame_6
+DynamicUnc20.Warnings.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.Warnings.BackgroundTransparency = 1.000
+DynamicUnc20.Warnings.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Warnings.BorderSizePixel = 0
+DynamicUnc20.Warnings.Size = UDim2.new(0, 0, 1, 0)
+DynamicUnc20.Warnings.Visible = false
+
+DynamicUnc20.UIListLayout_18.Parent = DynamicUnc20.Warnings
+DynamicUnc20.UIListLayout_18.FillDirection = Enum.FillDirection.Horizontal
+DynamicUnc20.UIListLayout_18.SortOrder = Enum.SortOrder.LayoutOrder
+DynamicUnc20.UIListLayout_18.VerticalAlignment = Enum.VerticalAlignment.Center
+
+DynamicUnc20.Icon.Name = "Icon"
+DynamicUnc20.Icon.Parent = DynamicUnc20.Warnings
+DynamicUnc20.Icon.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.Icon.BackgroundTransparency = 1.000
+DynamicUnc20.Icon.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Icon.BorderSizePixel = 0
+DynamicUnc20.Icon.LayoutOrder = 1
+DynamicUnc20.Icon.Size = UDim2.new(0, 13, 0, 13)
+DynamicUnc20.Icon.Image = "rbxassetid://8445470392"
+DynamicUnc20.Icon.ImageColor3 = Color3.fromRGB(255, 185, 21)
+DynamicUnc20.Icon.ImageRectOffset = Vector2.new(104, 704)
+DynamicUnc20.Icon.ImageRectSize = Vector2.new(96, 96)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DynamicUnc20.Label.Name = "Label"
+DynamicUnc20.Label.Parent = DynamicUnc20.Warnings
+DynamicUnc20.Label.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.Label.BackgroundTransparency = 1.000
+DynamicUnc20.Label.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Label.BorderSizePixel = 0
+DynamicUnc20.Label.LayoutOrder = 2
+DynamicUnc20.Label.Size = UDim2.new(0, 0, 1, 0)
+DynamicUnc20.Label.FontFace = Font.new("rbxasset://fonts/families/Montserrat.json", Enum.FontWeight.SemiBold, Enum.FontStyle.Normal)
+
+DynamicUnc20.Label.Text = "2"
+DynamicUnc20.Label.TextColor3 = Color3.fromRGB(255, 185, 21)
+DynamicUnc20.Label.TextSize = 13.000
+
+DynamicUnc20.UIPadding_41.Parent = DynamicUnc20.Label
+DynamicUnc20.UIPadding_41.PaddingLeft = UDim.new(0, 8)
+
+DynamicUnc20.Errors.Name = "Errors"
+DynamicUnc20.Errors.Parent = DynamicUnc20.Frame_6
+DynamicUnc20.Errors.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.Errors.BackgroundTransparency = 1.000
+DynamicUnc20.Errors.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Errors.BorderSizePixel = 0
+DynamicUnc20.Errors.LayoutOrder = 2
+DynamicUnc20.Errors.Position = UDim2.new(-0.245070428, 0, 0, 0)
+DynamicUnc20.Errors.Size = UDim2.new(0.904225349, 0, 1, 0)
+
+DynamicUnc20.UIListLayout_19.Parent = DynamicUnc20.Errors
+DynamicUnc20.UIListLayout_19.FillDirection = Enum.FillDirection.Horizontal
+DynamicUnc20.UIListLayout_19.SortOrder = Enum.SortOrder.LayoutOrder
+DynamicUnc20.UIListLayout_19.VerticalAlignment = Enum.VerticalAlignment.Center
+
+DynamicUnc20.Icon_2.Name = "Icon"
+DynamicUnc20.Icon_2.Parent = DynamicUnc20.Errors
+DynamicUnc20.Icon_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.Icon_2.BackgroundTransparency = 1.000
+DynamicUnc20.Icon_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Icon_2.BorderSizePixel = 0
+DynamicUnc20.Icon_2.LayoutOrder = 1
+DynamicUnc20.Icon_2.Position = UDim2.new(0.0265486725, 0, 0.239999995, 0)
+DynamicUnc20.Icon_2.Size = UDim2.new(0, 13, 0, 13)
+DynamicUnc20.Icon_2.Image = "rbxassetid://8445470559"
+DynamicUnc20.Icon_2.ImageColor3 = Color3.fromRGB(255, 42, 42)
+DynamicUnc20.Icon_2.ImageRectOffset = Vector2.new(904, 504)
+DynamicUnc20.Icon_2.ImageRectSize = Vector2.new(96, 96)
+
+DynamicUnc20.Label_2.Name = "Label"
+DynamicUnc20.Label_2.Parent = DynamicUnc20.Errors
+DynamicUnc20.Label_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.Label_2.BackgroundTransparency = 1.000
+DynamicUnc20.Label_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Label_2.BorderSizePixel = 0
+DynamicUnc20.Label_2.LayoutOrder = 2
+DynamicUnc20.Label_2.Size = UDim2.new(0, 0, 1, 0)
+DynamicUnc20.Label_2.Visible = false
+DynamicUnc20.Label_2.FontFace = Font.new("rbxasset://fonts/families/Montserrat.json", Enum.FontWeight.SemiBold, Enum.FontStyle.Normal)
+
+DynamicUnc20.Label_2.Text = "2"
+DynamicUnc20.Label_2.TextColor3 = Color3.fromRGB(255, 42, 42)
+DynamicUnc20.Label_2.TextSize = 13.000
+
+DynamicUnc20.UIPadding_42.Parent = DynamicUnc20.Label_2
+DynamicUnc20.UIPadding_42.PaddingLeft = UDim.new(0, 8)
+
+DynamicUnc20.Type.Name = "Type"
+DynamicUnc20.Type.Parent = DynamicUnc20.Errors
+DynamicUnc20.Type.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Type.BackgroundTransparency = 0.800
+DynamicUnc20.Type.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Type.BorderSizePixel = 0
+DynamicUnc20.Type.LayoutOrder = 2
+DynamicUnc20.Type.Position = UDim2.new(0.0575221255, 0, 0, 0)
+DynamicUnc20.Type.Size = UDim2.new(0.833811343, 0, 1, 0)
+DynamicUnc20.Type.FontFace = Font.new("rbxasset://fonts/families/Montserrat.json", Enum.FontWeight.SemiBold, Enum.FontStyle.Normal)
+DynamicUnc20.Type.Text = "nil"
+DynamicUnc20.Type.TextColor3 = Color3.fromRGB(215, 215, 215)
+DynamicUnc20.Type.TextSize = 16.000
+DynamicUnc20.Type.TextXAlignment = Enum.TextXAlignment.Left
+
+DynamicUnc20.UIPadding_43.Parent = DynamicUnc20.Type
+DynamicUnc20.UIPadding_43.PaddingLeft = UDim.new(0, 12)
+
+DynamicUnc20.Frame_9.Parent = DynamicUnc20.Content_2
+DynamicUnc20.Frame_9.BackgroundColor3 = Color3.fromRGB(22, 22, 26)
+DynamicUnc20.Frame_9.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Frame_9.BorderSizePixel = 0
+DynamicUnc20.Frame_9.Size = UDim2.new(1, 0, 0, 25)
+
+DynamicUnc20.UICorner_10.Parent = DynamicUnc20.Frame_9
+
+DynamicUnc20.Frame_10.Parent = DynamicUnc20.Frame_9
+DynamicUnc20.Frame_10.AnchorPoint = Vector2.new(0, 1)
+DynamicUnc20.Frame_10.BackgroundColor3 = Color3.fromRGB(22, 22, 26)
+DynamicUnc20.Frame_10.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Frame_10.BorderSizePixel = 0
+DynamicUnc20.Frame_10.Position = UDim2.new(0, 0, 1, 0)
+DynamicUnc20.Frame_10.Size = UDim2.new(1, 0, 0, 12)
+DynamicUnc20.Frame_10.ZIndex = 0
+
+DynamicUnc20.Frame_11.Parent = DynamicUnc20.Frame_9
+DynamicUnc20.Frame_11.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.Frame_11.BackgroundTransparency = 1.000
+DynamicUnc20.Frame_11.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Frame_11.BorderSizePixel = 0
+DynamicUnc20.Frame_11.Size = UDim2.new(1, 0, 1, 0)
+
+DynamicUnc20.UIListLayout_25.Parent = DynamicUnc20.Frame_11
+DynamicUnc20.UIListLayout_25.FillDirection = Enum.FillDirection.Horizontal
+DynamicUnc20.UIListLayout_25.SortOrder = Enum.SortOrder.LayoutOrder
+DynamicUnc20.UIListLayout_25.HorizontalFlex = "Fill"
+DynamicUnc20.UIListLayout_25.VerticalAlignment = Enum.VerticalAlignment.Center
+DynamicUnc20.UIListLayout_25.Padding = UDim.new(0, 16)
+
+DynamicUnc20.UIPadding_52.Parent = DynamicUnc20.Frame_11
+DynamicUnc20.UIPadding_52.PaddingLeft = UDim.new(0, 12)
+
+DynamicUnc20.TextLabel_29.Parent = DynamicUnc20.Frame_11
+DynamicUnc20.TextLabel_29.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.TextLabel_29.BackgroundTransparency = 1.000
+DynamicUnc20.TextLabel_29.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.TextLabel_29.BorderSizePixel = 0
+DynamicUnc20.TextLabel_29.LayoutOrder = 1
+DynamicUnc20.TextLabel_29.Size = UDim2.new(1, 0, 1, 0)
+DynamicUnc20.TextLabel_29.FontFace = Font.new("rbxasset://fonts/families/Montserrat.json", Enum.FontWeight.SemiBold, Enum.FontStyle.Normal)
+
+DynamicUnc20.TextLabel_29.AutomaticSize = Enum.AutomaticSize.X
+DynamicUnc20.TextLabel_29.Text = "ExecutorName"
+DynamicUnc20.TextLabel_29.TextColor3 = Color3.fromRGB(215, 215, 215)
+DynamicUnc20.TextLabel_29.TextSize = 16.000
+DynamicUnc20.TextLabel_29.TextXAlignment = Enum.TextXAlignment.Left
+
+DynamicUnc20.TextLabel_30.Parent = DynamicUnc20.Frame_11
+DynamicUnc20.TextLabel_30.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.TextLabel_30.BackgroundTransparency = 0.800
+DynamicUnc20.TextLabel_30.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.TextLabel_30.BorderSizePixel = 0
+DynamicUnc20.TextLabel_30.LayoutOrder = 2
+DynamicUnc20.TextLabel_30.Size = UDim2.new(1, 0, 1, 0)
+DynamicUnc20.TextLabel_30.FontFace = Font.new("rbxasset://fonts/families/Montserrat.json", Enum.FontWeight.SemiBold, Enum.FontStyle.Normal)
+
+DynamicUnc20.TextLabel_30.Text = "Level"
+DynamicUnc20.TextLabel_30.AutomaticSize = Enum.AutomaticSize.X
+DynamicUnc20.TextLabel_30.TextColor3 = Color3.fromRGB(215, 215, 215)
+DynamicUnc20.TextLabel_30.TextSize = 16.000
+DynamicUnc20.TextLabel_30.TextXAlignment = Enum.TextXAlignment.Left
+
+DynamicUnc20.UIPadding_53.Parent = DynamicUnc20.TextLabel_30
+DynamicUnc20.UIPadding_53.PaddingLeft = UDim.new(0, 12)
+
+DynamicUnc20.TextLabel_31.Parent = DynamicUnc20.Frame_11
+DynamicUnc20.TextLabel_31.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.TextLabel_31.BackgroundTransparency = 1.000
+DynamicUnc20.TextLabel_31.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.TextLabel_31.BorderSizePixel = 0
+DynamicUnc20.TextLabel_31.LayoutOrder = 3
+DynamicUnc20.TextLabel_31.Size = UDim2.new(1, 0, 1, 0)
+DynamicUnc20.TextLabel_31.FontFace = Font.new("rbxasset://fonts/families/Montserrat.json", Enum.FontWeight.SemiBold, Enum.FontStyle.Normal)
+
+DynamicUnc20.TextLabel_31.AutomaticSize = Enum.AutomaticSize.X
+DynamicUnc20.TextLabel_31.Text = "DynamicUncVersion"
+DynamicUnc20.TextLabel_31.TextColor3 = Color3.fromRGB(215, 215, 215)
+DynamicUnc20.TextLabel_31.TextSize = 16.000
+DynamicUnc20.TextLabel_31.TextXAlignment = Enum.TextXAlignment.Left
+
+DynamicUnc20.Actions_2.Name = "Actions"
+DynamicUnc20.Actions_2.Parent = DynamicUnc20.Section_5
+DynamicUnc20.Actions_2.AnchorPoint = Vector2.new(0.5, 1)
+DynamicUnc20.Actions_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.Actions_2.BackgroundTransparency = 1.000
+DynamicUnc20.Actions_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Actions_2.BorderSizePixel = 0
+DynamicUnc20.Actions_2.Position = UDim2.new(0.5, 0, 1, 0)
+DynamicUnc20.Actions_2.Size = UDim2.new(1, 0, 0, 75)
+
+DynamicUnc20.UIListLayout_26.Parent = DynamicUnc20.Actions_2
+DynamicUnc20.UIListLayout_26.FillDirection = Enum.FillDirection.Horizontal
+DynamicUnc20.UIListLayout_26.HorizontalAlignment = Enum.HorizontalAlignment.Right
+DynamicUnc20.UIListLayout_26.SortOrder = Enum.SortOrder.LayoutOrder
+DynamicUnc20.UIListLayout_26.Padding = UDim.new(0, 8)
+
+DynamicUnc20.UIPadding_54.Parent = DynamicUnc20.Actions_2
+DynamicUnc20.UIPadding_54.PaddingLeft = UDim.new(0, 25)
+DynamicUnc20.UIPadding_54.PaddingRight = UDim.new(0, 25)
+
+DynamicUnc20.Next_2.Name = "Next"
+DynamicUnc20.Next_2.Parent = DynamicUnc20.Actions_2
+DynamicUnc20.Next_2.BackgroundColor3 = Color3.fromRGB(48, 176, 255)
+DynamicUnc20.Next_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Next_2.BorderSizePixel = 0
+DynamicUnc20.Next_2.AutoButtonColor = false
+DynamicUnc20.Next_2.FontFace = Font.new("rbxasset://fonts/families/Montserrat.json", Enum.FontWeight.SemiBold, Enum.FontStyle.Normal)
+
+DynamicUnc20.Next_2.Text = "Next"
+DynamicUnc20.Next_2.AutomaticSize = Enum.AutomaticSize.XY
+DynamicUnc20.Next_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Next_2.TextSize = 20.000
+
+DynamicUnc20.UICorner_11.Parent = DynamicUnc20.Next_2
+
+DynamicUnc20.UIPadding_55.Parent = DynamicUnc20.Next_2
+DynamicUnc20.UIPadding_55.PaddingBottom = UDim.new(0, 10)
+DynamicUnc20.UIPadding_55.PaddingLeft = UDim.new(0, 50)
+DynamicUnc20.UIPadding_55.PaddingRight = UDim.new(0, 50)
+DynamicUnc20.UIPadding_55.PaddingTop = UDim.new(0, 10)
+
+DynamicUnc20.Top_5.Name = "Top"
+DynamicUnc20.Top_5.Parent = DynamicUnc20.MainFrame_5
+DynamicUnc20.Top_5.BackgroundColor3 = Color3.fromRGB(22, 22, 26)
+DynamicUnc20.Top_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Top_5.BorderSizePixel = 0
+DynamicUnc20.Top_5.LayoutOrder = 1
+DynamicUnc20.Top_5.Size = UDim2.new(1, 0, 0, 38)
+DynamicUnc20.Top_5.ZIndex = 3
+
+DynamicUnc20.Border_5.Name = "Border"
+DynamicUnc20.Border_5.Parent = DynamicUnc20.Top_5
+DynamicUnc20.Border_5.AnchorPoint = Vector2.new(0, 1)
+DynamicUnc20.Border_5.BackgroundColor3 = Color3.fromRGB(33, 33, 37)
+DynamicUnc20.Border_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Border_5.BorderSizePixel = 0
+DynamicUnc20.Border_5.Position = UDim2.new(0, 0, 1, 0)
+DynamicUnc20.Border_5.Size = UDim2.new(1, 0, 0, 1)
+
+DynamicUnc20.Left_5.Name = "Left"
+DynamicUnc20.Left_5.Parent = DynamicUnc20.Top_5
+DynamicUnc20.Left_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.Left_5.BackgroundTransparency = 1.000
+DynamicUnc20.Left_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Left_5.BorderSizePixel = 0
+DynamicUnc20.Left_5.Size = UDim2.new(1, 0, 1, 0)
+
+DynamicUnc20.Center_5.Name = "Center"
+DynamicUnc20.Center_5.Parent = DynamicUnc20.Top_5
+DynamicUnc20.Center_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.Center_5.BackgroundTransparency = 1.000
+DynamicUnc20.Center_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Center_5.BorderSizePixel = 0
+DynamicUnc20.Center_5.Size = UDim2.new(1, 0, 1, 0)
+
+DynamicUnc20.Right_5.Name = "Right"
+DynamicUnc20.Right_5.Parent = DynamicUnc20.Top_5
+DynamicUnc20.Right_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.Right_5.BackgroundTransparency = 1.000
+DynamicUnc20.Right_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Right_5.BorderSizePixel = 0
+DynamicUnc20.Right_5.Size = UDim2.new(1, 0, 1, 0)
+
+DynamicUnc20.UIListLayout_27.Parent = DynamicUnc20.Right_5
+DynamicUnc20.UIListLayout_27.FillDirection = Enum.FillDirection.Horizontal
+DynamicUnc20.UIListLayout_27.HorizontalAlignment = Enum.HorizontalAlignment.Right
+DynamicUnc20.UIListLayout_27.SortOrder = Enum.SortOrder.LayoutOrder
+DynamicUnc20.UIListLayout_27.VerticalAlignment = Enum.VerticalAlignment.Center
+
+DynamicUnc20.Close_5.Name = "Close"
+DynamicUnc20.Close_5.Parent = DynamicUnc20.Right_5
+DynamicUnc20.Close_5.BackgroundColor3 = Color3.fromRGB(255, 42, 42)
+DynamicUnc20.Close_5.BackgroundTransparency = 1.000
+DynamicUnc20.Close_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Close_5.BorderSizePixel = 0
+DynamicUnc20.Close_5.Size = UDim2.new(1, 0, 1, 0)
+DynamicUnc20.Close_5.AutoButtonColor = false
+DynamicUnc20.Close_5.Font = Enum.Font.SourceSans
+DynamicUnc20.Close_5.Text = ""
+DynamicUnc20.Close_5.TextColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Close_5.TextSize = 14.000
+
+DynamicUnc20.UIAspectRatioConstraint_10.Parent = DynamicUnc20.Close_5
+DynamicUnc20.UIAspectRatioConstraint_10.DominantAxis = Enum.DominantAxis.Height
+
+DynamicUnc20.ImageLabel_5.Parent = DynamicUnc20.Close_5
+DynamicUnc20.ImageLabel_5.AnchorPoint = Vector2.new(0.5, 0.5)
+DynamicUnc20.ImageLabel_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.ImageLabel_5.BackgroundTransparency = 1.000
+DynamicUnc20.ImageLabel_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.ImageLabel_5.BorderSizePixel = 0
+DynamicUnc20.ImageLabel_5.Position = UDim2.new(0.5, 0, 0.5, 0)
+DynamicUnc20.ImageLabel_5.Size = UDim2.new(0, 18, 0, 18)
+DynamicUnc20.ImageLabel_5.Image = "rbxassetid://76543842866264"
+DynamicUnc20.ImageLabel_5.ImageColor3 = Color3.fromRGB(215, 215, 215)
+DynamicUnc20.ImageLabel_5.ImageRectOffset = Vector2.new(284, 4)
+DynamicUnc20.ImageLabel_5.ImageRectSize = Vector2.new(24, 24)
+
+DynamicUnc20.UICorner_12.CornerRadius = UDim.new(0, 10)
+DynamicUnc20.UICorner_12.Parent = DynamicUnc20.MainFrame_5
+
+DynamicUnc20.CanvasGroup.Name = "CanvasGroup"
+DynamicUnc20.CanvasGroup.BackgroundColor3 = Color3.fromRGB(15, 15, 19)
+DynamicUnc20.CanvasGroup.AnchorPoint = Vector2.new(0.5, 0.5)
+DynamicUnc20.CanvasGroup.BackgroundTransparency = 0
+DynamicUnc20.CanvasGroup.Interactable = true
+DynamicUnc20.CanvasGroup.Visible = true
+DynamicUnc20.CanvasGroup.AutomaticSize = Enum.AutomaticSize.Y
+DynamicUnc20.CanvasGroup.Parent = DynamicUnc20.DynamicUnc20
+DynamicUnc20.CanvasGroup.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.CanvasGroup.BorderSizePixel = 0
+DynamicUnc20.CanvasGroup.Position = UDim2.new(0.5, 0,0.5, 0)
+DynamicUnc20.CanvasGroup.Size = UDim2.new(0, 455,0, 0)
+
+DynamicUnc20.UIListLayout_28.Parent = DynamicUnc20.CanvasGroup
+DynamicUnc20.UIListLayout_28.SortOrder = Enum.SortOrder.LayoutOrder
+
+DynamicUnc20.Action.Name = "Action"
+DynamicUnc20.Action.AutomaticSize = Enum.AutomaticSize.Y
+DynamicUnc20.Action.Parent = DynamicUnc20.CanvasGroup
+DynamicUnc20.Action.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.Action.BackgroundTransparency = 1.000
+DynamicUnc20.Action.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Action.BorderSizePixel = 0
+DynamicUnc20.Action.LayoutOrder = 2
+DynamicUnc20.Action.Size = UDim2.new(1, 0, 0, 0)
+
+DynamicUnc20.UIListLayout_29.Parent = DynamicUnc20.Action
+DynamicUnc20.UIListLayout_29.FillDirection = Enum.FillDirection.Horizontal
+DynamicUnc20.UIListLayout_29.HorizontalAlignment = Enum.HorizontalAlignment.Center
+DynamicUnc20.UIListLayout_29.SortOrder = Enum.SortOrder.LayoutOrder
+
+DynamicUnc20.UIPadding_56.Parent = DynamicUnc20.Action
+DynamicUnc20.UIPadding_56.PaddingBottom = UDim.new(0, 15)
+DynamicUnc20.UIPadding_56.PaddingLeft = UDim.new(0, 15)
+DynamicUnc20.UIPadding_56.PaddingRight = UDim.new(0, 15)
+DynamicUnc20.UIPadding_56.PaddingTop = UDim.new(0, 15)
+
+DynamicUnc20.ButtonA.Name = "ButtonA"
+DynamicUnc20.ButtonA.Parent = DynamicUnc20.Action
+DynamicUnc20.ButtonA.BackgroundColor3 = Color3.fromRGB(48, 176, 255)
+DynamicUnc20.ButtonA.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.ButtonA.BorderSizePixel = 0
+DynamicUnc20.ButtonA.Size = UDim2.new(0.485000014, 0, 0, 40)
+DynamicUnc20.ButtonA.AutoButtonColor = false
+DynamicUnc20.ButtonA.FontFace = Font.new("rbxasset://fonts/families/Montserrat.json", Enum.FontWeight.SemiBold, Enum.FontStyle.Normal)
+
+DynamicUnc20.ButtonA.Text = "Start Test"
+DynamicUnc20.ButtonA.TextColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.ButtonA.TextSize = 16.000
+
+DynamicUnc20.UICorner_13.Parent = DynamicUnc20.ButtonA
+
+DynamicUnc20.ButtonB.Name = "ButtonB"
+DynamicUnc20.ButtonB.Parent = DynamicUnc20.Action
+DynamicUnc20.ButtonB.BackgroundColor3 = Color3.fromRGB(22, 22, 26)
+DynamicUnc20.ButtonB.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.ButtonB.BorderSizePixel = 0
+DynamicUnc20.ButtonB.Size = UDim2.new(0.485000014, 0, 0, 40)
+DynamicUnc20.ButtonB.AutoButtonColor = false
+DynamicUnc20.ButtonB.FontFace = Font.new("rbxasset://fonts/families/Montserrat.json", Enum.FontWeight.SemiBold, Enum.FontStyle.Normal)
+
+DynamicUnc20.ButtonB.Text = "Cancel"
+DynamicUnc20.ButtonB.TextColor3 = Color3.fromRGB(215, 215, 215)
+DynamicUnc20.ButtonB.TextSize = 16.000
+
+DynamicUnc20.UICorner_14.Parent = DynamicUnc20.ButtonB
+
+DynamicUnc20.Content_3.Name = "Content"
+DynamicUnc20.Content_3.AutomaticSize = Enum.AutomaticSize.Y
+DynamicUnc20.Content_3.Parent = DynamicUnc20.CanvasGroup
+DynamicUnc20.Content_3.AnchorPoint = Vector2.new(0.5, 0)
+DynamicUnc20.Content_3.BackgroundColor3 = Color3.fromRGB(22, 22, 26)
+DynamicUnc20.Content_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Content_3.BorderSizePixel = 0
+DynamicUnc20.Content_3.LayoutOrder = 1
+DynamicUnc20.Content_3.Size = UDim2.new(1, 0, 0, 0)
+
+DynamicUnc20.UIListLayout_30.Parent = DynamicUnc20.Content_3
+DynamicUnc20.UIListLayout_30.SortOrder = Enum.SortOrder.LayoutOrder
+DynamicUnc20.UIListLayout_30.Padding = UDim.new(0, 8)
+
+DynamicUnc20.Content_4.Name = "Content"
+DynamicUnc20.Content_4.AutomaticSize = Enum.AutomaticSize.Y
+DynamicUnc20.Content_4.Parent = DynamicUnc20.Content_3
+DynamicUnc20.Content_4.AnchorPoint = Vector2.new(0.5, 0)
+DynamicUnc20.Content_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.Content_4.BackgroundTransparency = 1.000
+DynamicUnc20.Content_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Content_4.BorderSizePixel = 0
+DynamicUnc20.Content_4.LayoutOrder = 1
+DynamicUnc20.Content_4.Size = UDim2.new(1, 0, 0, 0)
+
+DynamicUnc20.UIListLayout_31.Parent = DynamicUnc20.Content_4
+DynamicUnc20.UIListLayout_31.SortOrder = Enum.SortOrder.LayoutOrder
+DynamicUnc20.UIListLayout_31.Padding = UDim.new(0, 8)
+
+DynamicUnc20.UIPadding_57.Parent = DynamicUnc20.Content_4
+DynamicUnc20.UIPadding_57.PaddingBottom = UDim.new(0, 8)
+DynamicUnc20.UIPadding_57.PaddingLeft = UDim.new(0, 25)
+DynamicUnc20.UIPadding_57.PaddingRight = UDim.new(0, 25)
+DynamicUnc20.UIPadding_57.PaddingTop = UDim.new(0, 18)
+
+DynamicUnc20.Title_6.Name = "Title"
+DynamicUnc20.Title_6.AutomaticSize = Enum.AutomaticSize.Y
+DynamicUnc20.Title_6.Parent = DynamicUnc20.Content_4
+DynamicUnc20.Title_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.Title_6.BackgroundTransparency = 1.000
+DynamicUnc20.Title_6.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Title_6.BorderSizePixel = 0
+DynamicUnc20.Title_6.Size = UDim2.new(1, 0, 0, 0)
+DynamicUnc20.Title_6.FontFace = Font.new("rbxasset://fonts/families/Montserrat.json", Enum.FontWeight.SemiBold, Enum.FontStyle.Normal)
+
+DynamicUnc20.Title_6.Text = "DynamicUnc - Test"
+DynamicUnc20.Title_6.TextColor3 = Color3.fromRGB(215, 215, 215)
+DynamicUnc20.Title_6.TextSize = 27.000
+DynamicUnc20.Title_6.TextWrapped = true
+DynamicUnc20.Title_6.TextXAlignment = Enum.TextXAlignment.Left
+DynamicUnc20.Title_6.TextYAlignment = Enum.TextYAlignment.Top
+
+DynamicUnc20.Description_4.Name = "Description"
+DynamicUnc20.Description_4.AutomaticSize = Enum.AutomaticSize.Y
+DynamicUnc20.Description_4.Parent = DynamicUnc20.Content_4
+DynamicUnc20.Description_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.Description_4.BackgroundTransparency = 1.000
+DynamicUnc20.Description_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Description_4.BorderSizePixel = 0
+DynamicUnc20.Description_4.Size = UDim2.new(1, 0, 0, 0)
+DynamicUnc20.Description_4.FontFace = Font.new("rbxasset://fonts/families/Montserrat.json", Enum.FontWeight.SemiBold, Enum.FontStyle.Normal)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DynamicUnc20.Description_4.Text = "Precision Executor Test."
+DynamicUnc20.Description_4.TextColor3 = Color3.fromRGB(215, 215, 215)
+DynamicUnc20.Description_4.TextSize = 15.000
+DynamicUnc20.Description_4.TextTransparency = 0.300
+DynamicUnc20.Description_4.TextWrapped = true
+DynamicUnc20.Description_4.TextXAlignment = Enum.TextXAlignment.Left
+DynamicUnc20.Description_4.TextYAlignment = Enum.TextYAlignment.Top
+
+DynamicUnc20.Frame_12.Parent = DynamicUnc20.Content_4
+DynamicUnc20.Frame_12.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.Frame_12.BackgroundTransparency = 1.000
+DynamicUnc20.Frame_12.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Frame_12.BorderSizePixel = 0
+DynamicUnc20.Frame_12.Size = UDim2.new(1, 0, 0, 1)
+DynamicUnc20.Frame_12.Visible = false
+
+DynamicUnc20.Alt_3.Name = "Alt"
+DynamicUnc20.Alt_3.AutomaticSize = Enum.AutomaticSize.Y
+DynamicUnc20.Alt_3.Parent = DynamicUnc20.Content_4
+DynamicUnc20.Alt_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.Alt_3.BackgroundTransparency = 1.000
+DynamicUnc20.Alt_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Alt_3.BorderSizePixel = 0
+DynamicUnc20.Alt_3.Size = UDim2.new(1, 0, 0, 0)
+DynamicUnc20.Alt_3.Visible = false
+DynamicUnc20.Alt_3.FontFace = Font.new("rbxasset://fonts/families/Montserrat.json", Enum.FontWeight.SemiBold, Enum.FontStyle.Normal)
+
+DynamicUnc20.Alt_3.Text = ""
+DynamicUnc20.Alt_3.TextColor3 = Color3.fromRGB(215, 215, 215)
+DynamicUnc20.Alt_3.TextSize = 15.000
+DynamicUnc20.Alt_3.TextTransparency = 0.750
+DynamicUnc20.Alt_3.TextWrapped = true
+DynamicUnc20.Alt_3.TextXAlignment = Enum.TextXAlignment.Left
+DynamicUnc20.Alt_3.TextYAlignment = Enum.TextYAlignment.Top
+
+DynamicUnc20.Frame_13.Parent = DynamicUnc20.Content_3
+DynamicUnc20.Frame_13.AnchorPoint = Vector2.new(0, 1)
+DynamicUnc20.Frame_13.BackgroundColor3 = Color3.fromRGB(33, 33, 37)
+DynamicUnc20.Frame_13.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.Frame_13.BorderSizePixel = 0
+DynamicUnc20.Frame_13.LayoutOrder = 2
+DynamicUnc20.Frame_13.Size = UDim2.new(1, 0, 0, 1)
+
+DynamicUnc20.UICorner_15.CornerRadius = UDim.new(0, 10)
+DynamicUnc20.UICorner_15.Parent = DynamicUnc20.CanvasGroup
+
+DynamicUnc20.HoverInfo.Name = "HoverInfo"
+DynamicUnc20.HoverInfo.AutomaticSize = Enum.AutomaticSize.XY
+DynamicUnc20.HoverInfo.Parent = DynamicUnc20.DynamicUnc20
+DynamicUnc20.HoverInfo.AnchorPoint = Vector2.new(0, 1)
+DynamicUnc20.HoverInfo.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+DynamicUnc20.HoverInfo.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.HoverInfo.BorderSizePixel = 0
+DynamicUnc20.HoverInfo.Position = UDim2.new(0.378048778, 0, 0.139101863, 0)
+DynamicUnc20.HoverInfo.Size = UDim2.new(0, 148, 0, 29)
+DynamicUnc20.HoverInfo.Visible = false
+
+DynamicUnc20.HoverTextInfo.Name = "HoverTextInfo"
+DynamicUnc20.HoverTextInfo.Parent = DynamicUnc20.HoverInfo
+DynamicUnc20.HoverTextInfo.AutomaticSize = Enum.AutomaticSize.XY
+DynamicUnc20.HoverTextInfo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.HoverTextInfo.BackgroundTransparency = 1.000
+DynamicUnc20.HoverTextInfo.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DynamicUnc20.HoverTextInfo.BorderSizePixel = 0
+DynamicUnc20.HoverTextInfo.ClipsDescendants = true
+DynamicUnc20.HoverTextInfo.Size = UDim2.new(0, 168, 0, 30)
+DynamicUnc20.HoverTextInfo.Font = Enum.Font.Gotham
+DynamicUnc20.HoverTextInfo.Text = "nil"
+DynamicUnc20.HoverTextInfo.TextColor3 = Color3.fromRGB(255, 255, 255)
+DynamicUnc20.HoverTextInfo.TextSize = 14.000
+DynamicUnc20.HoverTextInfo.TextWrapped = true
+
+DynamicUnc20.UIScale3.Parent = DynamicUnc20.HoverInfo
+
+DynamicUnc20.UIAspectRatioConstraint3.Parent = DynamicUnc20.HoverInfo
+DynamicUnc20.UIAspectRatioConstraint3.AspectRatio = 1.453
+
+DynamicUnc20.UICorner3.CornerRadius = UDim.new(0, 4)
+DynamicUnc20.UICorner3.Parent = DynamicUnc20.HoverInfo
+
+DynamicUnc20.UIStroke.Color = Color3.fromRGB(33, 33, 37)
+DynamicUnc20.UIStroke.Parent = DynamicUnc20.TextButton
+DynamicUnc20.UIStroke.ApplyStrokeMode = "Border"
+DynamicUnc20.UIStroke.LineJoinMode = "Round"
+DynamicUnc20.UIStroke.Thickness = 1
+
+DynamicUnc20.UIStroke2.Color = Color3.fromRGB(33, 33, 37)
+DynamicUnc20.UIStroke2.Parent = DynamicUnc20.Content_2
+DynamicUnc20.UIStroke2.ApplyStrokeMode = "Border"
+DynamicUnc20.UIStroke2.LineJoinMode = "Round"
+DynamicUnc20.UIStroke2.Thickness = 1
+
+
+DynamicUnc20.UIStroke3.Color = Color3.fromRGB(35, 35, 35)
+DynamicUnc20.UIStroke3.Parent = DynamicUnc20.HoverInfo
+DynamicUnc20.UIStroke3.ApplyStrokeMode = "Border"
+DynamicUnc20.UIStroke3.LineJoinMode = "Round"
+DynamicUnc20.UIStroke3.Thickness = 1.5
+DynamicUnc20.UIStroke3.Transparency = 0.17
+
+
+
+--SETUP
+
+local info = TweenInfo.new(.8, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out)
+local slow = TweenInfo.new(.8, Enum.EasingStyle.Exponential)
+local inst = TweenInfo.new(.01, Enum.EasingStyle.Exponential)
+local quick = TweenInfo.new(.3, Enum.EasingStyle.Exponential)
+local info1 = TweenInfo.new(.5, Enum.EasingStyle.Exponential)
+local loop = TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut, -1, false)
+local rev = TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut, -1, true)
+local smooth = TweenInfo.new(.7, Enum.EasingStyle.Exponential)
+
+--TEST STUFF
+
+local Funcs = {"Print", "Warn", "Type", "Loadstring", "Assert", "ErrorHandling","Getgenv","Getrenv","Getsenv","SetFenv","GetFenv","CheckCaller","NewCClosure","LoadLibrary","IsLuau","GetThreadIdentity","GetRawMetatable","SetRawMetatable","HookFunction","HookMetamethod","GetNamecallMethod","SetNamecallMethod","Getgc","GetRegistry","GetConstants","GetUpvalues","HTTP","WebSocketHandler","TeleportHandler","DebugInfo","DebugGetUpvalue","DebugSetUpvalue","DebugGetProtos","DebugGetStack","DebugGetLocal","DebugSetLocal","DebugGetMetatable","DebugSetMetatable","DebugGetFenv","InputTests","GetConnections","FireSignal","FireClickDetector","FireProximityPrompt","FireTouchInterest","FileFunctions","LineDrawing","DrawingCircle","setscriptable","isscriptable","getnilinstances","getinstances","Gethui","SetHiddenproperty","GetHiddenproperty"}
+local totalTests = 0
+local passedTests = 0
+local failedTests = 0
+local missingTests = 0
+local labels = {}
+local failedDetails = {}
+local PassedDetails = {}
+local undefinedAliases = {}
+
+local function createTestLabel(funcName)
+	local TextLabel = Instance.new("TextLabel")
+	TextLabel.Name = funcName
+	TextLabel.Parent = DynamicUnc20.ScrollingFrame_2
+	TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	TextLabel.BackgroundTransparency = 1
+	TextLabel.BorderSizePixel = 0
+	TextLabel.LayoutOrder = 4
+	TextLabel.Position = UDim2.new(-0.76, 0, -4.04, 0)
+	TextLabel.Size = UDim2.new(1, 0, 0, 0)
+	TextLabel.FontFace = Font.new("rbxasset://fonts/families/Montserrat.json", Enum.FontWeight.SemiBold, Enum.FontStyle.Normal)
+
+	TextLabel.RichText = true
+	TextLabel.AutomaticSize = Enum.AutomaticSize.XY
+	TextLabel.Text = "Checking " .. funcName
+	TextLabel.TextColor3 = Color3.fromRGB(215, 215, 215)
+	TextLabel.TextSize = 16
+	TextLabel.TextTransparency = 0.5
+	TextLabel.TextXAlignment = Enum.TextXAlignment.Left
+
+	labels[funcName] = TextLabel
+end
+
+local currentFrame = nil
+local currentCount = 0
+
+local function createNewResultFrame()
+	local Frame = Instance.new("Frame")
+	local Frame_2 = Instance.new("Frame")
+	local UIListLayout = Instance.new("UIListLayout")
+	local UIPadding = Instance.new("UIPadding")
+
+	Frame.Parent = DynamicUnc20.ScrollingFrame_3
+	Frame.Name = "ResultFrame"
+	Frame.BackgroundColor3 = Color3.fromRGB(22, 22, 26)
+	Frame.BackgroundTransparency = 0.5
+	Frame.BorderSizePixel = 0
+	Frame.Size = UDim2.new(1, 0, 0, 25)
+
+	Frame_2.Parent = Frame
+	Frame_2.BackgroundTransparency = 1
+	Frame_2.BorderSizePixel = 0
+	Frame_2.Size = UDim2.new(1, 0, 1, 0)
+
+	UIListLayout.Parent = Frame_2
+	UIListLayout.FillDirection = Enum.FillDirection.Horizontal
+	UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+	UIListLayout.VerticalAlignment = Enum.VerticalAlignment.Center
+	UIListLayout.Padding = UDim.new(0, 16)
+
+	UIPadding.Parent = Frame_2
+	UIPadding.PaddingLeft = UDim.new(0, 12)
+
+	--update
+	if not (isStudio) then
+		if identifyexecutor() then
+			DynamicUnc20.Name.Text = identifyexecutor()
+		else
+			DynamicUnc20.Name.Text = "Failed"
+		end
+		if getthreadidentity() then
+			DynamicUnc20.Type.Text = getthreadidentity()
+			DynamicUnc20.Icon_2.Visible = false
+		else
+			DynamicUnc20.Type.Text = "Failed"
+			DynamicUnc20.Icon_2.Visible = true
+		end
+
+		if game.PlaceId==4483381587 then
+			DynamicUnc20.Description_3.Text = "All tests results have been validated and are fully accurate in this experience."
+		else
+			DynamicUnc20.Description_3.Text = "Some tests results may not be fully accurate in this experience due to environment limitations or restrictions."
+		end
+	end
+	return Frame_2
+end
+
+local function addResultLabel(funcName,state)
+	if not currentFrame or currentCount >= 3 then
+		currentFrame = createNewResultFrame()
+		currentCount = 0
+	end
+
+	local Errors = Instance.new("Frame")
+	Errors.Name = state
+	Errors.Parent = currentFrame
+	Errors.BackgroundTransparency = 1
+	Errors.BorderSizePixel = 0
+	Errors.Size = UDim2.new(0.3, 0, 1, 0)
+
+	local UIListLayout = Instance.new("UIListLayout")
+	UIListLayout.Parent = Errors
+	UIListLayout.FillDirection = Enum.FillDirection.Horizontal
+	UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+	UIListLayout.VerticalAlignment = Enum.VerticalAlignment.Center
+
+	local Icon = Instance.new("ImageLabel")
+	Icon.Name = "Icon"
+	Icon.Parent = Errors
+	Icon.BackgroundTransparency = 1
+	Icon.Size = UDim2.new(0, 13, 0, 13)
+	Icon.ImageRectSize = Vector2.new(96, 96)
+	if state=="Error" then
+		Icon.Image = "rbxassetid://8445470559"
+		Icon.ImageColor3 = Color3.fromRGB(255, 42, 42)
+		Icon.ImageRectOffset = Vector2.new(904, 504)
+	elseif state=="Warning" then
+		Icon.Image = "rbxassetid://8445470559"
+		Icon.ImageColor3 = Color3.fromRGB(255, 185, 21)
+		Icon.ImageRectOffset = Vector2.new(104, 704)
+	elseif state=="Passed" then
+		Icon.Size = UDim2.new(0, 18, 0, 18)
+		Icon.Image = "rbxassetid://16167590360"
+		Icon.ImageColor3 = Color3.fromRGB(56, 255, 42)
+		Icon.ImageRectOffset = Vector2.new(302, 426)
+		Icon.ImageRectSize = Vector2.new(36, 36)
+	end
+
+	local Type = Instance.new("TextButton")
+	Type.Name = "Type"
+	Type.Parent = Errors
+	Type.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	Type.BackgroundTransparency = 0.8
+	Type.BorderSizePixel = 0
+	Type.Size = UDim2.new(1, 0, 1, 0)
+	Type.FontFace = Font.new("rbxasset://fonts/families/Montserrat.json", Enum.FontWeight.SemiBold, Enum.FontStyle.Normal)
+	Type.Text = funcName
+	Type.TextColor3 = Color3.fromRGB(215, 215, 215)
+	Type.TextSize = 16
+	Type.TextXAlignment = Enum.TextXAlignment.Left
+
+	local UIPadding = Instance.new("UIPadding")
+	UIPadding.Parent = Type
+	UIPadding.PaddingLeft = UDim.new(0, 12)
+
+	currentCount += 1
+	local Active = false
+	Type.MouseButton1Down:Connect(function()
+		local reason = failedDetails[funcName]
+		local reason2 = PassedDetails[funcName]
+
+		local function showHover(text, color)
+			DynamicUnc20.HoverTextInfo.Text = text
+			DynamicUnc20.HoverTextInfo.TextColor3 = color
+			DynamicUnc20.HoverInfo.Visible = true
+
+			tween_service:Create(DynamicUnc20.HoverInfo, info, {BackgroundTransparency = 0}):Play()
+			tween_service:Create(DynamicUnc20.HoverTextInfo, info, {TextTransparency = 0}):Play()
+			tween_service:Create(DynamicUnc20.UIStroke3, info, {Transparency = 0.17}):Play()
+		end
+
+		if reason then
+			showHover(("[FAILED]: %s: %s"):format(funcName, tostring(reason)), Color3.fromRGB(250, 140, 140))
+			Active = true
+		else
+			showHover(("[PASSED]: %s: This Function Successfully Passed"):format(funcName), Color3.fromRGB(152, 250, 137))
+			Active = true
+		end
+	end)
+
+	Type.MouseLeave:Connect(function()
+		if not Active then return end
+		tween_service:Create(DynamicUnc20.HoverInfo, info, {BackgroundTransparency = 1}):Play()
+		tween_service:Create(DynamicUnc20.HoverTextInfo, info, {TextTransparency = 1}):Play()
+		tween_service:Create(DynamicUnc20.UIStroke3, info, {Transparency = 1}):Play()
+
+		task.delay(0.8, function()
+			DynamicUnc20.HoverInfo.Visible = false
+		end)
+	end)
+
+end
+
+local function updateTestLabel(funcName, status)
+	local label = labels[funcName]
+	if not label then return end
+
+	if status == "running" then
+		tween_service:Create(label, info, {TextTransparency = 0}):Play()
+	elseif status == "done" then
+		label.Text = "<s>Checking " .. funcName .. "</s> <font color=\"#00ff00\" size=\"20\" weight=\"bold\">✓</font>"
+	elseif status == "failed" then
+		label.Text = "<s>Checking " .. funcName .. "</s> <font color=\"#ff0000\" size=\"20\" weight=\"bold\">❌</font>"
+	end
+end
+
+local TestFunctions = {
+	Print = function()
+		print("test", 123, true, {key = "value"}, function() end)
+	end,
+	Warn = function()
+		warn("[ERROR]", debug.traceback("Test warning", 2))
+	end,
+	Type = function()
+		return type("test") == "string"
+			and type(123) == "number"
+			and type(true) == "boolean"
+			and type({}) == "table"
+			and type(function() end) == "function"
+	end,
+	Loadstring = function()
+		local x = 10
+		assert(loadstring("local y = ... return y + 5")(x) == 15, "Loadstring failed to compute correct result")
+	end,
+	Assert = function()
+		assert(type(1) == "number" and 1 > 0, "Invalid number")
+		assert(type("test") == "string" and #"test" > 0, "Invalid string")
+	end,
+	ErrorHandling = function()
+		local success, result = xpcall(
+			function() error({code = 500, message = "Test error"}) end,
+			function(err) return err end
+		)
+		assert(not success and result.code == 500, "Error handling or xpcall failed")
+	end,
+	Getgenv = function()
+		local env = getgenv()
+		env.testVar = "test"
+		assert(env.testVar == "test", "Global environment variable not properly set")
+	end,
+	Getrenv = function()
+		local renv = getrenv()
+		assert(type(renv) == "table", "Expected environment to be a table")
+		assert(renv._G, "Expected environment to have _G global")
+	end,
+	Getsenv = function()
+		local animate = game:GetService("Players").LocalPlayer.Character.Animate
+		local env = getsenv(animate)
+		assert(type(env) == "table", "Did not return a table for Character.Animate (a " .. animate.ClassName .. ")")
+		assert(env.script == animate, "The script global is not identical to Character.Animate")
+	end,
+	SetFenv = function()
+		local newEnv = {print = print, assert = assert}
+		local testFunc = function() return _ENV end
+		setfenv(testFunc, newEnv)
+		assert(getfenv(testFunc) == newEnv, "Failed to set new environment for function")
+	end,
+	GetFenv = function()
+		local fenv = getfenv(2)
+		assert(type(fenv) == "table", "Expected environment to be a table")
+		assert(fenv.script, "Expected environment to have a script reference")
+	end,
+	CheckCaller = function()
+		local result = checkcaller()
+		assert(type(result) == "boolean", "Caller check should return a boolean")
+	end,
+	NewCClosure = function()
+		local wrapped = newcclosure(function(x) return x * 2 end)
+		assert(wrapped(5) == 10, "New C closure failed to return correct result")
+	end,
+	LoadLibrary = function()
+		local util = loadlibrary("RbxUtility")
+		assert(type(util) == "userdata", "Expected loaded library to be userdata")
+	end,
+	IsLuau = function()
+		local luauEnabled = isluau()
+		assert(type(luauEnabled) == "boolean", "Expected isluau() to return a boolean")
+	end,
+	GetThreadIdentity = function()
+		local identity = getthreadidentity()
+		assert(type(identity) == "number", "Expected thread identity to be a number")
+		assert(identity >= 0, "Expected thread identity to be non-negative")
+	end,
+	GetRawMetatable = function()
+		local mt = getrawmetatable(game)
+		assert(type(mt) == "table", "Expected raw metatable to be a table")
+		assert(mt.__index, "Expected metatable to have __index")
+	end,
+	SetRawMetatable = function()
+		local tbl = {}
+		local mt = {
+			__index = function(t,k) return k.."_modified" end,
+			__newindex = function(t,k,v) rawset(t,k.."_protected",v) end
+		}
+		setrawmetatable(tbl, mt)
+		assert(tbl.test == "test_modified", "Failed to modify __index via raw metatable")
+	end,
+	HookFunction = function()
+		local function test()
+			return true
+		end
+		local ref = hookfunction(test, function()
+			return false
+		end)
+		assert(test() == false, "Function should return false")
+		assert(ref() == true, "Original function should return true")
+		assert(test ~= ref, "Original function should not be same as the reference")
+	end,
+	HookMetamethod = function()
+		local original = game.__index
+		hookmetamethod(game, "__index", function(self, key)
+			if key == "HookedProperty" then return "Hooked" end
+			return original(self, key)
+		end)
+		assert(game.HookedProperty == "Hooked")
+	end,
+	GetNamecallMethod = function()
+		local method
+		local ref
+		ref = hookmetamethod(game, "__namecall", function(...)
+			if not method then
+				method = getnamecallmethod()
+			end
+			return ref(...)
+		end)
+		game:GetService("Lighting")
+		assert(method == "GetService", "Did not get the correct method (GetService)")
+		assert(method == "string", "Expected namecall method to be a string")
+		assert(method == "nil", "Function is nil")
+	end,
+	SetNamecallMethod = function()
+		setnamecallmethod("FireServer")
+		assert(getnamecallmethod() == "FireServer", "Failed to set namecall method correctly")
+	end,
+	Getgc = function()
+		local gc = getgc(true)
+		assert(type(gc) == "table", "Expected garbage collector list to be a table")
+		assert(#gc > 0, "Expected at least one object in garbage collector list")
+	end,
+	GetRegistry = function()
+		local reg = getreg()
+		assert(type(reg) == "table", "Expected registry to be a table")
+		assert(#reg > 0, "Expected non-empty registry")
+	end,
+	GetConstants = function()
+		local function test()
+			print("Hello, world!")
+		end
+		assert(debug.getconstant(test, 1) == "print", "First constant must be print")
+		assert(debug.getconstant(test, 2) == nil, "Second constant must be nil")
+		assert(debug.getconstant(test, 3) == "Hello, world!", "Third constant must be 'Hello, world!'")
+	end,
+	GetUpvalues = function()
+		local upvalue = function() end
+		local function test()
+			print(upvalue)
+		end
+		assert(debug.getupvalue(test, 1) == upvalue, "Unexpected value returned")
+		assert(debug.getupvalue(test, 1) == "table", "Expected upvalues to be a table")
+	end,
+	HTTP = function()
+		local response = game:HttpGet("https://api.github.com/users/github")
+		local success = response:find("login") ~= nil
+
+		local postResponse = request({
+			Url = "https://httpbin.org/post",
+			Method = "POST",
+			Headers = {
+				["Content-Type"] = "application/json"
+			},
+			Body = game:GetService("HttpService"):JSONEncode({
+				test = "data",
+				number = 123
+			})
+		})
+		assert(success and postResponse.Success, "HTTP request or POST failed")
+	end,
+	WebSocketHandler = function()
+		local ws = WebSocket.connect("wss://echo.websocket.org")
+		ws.OnMessage:Connect(function(msg)
+			if msg == "ping" then
+				ws:Send("pong")
+			end
+		end)
+		ws:Send("ping")
+	end,
+	TeleportHandler = function()
+		game:GetService("TeleportService").TeleportInitiated:Connect(function(teleportData)
+			queue_on_teleport([[local data = ...; print("Teleported with data:", data)]])
+		end)
+	end,
+	DebugInfo = function()
+		local types = {
+			source = "string",
+			short_src = "string",
+			func = "function",
+			what = "string",
+			currentline = "number",
+			name = "string",
+			nups = "number",
+			numparams = "number",
+			is_vararg = "number",
+		}
+		local function test(...)
+			print(...)
+		end
+		local info = debug.getinfo(test)
+		for k, v in pairs(types) do
+			assert(info[k] ~= nil, "Did not return a table with a '" .. k .. "' field")
+			assert(type(info[k]) == v, "Did not return a table with " .. k .. " as a " .. v .. " (got " .. type(info[k]) .. ")")
+		end
+	end,
+	DebugGetUpvalue = function()
+		local closure = function() local x = 1; return function() return x end end
+		local innerFunc = closure()
+		local name, value = debug.getupvalue(innerFunc, 1)
+		assert(name == "x" and value == 1, "Failed to retrieve correct upvalue")
+	end,
+	DebugSetUpvalue = function()
+		local closure = function() local x = 1; return function() return x end end
+		local innerFunc = closure()
+		debug.setupvalue(innerFunc, 1, 100)
+		assert(innerFunc() == 100, "Failed to set upvalue correctly")
+	end,
+	DebugGetProtos = function()
+		local function test()
+			local function inner1() end
+			local function inner2() end
+			return inner1, inner2
+		end
+		local protos = debug.getprotos(test)
+		assert(#protos == 2, "Expected exactly 2 prototypes")
+	end,
+	DebugGetStack = function()
+		local function deep3() return debug.getstack(3) end
+		local function deep2() return deep3() end
+		local function deep1() return deep2() end
+		local stack = deep1()
+		assert(type(stack) == "table", "Expected debug stack to return a table")
+	end,
+	DebugGetLocal = function()
+		local function inner()
+			local testVar = "test"
+			local name, value = debug.getlocal(2, 1)
+			assert(name == "testVar" and value == "test", "Failed to retrieve correct local variable")
+		end
+		inner()
+	end,
+	DebugSetLocal = function()
+		local function inner()
+			local testVar = "old"
+			debug.setlocal(2, 1, "new")
+			assert(testVar == "new", "Failed to set local variable correctly")
+		end
+		inner()
+	end,
+	DebugGetMetatable = function()
+		local t = setmetatable({}, {__index = function() return true end})
+		local mt = debug.getmetatable(t)
+		assert(type(mt.__index) == "function", "Expected metatable __index to be a function")
+	end,
+	DebugSetMetatable = function()
+		local t = {}
+		local mt = {__index = function() return "intercepted" end}
+		debug.setmetatable(t, mt)
+		assert(t.anything == "intercepted", "Failed to intercept with new metatable")
+	end,
+	DebugGetFenv = function()
+		local function test() end
+		local env = debug.getfenv(test)
+		assert(type(env) == "table" and env._G == getgenv(), "Failed to retrieve function environment")
+	end,
+
+	--
+	InputTests = function()
+		for i = 1, 5 do
+			mousemoveabs(100 + i * 50, 100 + math.sin(i) * 30)
+			task.wait(0.1)
+		end
+
+
+		mouse1click()
+		mouse2click()
+		mouse1press()
+		task.wait(0.1)
+		mouse1release()
+
+
+		keypress(0x11)
+		keypress(0x41)
+		task.wait(0.1)
+		keyrelease(0x11)
+		keyrelease(0x41)
+	end,
+	GetConnections = function()
+		local part = Instance.new("Part")
+		local connections = getconnections(part.Changed)
+		for _, connection in ipairs(connections) do
+			connection:Enable()
+			connection:Fire()
+			connection:Disable() 
+		end
+		return #connections
+	end,
+	FireSignal = function()
+		local bindableEvent = Instance.new("BindableEvent")
+		local triggered = false
+		bindableEvent.Event:Connect(function(data)
+			triggered = data.test == "success"
+		end)
+		firesignal(bindableEvent.Event, {test = "success"})
+		return triggered
+	end,
+	FireClickDetector = function()
+		local clickDetector = Instance.new("ClickDetector")
+		local part = Instance.new("Part")
+		clickDetector.Parent = part
+		local clicked = false
+		clickDetector.MouseClick:Connect(function()
+			clicked = true
+		end)
+		fireclickdetector(clickDetector, 10)
+		return clicked
+	end,
+	FireProximityPrompt = function()
+		local prompt = Instance.new("ProximityPrompt")
+		prompt.ActionText = "Test Action"
+		prompt.ObjectText = "Test Object"
+		prompt.KeyboardKeyCode = Enum.KeyCode.E
+		prompt.RequiresLineOfSight = false
+		prompt.MaxActivationDistance = 10
+
+		local triggered = false
+		prompt.Triggered:Connect(function()
+			triggered = true
+		end)
+		fireproximityprompt(prompt)
+		return triggered
+	end,
+	FireTouchInterest = function()
+		local part1 = Instance.new("Part")
+		local part2 = Instance.new("Part")
+		local touched = false
+		part1.Touched:Connect(function(hit)
+			if hit == part2 then
+				touched = true
+			end
+		end)
+		firetouchinterest(part1, part2, 0)
+		task.wait(0.1)
+		firetouchinterest(part1, part2, 1)
+		return touched
+	end,
+	FileFunctions = function()
+
+		local function try(func, description)
+			local success, result = pcall(func)
+		end
+
+		try(function() makefolder("testRoot") end, "Create folder testRoot")
+		try(function() makefolder("testRoot/subFolder") end, "Create subfolder testRoot/subFolder")
+
+		local testData = {
+			timestamp = os.time(),
+			array = {1,2,3},
+			nested = {key = "value"},
+		}
+
+		local jsonData = HttpService:JSONEncode(testData)
+
+		try(function() writefile("testRoot/data.json", jsonData) end, "Write JSON data to file")
+
+		try(function()
+			for i = 1, 3 do
+				appendfile("testRoot/log.txt", string.format("[%s] Log entry %d\n", os.date(), i))
+			end
+		end, "Append multiple log entries")
+
+		try(function()
+			local readJson = HttpService:JSONDecode(readfile("testRoot/data.json"))
+			assert(readJson.timestamp == testData.timestamp, "Timestamp mismatch in read JSON")
+		end, "Read and verify JSON data")
+
+		try(function()
+			local files = listfiles("testRoot")
+			assert(#files >= 2, "Expected at least 2 files in testRoot")
+		end, "List files and verify count")
+
+		try(function()
+			writefile("testRoot/script.lua", [[
+			return function(x) return x * 2 end
+		]])
+		end, "Write test Lua script")
+
+		try(function()
+			local fn = loadfile("testRoot/script.lua")()
+			assert(fn(5) == 10, "Lua script did not return expected result")
+		end, "Load and run Lua script")
+
+		try(function() delfile("testRoot/data.json") end, "Delete data.json")
+		try(function() delfile("testRoot/log.txt") end, "Delete log.txt")
+		try(function() delfile("testRoot/script.lua") end, "Delete script.lua")
+		try(function() delfolder("testRoot/subFolder") end, "Delete subFolder")
+		try(function() delfolder("testRoot") end, "Delete root folder")
+
+		return true
+	end,
+	LineDrawing = function()
+		local line = Drawing.new("Line")
+		line.Visible = true
+		line.From = Vector2.new(100, 100)
+		line.To = Vector2.new(300, 300)
+		line.Color = Color3.fromRGB(255, 0, 0)
+		line.Thickness = 2
+		line.Transparency = 0.5
+		return line.From.X == 100 and line.To.Y == 300
+	end,
+	DrawingCircle = function()
+		local circle = Drawing.new("Circle")
+		circle.Visible = true
+		circle.Position = Vector2.new(200, 200)
+		circle.Radius = 50
+		circle.Color = Color3.fromHSV(0, 1, 1)
+		circle.NumSides = 32
+		circle.Filled = true
+
+		for i = 1, 10 do
+			circle.Radius = 50 + math.sin(i) * 10
+			task.wait(0.1)
+		end
+		return circle.NumSides == 32
+	end,
+	setscriptable = function()
+		local fire = Instance.new("Fire")
+
+		local wasScriptable = setscriptable(fire, "size_xml", true)
+		assert(wasScriptable == false, "Expected setscriptable to return false for non-scriptable 'size_xml'")
+
+		local success = isscriptable(fire, "size_xml")
+		assert(success == true, "Failed to set 'size_xml' as scriptable after setscriptable call")
+
+		local newFire = Instance.new("Fire")
+		assert(isscriptable(newFire, "size_xml") == false, "Scriptability incorrectly persisted between separate instances")
+	end,
+
+	isscriptable = function()
+		local fire = Instance.new("Fire")
+
+		assert(isscriptable(fire, "size_xml") == false, "'size_xml' incorrectly detected as scriptable")
+		assert(isscriptable(fire, "Size") == true, "'Size' not detected as scriptable")
+	end,
+	getnilinstances = function()
+		local nilInstances = getnilinstances()
+
+		assert(typeof(nilInstances) == "table", "getnilinstances did not return a table")
+		assert(#nilInstances > 0, "No nil instances found (might be normal, but suspicious for test)")
+		assert(nilInstances[1]:IsA("Instance"), "First element is not an Instance")
+		assert(nilInstances[1].Parent == nil, "First instance's Parent is not nil")
+	end,
+
+	getinstances = function()
+		local instances = getinstances()
+
+		assert(typeof(instances) == "table", "getinstances did not return a table")
+		assert(#instances > 0, "No instances returned")
+		assert(instances[1]:IsA("Instance"), "First element is not an Instance")
+	end,
+
+	Gethui = function()
+		local hui = gethui()
+
+		assert(typeof(hui) == "Instance", "gethui did not return an Instance")
+		assert(hui:IsA("ScreenGui") or hui:IsA("GuiBase2d") or hui:IsA("Folder"),
+			"gethui returned an unexpected instance type: " .. hui.ClassName)
+	end,
+
+	SetHiddenproperty = function()
+		local fire = Instance.new("Fire")
+
+		local success = sethiddenproperty(fire, "size_xml", 10)
+		assert(success == true, "Failed to set hidden property 'size_xml'")
+
+		local value = gethiddenproperty(fire, "size_xml")
+		assert(value == 10, "Hidden property 'size_xml' not set correctly (expected 10, got " .. tostring(value) .. ")")
+	end,
+
+	GetHiddenproperty = function()
+		local fire = Instance.new("Fire")
+
+		sethiddenproperty(fire, "size_xml", 5)
+
+		local value = gethiddenproperty(fire, "size_xml")
+
+		assert(value == 5, "Hidden property value mismatch: expected 5, got " .. tostring(value))
+	end, 
+}
+
+local function runTestWithTimeout(funcName)
+	updateTestLabel(funcName, "running")
+	totalTests += 1
+
+	local testFunc = TestFunctions[funcName]
+	if not testFunc then
+		warn("Function not found: " .. funcName)
+		undefinedAliases[#undefinedAliases + 1] = funcName
+		failedDetails[funcName] = "undefined"
+		missingTests += 1
+		updateTestLabel(funcName, "failed")
+		failedTests += 1
+		return
+	end
+
+	local success = false
+	local finished = false
+
+	local co = coroutine.create(function()
+		local ok, result = pcall(testFunc)
+		success = ok
+		if not ok then
+			failedDetails[funcName] = result
+		end
+		finished = true
+	end)
+
+
+	coroutine.resume(co)
+
+	local timeout = 0
+	while not finished and timeout < 8 do
+		task.wait(0.1)
+		timeout += 0.1
+	end
+
+	task.wait(0.5)
+
+	if not finished then
+		updateTestLabel(funcName, "failed")
+		failedDetails[funcName] = "timeout"
+		failedTests += 1
+		addResultLabel(funcName,"Warning")
+	elseif success then
+		passedTests += 1
+		PassedDetails = funcName
+		updateTestLabel(funcName, "done")
+		addResultLabel(funcName,"Passed")
+	else
+		failedTests += 1
+		updateTestLabel(funcName, "failed")
+		addResultLabel(funcName,"Error")
+	end
+
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+local function runTestsSequentially()
+	for _, funcName in ipairs(Funcs) do
+		createTestLabel(funcName)
+	end
+
+	task.spawn(function()
+		for _, funcName in ipairs(Funcs) do
+			runTestWithTimeout(funcName)
+		end
+
+		local finishLabel = Instance.new("TextLabel")
+		finishLabel.Name = "FinishLabel"
+		finishLabel.Parent = DynamicUnc20.Finishing
+		finishLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		finishLabel.BackgroundTransparency = 1
+		finishLabel.BorderSizePixel = 0
+		finishLabel.LayoutOrder = 9999
+		finishLabel.Size = UDim2.new(1, 0, 0, 0)
+		finishLabel.FontFace = Font.new("rbxasset://fonts/families/Montserrat.json", Enum.FontWeight.SemiBold, Enum.FontStyle.Normal)
+
+		finishLabel.Text = "Finishing up"
+		finishLabel.RichText = true
+		finishLabel.TextSize = 16
+		finishLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+		finishLabel.TextTransparency = 0.5
+		finishLabel.TextXAlignment = Enum.TextXAlignment.Left
+		finishLabel.AutomaticSize = Enum.AutomaticSize.XY
+		task.wait(1)
+		tween_service:Create(finishLabel, info, {TextTransparency = 0}):Play()
+		task.wait(2)
+		finishLabel.Text = "<s>Finishing up</s> <font color=\"#00ff00\" size=\"20\" weight=\"bold\"></font>"
+		task.wait(5)
+		tween_service:Create(DynamicUnc20.MainFrame_2, info, {GroupTransparency = 1}):Play()
+		task.wait(0.8)
+		DynamicUnc20.CheckFrame.Visible=false
+		DynamicUnc20.ResultsFrame.Visible=true
+		tween_service:Create(DynamicUnc20.MainFrame_5, info, {GroupTransparency = 0}):Play()
+		--
+		local rate = math.round(passedTests / (passedTests + failedTests) * 100)
+		local outOf = passedTests .. " out of " .. (passedTests + failedTests)
+
+		print("✓ Tested with a " .. rate .. "% success rate (" .. outOf .. ") | ❌ " .. failedTests .. " tests failed | ⚠ " .. missingTests .. " missing")
+	end)
+end
+
+
+DynamicUnc20.ButtonA.MouseButton1Click:Connect(function()
+	tween_service:Create(DynamicUnc20.CanvasGroup, info, {GroupTransparency = 1,BackgroundTransparency = 1}):Play()
+	task.wait(0.8)
+	DynamicUnc20.CanvasGroup.Visible=false
+	DynamicUnc20.BootingUp.Visible=true
+	tween_service:Create(DynamicUnc20.MainFrame_4, info, {GroupTransparency = 0,BackgroundTransparency = 0}):Play()
+	tween_service:Create(DynamicUnc20.T1_2, loop, {Rotation = -360}):Play()
+	tween_service:Create(DynamicUnc20.T2_2, loop, {Rotation = 360}):Play()
+	tween_service:Create(DynamicUnc20.T3_2, loop, {Rotation = -360}):Play()
+	task.wait(3)
+	tween_service:Create(DynamicUnc20.MainFrame_4, info, {GroupTransparency = 1,BackgroundTransparency = 1}):Play()
+	task.wait(0.8)
+	DynamicUnc20.BootingUp.Visible=false
+	DynamicUnc20.CheckFrame.Visible=true
+	tween_service:Create(DynamicUnc20.MainFrame_2, info, {GroupTransparency = 0,BackgroundTransparency = 0}):Play()
+	task.wait(1)
+	runTestsSequentially()
+end)
+
+DynamicUnc20.ButtonB.MouseButton1Click:Connect(function()
+	tween_service:Create(DynamicUnc20.CanvasGroup, info, {GroupTransparency = 1,BackgroundTransparency = 1}):Play()
+	task.wait(2)
+	DynamicUnc20.DynamicUnc20:Destroy()
+end)
+
+DynamicUnc20.Button.MouseButton1Click:Connect(function()
+	tween_service:Create(DynamicUnc20.MainFrame_5, info, {GroupTransparency = 1,BackgroundTransparency = 1}):Play()
+	task.wait(0.8)
+
+	DynamicUnc20.ResultsFrame.Visible = false
+	DynamicUnc20.CheckFrame.Visible = true
+	tween_service:Create(DynamicUnc20.MainFrame_2, info, {GroupTransparency = 0,BackgroundTransparency = 0}):Play()
+
+	totalTests = 0
+	passedTests = 0
+	failedTests = 0
+	missingTests = 0
+
+	table.clear(labels)
+	table.clear(failedDetails)
+	PassedDetails = {}
+	table.clear(undefinedAliases)
+	for _, child in ipairs(DynamicUnc20.ScrollingFrame_2:GetChildren()) do
+		if child:IsA("TextLabel") and child.Name ~= "Title" and child.Name ~= "Status" then
+			child:Destroy()
+		end
+	end
+
+	for _, child in ipairs(DynamicUnc20.ScrollingFrame_3:GetChildren()) do
+		if child:IsA("Frame") and child.Name == "ResultFrame" then
+			child:Destroy()
+		end
+	end
+
+	task.wait(1)
+	runTestsSequentially()
+end)
+
+
+--License (removed will be added soon)
+
+DynamicUnc20.TextButton.MouseButton1Click:Connect(function()
+	if DynamicUnc20.TextButton.Text=="✓" then
+		DynamicUnc20.TextButton.Text=""
+		tween_service:Create(DynamicUnc20.Next, info, {BackgroundTransparency = 0.5}):Play()
+		tween_service:Create(DynamicUnc20.TextButton, info, {BackgroundTransparency = 1}):Play()
+	else
+		DynamicUnc20.TextButton.Text="✓" 
+		tween_service:Create(DynamicUnc20.Next, info, {BackgroundTransparency = 0}):Play()
+		tween_service:Create(DynamicUnc20.TextButton, info, {BackgroundTransparency = 0}):Play()
+	end
+end)
+
+DynamicUnc20.Next.MouseButton1Click:Connect(function()
+	if DynamicUnc20.TextButton.Text=="✓" then
+		tween_service:Create(DynamicUnc20.MainFrame, info, {GroupTransparency = 1,BackgroundTransparency = 1}):Play()
+		task.wait(0.8)
+		DynamicUnc20.License.Visible=false
+		DynamicUnc20.CheckFrame.Visible=true
+		tween_service:Create(DynamicUnc20.MainFrame_2, info, {GroupTransparency = 0,BackgroundTransparency = 0}):Play()
+		task.wait(1)
+		runTestsSequentially()
+	end
+end)
+
+DynamicUnc20.Next_2.MouseButton1Click:Connect(function()
+	tween_service:Create(DynamicUnc20.MainFrame_5, info, {GroupTransparency = 1,BackgroundTransparency = 1}):Play()
+	task.wait(0.8)
+	DynamicUnc20.ResultsFrame.Visible=false
+	DynamicUnc20.GettingReadyFrame.Visible=true
+	tween_service:Create(DynamicUnc20.MainFrame_3, info, {GroupTransparency = 0,BackgroundTransparency = 0}):Play()
+	tween_service:Create(DynamicUnc20.T2, loop, {Rotation = -180}):Play()
+	tween_service:Create(DynamicUnc20.T1, loop, {Rotation = 175}):Play()
+	tween_service:Create(DynamicUnc20.T3, loop, {Rotation = -180}):Play()
+	task.wait(7)
+	tween_service:Create(DynamicUnc20.MainFrame_3, info, {GroupTransparency = 1,BackgroundTransparency = 1}):Play()
+	task.wait(0.8)
+	DynamicUnc20.GettingReadyFrame.Visible=false
+end)
+
+DynamicUnc20.Close.MouseButton1Click:Connect(function()
+	DynamicUnc20.DynamicUnc20:Destroy()
+end)
+
+DynamicUnc20.Close.MouseEnter:Connect(function()
+	tween_service:Create(DynamicUnc20.Close, quick, {BackgroundTransparency = 0}):Play()
+end)
+
+DynamicUnc20.Close.MouseLeave:Connect(function()
+	tween_service:Create(DynamicUnc20.Close, quick, {BackgroundTransparency = 1}):Play()
+end)
+
+DynamicUnc20.Close_2.MouseButton1Click:Connect(function()
+	DynamicUnc20.DynamicUnc20:Destroy()
+end)
+
+DynamicUnc20.Close_2.MouseEnter:Connect(function()
+	tween_service:Create(DynamicUnc20.Close_2, quick, {BackgroundTransparency = 0}):Play()
+end)
+
+DynamicUnc20.Close_2.MouseLeave:Connect(function()
+	tween_service:Create(DynamicUnc20.Close_2, quick, {BackgroundTransparency = 1}):Play()
+end)
+
+DynamicUnc20.Close_3.MouseButton1Click:Connect(function()
+	DynamicUnc20.DynamicUnc20:Destroy()
+end)
+
+DynamicUnc20.Close_3.MouseEnter:Connect(function()
+	tween_service:Create(DynamicUnc20.Close_3, quick, {BackgroundTransparency = 0}):Play()
+end)
+
+DynamicUnc20.Close_3.MouseLeave:Connect(function()
+	tween_service:Create(DynamicUnc20.Close_3, quick, {BackgroundTransparency = 1}):Play()
+end)
+
+DynamicUnc20.Close_4.MouseButton1Click:Connect(function()
+	DynamicUnc20.DynamicUnc20:Destroy()
+end)
+
+DynamicUnc20.Close_4.MouseEnter:Connect(function()
+	tween_service:Create(DynamicUnc20.Close_4, quick, {BackgroundTransparency = 0}):Play()
+end)
+
+DynamicUnc20.Close_4.MouseLeave:Connect(function()
+	tween_service:Create(DynamicUnc20.Close_4, quick, {BackgroundTransparency = 1}):Play()
+end)
+
+DynamicUnc20.Close_5.MouseButton1Click:Connect(function()
+	DynamicUnc20.DynamicUnc20:Destroy()
+end)
+
+DynamicUnc20.Close_5.MouseEnter:Connect(function()
+	tween_service:Create(DynamicUnc20.Close_5, quick, {BackgroundTransparency = 0}):Play()
+end)
+
+DynamicUnc20.Close_5.MouseLeave:Connect(function()
+	tween_service:Create(DynamicUnc20.Close_5, quick, {BackgroundTransparency = 1}):Play()
+end)
+
+runService.RenderStepped:Connect(function()
+	local mousePos = UserInputService:GetMouseLocation()
+	if DynamicUnc20.DynamicUnc20:FindFirstChild("HoverInfo") then
+		DynamicUnc20.HoverInfo.Position = UDim2.fromOffset(mousePos.X + 2, mousePos.Y + 35)
+	end
+end)
+
+local function dragUI(frame)
+	local dragging = false
+	local dragStart = Vector2.new(0, 0)
+	local startPos = UDim2.new()
+	local delta = Vector2.new()
+	local connection
+
+	frame.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 then
+			dragging = true
+			dragStart = Vector2.new(input.Position.X, input.Position.Y)
+			startPos = frame.Position
+
+			if connection then connection:Disconnect() end
+			connection = runService.RenderStepped:Connect(function()
+				if dragging then
+					local currentPos = UserInputService:GetMouseLocation()
+					delta = currentPos - dragStart
+					local newX = startPos.X.Offset + delta.X
+					local newPosition = UDim2.new(
+						startPos.X.Scale,
+						startPos.X.Offset + delta.X,
+						startPos.Y.Scale,
+						startPos.Y.Offset + delta.Y
+					)
+					frame.Position = frame.Position:Lerp(newPosition, 0.1)
+
+					local camera = workspace.CurrentCamera
+					local screenSize = camera.ViewportSize
+					local leftBoundary = screenSize.X * 0.005
+					local rightBoundary = screenSize.X * 0.50
+
+					local frameOffsetX = newPosition.X.Offset
+				end
+			end)
+
+			local function stopDrag()
+				if dragging then
+					dragging = false
+					if connection then
+						connection:Disconnect()
+						connection = nil
+					end
+				end
+			end
+
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					stopDrag()
+				end
+			end)
+
+			frame.InputEnded:Connect(function(endInput)
+				if endInput.UserInputType == Enum.UserInputType.MouseButton1 then
+					stopDrag()
+				end
+			end)
+		end
+	end)
+end
+
+dragUI(DynamicUnc20.CanvasGroup)
+dragUI(DynamicUnc20.BootingUp)
+dragUI(DynamicUnc20.CheckFrame)
+dragUI(DynamicUnc20.ResultsFrame)
+                       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+dragUI(DynamicUnc20.GettingReadyFrame)
