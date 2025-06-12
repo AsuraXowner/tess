@@ -13850,7 +13850,7 @@ local function SaveResults()
 		missingStr,
 		"",
 		("Rate: %d%% (%s)"):format(rate, outOf),
-		("Failures: %d\nMissing: %d"):format(failedTests, missingTests or 0),
+		("Failed: %d\nMissing: %d"):format(failedTests, missingTests or 0),
 		("Executor: %s"):format(tostring(execName)),
 	}, "\n")
 	writefile("DynamicUncResults/DynamicUncResult.lua", report)
