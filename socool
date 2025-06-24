@@ -1,0 +1,5079 @@
+--[[
+ .____                  ________ ___.    _____                           __                
+ |    |    __ _______   \_____  \\_ |___/ ____\_ __  ______ ____ _____ _/  |_  ___________ 
+ |    |   |  |  \__  \   /   |   \| __ \   __\  |  \/  ___// ___\\__  \\   __\/  _ \_  __ \
+ |    |___|  |  // __ \_/    |    \ \_\ \  | |  |  /\___ \\  \___ / __ \|  | (  <_> )  | \/
+ |_______ \____/(____  /\_______  /___  /__| |____//____  >\___  >____  /__|  \____/|__|   
+         \/          \/         \/    \/                \/     \/     \/                   
+          \_Welcome to LuaObfuscator.com   (Alpha 0.10.9) ~  Much Love, Ferib 
+
+]]--
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+return {
+	Print = function() 
+		if (isStudio) then
+			assert(isStudio, "Function Failed to test missing executorfunctions")
+		end
+		local testTable = {key = "value"}
+		local testFunc = function() return "func" end
+		print("PrintTestSomething >", 123, true, testTable, testFunc)
+	end,
+
+	Warn = function()
+		if (isStudio) then
+			assert(isStudio, "Function Failed to test missing executorfunctions")
+		end
+		local warningMessage = "⚠️ WarnTest"
+		local tb = debug.traceback(warningMessage, 2)
+		warn(tb)
+		assert(tb:find("WarnTest"), "Warning message didn't contain expected content")
+	end,
+
+	Type = function()
+		if (isStudio) then
+			assert(isStudio, "Function Failed to test missing executorfunctions")
+		end
+		assert(typeof("test") == "string", "Expected string")
+		assert(typeof(123) == "number", "Expected number")
+		assert(typeof(true) == "boolean", "Expected boolean")
+		assert(typeof({}) == "table", "Expected table")
+		assert(typeof(function() end) == "function", "Expected function")
+	end,
+
+	Loadstring = function()
+		local env = setmetatable({}, {__index = _G})
+		local code = "return function(x) return x * x end"
+		local loaded = assert(loadstring(code), "Failed to load string")
+		setfenv(loaded, env)
+		local func = loaded()
+		local result = func(6)
+		assert(result == 36, "Loadstring failed to compute square correctly")
+	end,
+
+	Assert = function()
+		if (isStudio) then
+			assert(isStudio, "Function Failed to test missing executorfunctions")
+		end
+		assert(type(1) == "number" and 1 > 0, "Assert test failed: number")
+		assert(type("Roblox") == "string" and #"Roblox" >= 6, "Assert test failed: string")
+		assert(type(true) == "boolean" and not not true, "Assert test failed: boolean")
+		assert(type({1, 2, 3}) == "table", "Assert test failed: table")
+		assert(type(function() end) == "function", "Assert test failed: function")
+	end,
+
+	ErrorHandling = function()
+		if (isStudio) then
+			assert(isStudio, "Function Failed to test missing executorfunctions")
+		end
+		local function throwError()
+			error({ code = 500, message = "Intentional error for test" })
+		end
+
+		local function errorHandler(err)
+			assert(typeof(err) == "table", "Error was not table")
+			assert(err.code == 500, "Error code mismatch")
+			assert(err.message == "Intentional error for test", "Error message mismatch")
+			return err
+		end
+
+		local success, caught = xpcall(throwError, errorHandler)
+		assert(not success, "Expected function to fail")
+		assert(caught.code == 500, "Failed to catch correct error")
+	end,
+
+	Getgenv = function()
+		local env = getgenv()
+		env.testVar = "test"
+		assert(env.testVar == "test", "Global environment variable not properly set")
+	end,
+	Getrenv = function()
+		local renv = getrenv()
+		assert(type(renv) == "table", "Expected environment to be a table")
+		assert(renv._G, "Expected environment to have _G global")
+	end,
+	Getsenv = function()
+		assert(type(getsenv) == "function", "Function is nil")
+		local animate = game:GetService("Players").LocalPlayer.Character.Animate
+		local env = getsenv(animate)
+		assert(type(env) == "table", "Did not return a table for Character.Animate (a " .. animate.ClassName .. ")")
+		assert(env.script == animate, "The script global is not identical to Character.Animate")
+	end,
+	SetFenv = function()
+		if (isStudio) then
+			assert(isStudio, "Function Failed to test missing executorfunctions")
+		end
+		assert(typeof(setfenv) == "function", "function is nil")
+		local newEnv = { print = print }
+		local testFunc = function()
+			print("ENV TEST")
+		end
+		setfenv(testFunc, newEnv)
+		local currentEnv = getfenv(testFunc)
+		assert(currentEnv == newEnv, "setfenv failed to apply the environment")
+	end,
+
+	GetFenv = function()
+		if (isStudio) then
+			assert(isStudio, "Function Failed to test missing executorfunctions")
+		end
+		assert(typeof(getfenv) == "function", "function is nil")
+		local env = getfenv(1)
+		assert(typeof(env) == "table", "getfenv did not return a valid table")
+		assert(env.script or env._G or env.print, "Environment table seems invalid (missing common keys)")
+	end,
+
+	CheckCaller = function()
+		local result = checkcaller()
+		assert(type(result) == "boolean", "Caller check should return a boolean")
+	end,
+	NewCClosure = function()
+		local wrapped = newcclosure(function(x) return x * 2 end)
+		assert(wrapped(5) == 10, "New C closure failed to return correct result")
+	end,
+	--LoadLibrary = function()
+	--	local util = loadlibrary("RbxUtility")
+	--	assert(type(util) == "userdata", "Expected loaded library to be userdata")
+	--	assert(type(util) == "function", "Function is nil")
+	--end,
+	--IsLuau = function()
+	--	local luauEnabled = isluau()
+	--	assert(type(luauEnabled) == "boolean", "Expected isluau() to return a boolean")
+	--	assert(type(luauEnabled) == "function", "Function is nil")
+	--end,
+	GetThreadIdentity = function()
+		assert(type(getthreadidentity) == "function", "Function is nil")
+		local identity = getthreadidentity()
+		assert(type(identity) == "number", "Expected thread identity to be a number")
+		assert(identity >= 0, "Expected thread identity to be non-negative")
+	end,
+	Setthreadidentity = function()
+		setthreadidentity(3)
+		assert(getthreadidentity() == 3, "Did not set the thread identity")
+	end,
+	GetRawMetatable = function()
+		local mt = getrawmetatable(game)
+		assert(type(mt) == "table", "Expected raw metatable to be a table")
+		assert(mt.__index, "Expected metatable to have __index")
+	end,
+	SetRawMetatable = function()
+		local tbl = {}
+		local mt = {
+			__index = function(t,k) return k.."_modified" end,
+			__newindex = function(t,k,v) rawset(t,k.."_protected",v) end
+		}
+		setrawmetatable(tbl, mt)
+		assert(tbl.test == "test_modified", "Failed to modify __index via raw metatable")
+	end,
+	HookFunction = function()
+		local function test()
+			return true
+		end
+		local ref = hookfunction(test, function()
+			return false
+		end)
+		assert(test() == false, "Function should return false")
+		assert(ref() == true, "Original function should return true")
+		assert(test ~= ref, "Original function should not be same as the reference")
+	end,
+	HookMetamethod = function()
+		local object = setmetatable({}, { __index = newcclosure(function() return false end), __metatable = "Locked!" })
+		local ref = hookmetamethod(object, "__index", function() return true end)
+		assert(object.test == true, "Failed to hook a metamethod and change the return value")
+		assert(ref() == false, "Did not return the original function")
+	end,
+	GetNamecallMethod = function()
+		local method
+		local ref
+		ref = hookmetamethod(game, "__namecall", function(...)
+			if not method then
+				method = getnamecallmethod()
+			end
+			return ref(...)
+		end)
+		game:GetService("Lighting")
+		assert(method == "GetService", "Did not get the correct method (GetService)")
+	end,
+	SetNamecallMethod = function()
+		setnamecallmethod("FireServer")
+		assert(getnamecallmethod() == "FireServer", "Failed to set namecall method correctly")
+	end,
+	Getgc = function()
+		local gc = getgc(true)
+		assert(type(gc) == "table", "Expected garbage collector list to be a table")
+		assert(#gc > 0, "Expected at least one object in garbage collector list")
+	end,
+	GetRegistry = function()
+		local reg = getreg()
+		assert(type(reg) == "table", "Expected registry to be a table")
+		assert(#reg > 0, "Expected non-empty registry")
+	end,
+	GetConstants = function()
+		local function test()
+			print("Hello, world!")
+		end
+		assert(debug.getconstant(test, 1) == "print", "First constant must be print")
+		assert(debug.getconstant(test, 2) == nil, "Second constant must be nil")
+		assert(debug.getconstant(test, 3) == "Hello, world!", "Third constant must be 'Hello, world!'")
+	end,
+	GetUpvalues = function()
+		local secret1 = "foo"
+		local secret2 = "bar"
+		local function multi()
+			return secret1, secret2
+		end
+		local ups = debug.getupvalues(multi)
+		assert(type(ups) == "table", "Expected table from getupvalues")
+		assert(ups[1] == secret1, "Expected first upvalue 'foo', got "..tostring(ups[1]))
+		assert(ups[2] == secret2, "Expected second upvalue 'bar', got "..tostring(ups[2]))
+	end,
+	HTTP = function()
+		local response = game:HttpGet("https://api.github.com/users/github")
+		local success = response:find("login") ~= nil
+
+		local postResponse = request({
+			Url = "https://httpbin.org/post",
+			Method = "POST",
+			Headers = {
+				["Content-Type"] = "application/json"
+			},
+			Body = game:GetService("HttpService"):JSONEncode({
+				test = "data",
+				number = 123
+			})
+		})
+		assert(success and postResponse.Success, "HTTP request or POST failed")
+	end,
+	WebSocketHandler = function()
+		local types = {
+			Send = "function",
+			Close = "function",
+			OnMessage = {"table", "userdata"},
+			OnClose = {"table", "userdata"},
+		}
+		local ws = WebSocket.connect("ws://echo.websocket.events")
+		assert(type(ws) == "table" or type(ws) == "userdata", "Did not return a table or userdata")
+		for k, v in pairs(types) do
+			if type(v) == "table" then
+				assert(table.find(v, type(ws[k])), "Did not return a " .. table.concat(v, ", ") .. " for " .. k .. " (a " .. type(ws[k]) .. ")")
+			else
+				assert(type(ws[k]) == v, "Did not return a " .. v .. " for " .. k .. " (a " .. type(ws[k]) .. ")")
+			end
+		end
+		ws:Close()
+	end,
+	--[[TeleportHandler = function()
+		local teleportData = "Testing234"
+
+		queue_on_teleport(([[
+		print("Teleported with data: %s")
+	):format(teleportData))
+
+		local placeId = 73391847958595
+		local service = game:GetService("TeleportService")
+		service:Teleport(placeId, game.Players.LocalPlayer)
+	end,--]]
+	DebugInfo = function()
+		local types = {
+			source = "string",
+			short_src = "string",
+			func = "function",
+			what = "string",
+			currentline = "number",
+			name = "string",
+			nups = "number",
+			numparams = "number",
+			is_vararg = "number",
+		}
+		local function test(...)
+			print(...)
+		end
+		local info = debug.getinfo(test)
+		for k, v in pairs(types) do
+			assert(info[k] ~= nil, "Did not return a table with a '" .. k .. "' field")
+			assert(type(info[k]) == v, "Did not return a table with " .. k .. " as a " .. v .. " (got " .. type(info[k]) .. ")")
+		end
+	end,
+	DebugGetUpvalue = function()
+		local upvalue = function() end
+		local function test()
+			print(upvalue)
+		end
+		assert(debug.getupvalue(test, 1) == upvalue, "Unexpected value returned from debug.getupvalue")
+	end,
+	DebugSetUpvalue = function()
+		local function upvalue()
+			return "fail"
+		end
+		local function test()
+			return upvalue()
+		end
+		debug.setupvalue(test, 1, function()
+			return "success"
+		end)
+		assert(test() == "success", "debug.setupvalue did not set the first upvalue")
+	end,
+	DebugGetProtos = function()
+		local function test()
+			local function inner1() end
+			local function inner2() end
+			return inner1, inner2
+		end
+		local protos = debug.getprotos(test)
+		assert(#protos == 2, "Expected exactly 2 prototypes")
+	end,
+	DebugGetStack = function()
+		local function deep3() return debug.getstack(3) end
+		local function deep2() return deep3() end
+		local function deep1() return deep2() end
+		local stack = deep1()
+		assert(type(stack) == "table", "Expected debug stack to return a table")
+	end,
+	DebugGetMetatable = function()
+		local t = setmetatable({}, {__index = function() return true end})
+		local mt = debug.getmetatable(t)
+		assert(type(mt.__index) == "function", "Expected metatable __index to be a function")
+		assert(mt, "Function missing or returned false")
+	end,
+	DebugSetMetatable = function()
+		local t = {}
+		local mt = {__index = function() return "intercepted" end}
+		debug.setmetatable(t, mt)
+		assert(t.anything == "intercepted", "Failed to intercept with new metatable")
+		assert(t, "Function missing or returned false")
+	end,
+
+	--
+	InputTests = function()
+		for i = 1, 5 do
+			mousemoveabs(100 + i * 50, 100 + math.sin(i) * 30)
+			task.wait(0.1)
+		end
+
+
+		mouse1click()
+		mouse2click()
+		mouse1press()
+		task.wait(0.1)
+		mouse1release()
+
+
+		keypress(0x11)
+		keypress(0x41)
+		task.wait(0.1)
+		keyrelease(0x11)
+		keyrelease(0x41)
+	end,
+	GetConnections = function()
+		local part = Instance.new("Part")
+		local connections = getconnections(part.Changed)
+		for _, connection in ipairs(connections) do
+			connection:Enable()
+			connection:Fire()
+			connection:Disable() 
+		end
+		return #connections
+	end,
+	FireSignal = function()
+		assert(typeof(firesignal) == "function", "Function is nil")
+
+		local bindableEvent = Instance.new("BindableEvent")
+		local triggered = false
+
+		bindableEvent.Event:Connect(function(data)
+			triggered = data.test == "success"
+		end)
+
+		firesignal(bindableEvent.Event, {test = "success"})
+
+		assert(triggered, "firesignal did not properly trigger the event")
+	end,
+	FireClickDetector = function()
+		assert(typeof(fireclickdetector) == "function", "fireclickdetector not available")
+
+		local clickDetector = Instance.new("ClickDetector")
+		local part = Instance.new("Part")
+		clickDetector.Parent = part
+
+		local clicked = false
+		clickDetector.MouseClick:Connect(function()
+			clicked = true
+		end)
+
+		fireclickdetector(clickDetector, 10)
+	end,
+
+	FireProximityPrompt = function()
+		assert(typeof(fireproximityprompt) == "function", "fireproximityprompt not available")
+
+		local prompt = Instance.new("ProximityPrompt")
+		prompt.ActionText = "Test Action"
+		prompt.ObjectText = "Test Object"
+		prompt.KeyboardKeyCode = Enum.KeyCode.E
+		prompt.RequiresLineOfSight = false
+		prompt.MaxActivationDistance = 10
+		prompt.Parent = workspace
+
+		local triggered = false
+		prompt.Triggered:Connect(function()
+			triggered = true
+		end)
+
+		fireproximityprompt(prompt)
+	end,
+	FireTouchInterest = function()
+		assert(typeof(firetouchinterest) == "function", "firetouchinterest not available")
+
+		local part1 = Instance.new("Part")
+		local part2 = Instance.new("Part")
+		part1.Anchored = true
+		part2.Anchored = true
+		part1.Position = Vector3.new(0, 5, 0)
+		part2.Position = Vector3.new(0, 5, 0)
+		part1.Size = Vector3.new(4, 1, 4)
+		part2.Size = Vector3.new(4, 1, 4)
+		part1.Parent = workspace
+		part2.Parent = workspace
+
+		local touched = false
+		part1.Touched:Connect(function(hit)
+			if hit == part2 then
+				touched = true
+			end
+		end)
+
+		firetouchinterest(part1, part2, 0)
+		task.wait(0.1)
+		firetouchinterest(part1, part2, 1)
+
+		part1:Destroy()
+		part2:Destroy()
+	end,
+	FileFunctions = function()
+		makefolder("testRoot")
+		makefolder("testRoot/subFolder")
+
+		local testData = {
+			timestamp = os.time(),
+			array = {1, 2, 3},
+			nested = { key = "value" },
+		}
+
+		local jsonData = HttpService:JSONEncode(testData)
+		writefile("testRoot/data.json", jsonData)
+		writefile("testRoot/log.txt", string.format("[%s] Log entry", os.date()))
+
+		for i = 1, 3 do
+			appendfile("testRoot/log.txt", string.format("[%s] Log entry %d\n", os.date(), i))
+		end
+
+		local readJson = HttpService:JSONDecode(readfile("testRoot/data.json"))
+		assert(readJson.timestamp == testData.timestamp, "Timestamp mismatch in read JSON")
+
+		local files = listfiles("testRoot")
+		assert(#files >= 2, "Expected at least 2 files in testRoot")
+
+		writefile("testRoot/script.lua", [[
+		return function(x) return x * 2 end
+	]])
+
+		local fn = loadfile("testRoot/script.lua")()
+		assert(fn(5) == 10, "Lua script did not return expected result")
+
+		delfile("testRoot/data.json")
+		delfile("testRoot/log.txt")
+		delfile("testRoot/script.lua")
+		delfolder("testRoot/subFolder")
+		delfolder("testRoot")
+	end,
+	LineDrawing = function()
+		local line = Drawing.new("Line")
+		line.Visible = true
+		line.From = Vector2.new(100, 100)
+		line.To = Vector2.new(300, 300)
+		line.Color = Color3.fromRGB(255, 0, 0)
+		line.Thickness = 2
+		line.Transparency = 0.5
+		return line.From.X == 100 and line.To.Y == 300
+	end,
+	DrawingCircle = function()
+		local circle = Drawing.new("Circle")
+		circle.Visible = true
+		circle.Position = Vector2.new(200, 200)
+		circle.Radius = 50
+		circle.Color = Color3.fromHSV(0, 1, 1)
+		circle.NumSides = 32
+		circle.Filled = true
+
+		for i = 1, 10 do
+			circle.Radius = 50 + math.sin(i) * 10
+			task.wait(0.1)
+		end
+		return circle.NumSides == 32
+	end,
+	setscriptable = function()
+		assert(typeof(setscriptable) == "function", "Function is nil")
+		assert(typeof(isscriptable) == "function", "isscriptable is required inorder to test setscriptable")
+
+		local inst = Instance.new("Fire")
+		local prop = "size_xml"
+
+		local initiallyScriptable = isscriptable(inst, prop)
+		assert(initiallyScriptable == false, ("Property '%s' should not be scriptable initially"):format(prop))
+
+		local result = setscriptable(inst, prop, true)
+		assert(result == false or result == true, "Expected boolean return")
+		assert(isscriptable(inst, prop) == true, ("Property '%s' was not made scriptable"):format(prop))
+
+		local fresh = Instance.new("Fire")
+		assert(isscriptable(fresh, prop) == false, "Scriptability persisted unexpectedly to another instance")
+
+		setscriptable(inst, prop, false)
+		assert(isscriptable(inst, prop) == false, "Failed to revert scriptability to false")
+
+		assert(isscriptable(inst, "Size") == true, "Known property 'Size' should always be scriptable")
+	end,
+
+	isscriptable = function()
+		assert(typeof(isscriptable) == "function", "Function is nil")
+
+		local inst = Instance.new("Fire")
+
+		assert(isscriptable(inst, "size_xml") == false, "False positive: 'size_xml' should not be scriptable")
+
+		assert(isscriptable(inst, "Size") == true, "False negative: 'Size' should be scriptable")
+	end,
+
+	--[[getscriptable = function()--sucks
+			assert(typeof(isscriptable) == "function", "isscriptable is required in order to test getscriptable")
+			assert(typeof(getscriptable) == "function", "getscriptable must be a function")
+
+			local inst = Instance.new("Fire")
+			local results = getscriptable(inst)
+
+			assert(typeof(results) == "table", "Did not return a table")
+			assert(#results > 0, "Returned empty scriptable list")
+
+			assert(table.find(results, "Size"), "Missing known scriptable property 'Size'")
+			assert(not table.find(results, "size_xml"), "Invalid property 'size_xml' should not be included")
+
+			for _, prop in ipairs(results) do
+				assert(isscriptable(inst, prop), ("Property '%s' failed isscriptable verification"):format(prop))
+			end
+	end,--]]
+
+	getnilinstances = function()
+		local nilInstances = getnilinstances()
+
+		assert(typeof(nilInstances) == "table", "getnilinstances did not return a table")
+		assert(#nilInstances > 0, "No nil instances found (might be normal, but suspicious for test)")
+		assert(nilInstances[1]:IsA("Instance"), "First element is not an Instance")
+		assert(nilInstances[1].Parent == nil, "First instance's Parent is not nil")
+	end,
+
+	getinstances = function()
+		local instances = getinstances()
+
+		assert(typeof(instances) == "table", "getinstances did not return a table")
+		assert(#instances > 0, "No instances returned")
+		assert(instances[1]:IsA("Instance"), "First element is not an Instance")
+	end,
+
+	Gethui = function()
+		local hui = gethui()
+
+		assert(typeof(hui) == "Instance", "gethui did not return an Instance")
+		assert(hui:IsA("ScreenGui") or hui:IsA("GuiBase2d") or hui:IsA("Folder"),"gethui returned an unexpected instance type: " .. hui.ClassName)
+	end,
+
+	SetHiddenproperty = function()
+		local fire = Instance.new("Fire")
+
+		local success = sethiddenproperty(fire, "size_xml", 10)
+		assert(success == true, "Failed to set hidden property 'size_xml'")
+
+		local value = gethiddenproperty(fire, "size_xml")
+		assert(value == 10, "Hidden property 'size_xml' not set correctly (expected 10, got " .. tostring(value) .. ")")
+	end,
+
+	GetHiddenproperty = function()
+		local fire = Instance.new("Fire")
+
+		sethiddenproperty(fire, "size_xml", 5)
+
+		local value = gethiddenproperty(fire, "size_xml")
+
+		assert(value == 5, "Hidden property value mismatch: expected 5, got " .. tostring(value))
+	end,
+	isreadonly = function()
+		local object = {}
+		local success, err
+
+		if table.freeze then
+			table.freeze(object)
+		else
+			error("table.freeze not supported in this environment")
+		end
+
+		success, err = pcall(function()
+			object._test = "should fail"
+		end)
+
+		assert(not success, "Object accepted modification after freezing")
+		assert(isreadonly and isreadonly(object), "Function missing or returned false")
+	end,
+
+	setreadonly = function()
+			assert(typeof(setreadonly) == "function", "setreadonly not available")
+
+			local object = { _canWrite = false }
+
+			setreadonly(object, true)
+
+			local success = false
+			local message
+			-- Attempt to write to the table; this should fail and error.
+			local ok, err = pcall(function()
+				object._canWrite = true
+			end)
+			success, message = ok, err
+
+			assert(not success, "Table was still writable after setting to readonly")
+
+		setreadonly(object, false)
+		object._canWrite = true
+
+		assert(object._canWrite == true, "Unfreezing the table did not restore writability")
+	end,
+
+	cryptbase64encode = function()
+		local result = crypt.base64encode("test")
+		assert(result == "dGVzdA==", "Incorrect base64 encoding result: " .. tostring(result))
+		assert(crypt.base64decode(result) == "test", "Roundtrip decoding mismatch")
+	end,
+
+	cryptbase64decode = function()
+		local result = crypt.base64decode("dGVzdA==")
+		assert(result == "test", "Incorrect base64 decoding result: " .. tostring(result))
+	end,
+
+	cryptencrypt = function()
+		local key = crypt.generatekey()
+		assert(key, "Key generation failed")
+
+		local encrypted, iv = crypt.encrypt("test", key, nil, "CBC")
+		assert(encrypted and iv, "Encryption failed or IV missing")
+
+		local decrypted = crypt.decrypt(encrypted, key, iv, "CBC")
+		assert(decrypted == "test", "Decrypted result mismatch: " .. tostring(decrypted))
+	end,
+
+	cryptdecrypt = function()
+		local key, iv = crypt.generatekey(), crypt.generatekey()
+		assert(key and iv, "Key or IV generation failed")
+
+		local encrypted = crypt.encrypt("test", key, iv, "CBC")
+		assert(encrypted, "Encryption failed")
+
+		local decrypted = crypt.decrypt(encrypted, key, iv, "CBC")
+		assert(decrypted == "test", "Decryption result mismatch: " .. tostring(decrypted))
+	end,
+
+	cryptgeneratebytes = function()
+		local size = math.random(16, 64)
+		local encoded = crypt.generatebytes(size)
+		assert(type(encoded) == "string", "Output not a string")
+
+		local success, decoded = pcall(crypt.base64decode, encoded)
+		assert(success and type(decoded) == "string", "Decoding failed")
+		assert(#decoded == size, ("Expected %d bytes, got %d"):format(size, #decoded))
+	end,
+
+	cryptgeneratekey = function()
+		local key = crypt.generatekey()
+		assert(type(key) == "string", "Key is not a string")
+
+		local success, decoded = pcall(crypt.base64decode, key)
+		assert(success and #decoded == 32, "Key should decode to 32 bytes")
+	end,
+
+	crypthash = function()
+		assert(crypt and typeof(crypt.hash) == "function", "function is nil")
+		local test_input = "test"
+		local algorithms = {'sha1', 'sha384', 'sha512', 'md5', 'sha256', 'sha3-224', 'sha3-256', 'sha3-512'}
+		for _, algorithm in ipairs(algorithms) do
+			local hash = crypt.hash(test_input, algorithm)
+			assert(hash, "crypt.hash on algorithm '" .. algorithm .. "' should return a hash")
+		end
+	end,
+
+	SetClipboard = function()
+		assert(type(setclipboard) == "function") --or type(getclipboard) == "function", "setclipboard or getclipboard not available")
+
+		local testString = "ClipboardTest_" .. tostring(math.random(100000, 999999))
+
+		--local old = getclipboard and getclipboard() or ""
+
+		local success = pcall(function()
+			if setclipboard then
+				setclipboard(testString)
+			else
+				error("setclipboard not available")
+			end
+		end)
+
+		assert(success, "setclipboard failed to run")
+
+		--assert(type(getclipboard) == "function", "getclipboard required inorder to test setclipboard")
+		--local clipboardContent = getclipboard()
+		--assert(type(clipboardContent) == "string", "getclipboard did not return string")
+		--assert(clipboardContent == testString, ("Clipboard mismatch. Expected '%s', got '%s'"):format(testString, clipboardContent))
+
+		if old then
+			pcall(function() setclipboard(old) end)
+		end
+	end,
+
+	--[[GetClipboard = function()
+		assert(type(getclipboard) == "function", "getclipboard is nil")
+
+		local result = getclipboard()
+		assert(type(result) == "string", "Clipboard did not return a string")
+		assert(#result >= 0, "Clipboard content invalid or nil")
+	end,--]]
+	getscriptclosure = function()
+		assert(typeof(getscriptclosure) == "function", "function is nil")
+		local module = game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("Animate")
+		assert(module and (module:IsA("LocalScript") or module:IsA("ModuleScript")), "script not found or invalid")
+		local closure = getscriptclosure(module)
+		assert(typeof(closure) == "function", "Failed to retrieve valid closure from script")
+		return closure
+	end,
+	iscclosure = function()
+		assert(iscclosure(print) == true, "Roblox native function 'print' should be a C closure")
+		assert(iscclosure(function() end) == false, "Lua function misclassified as C closure")
+	end,
+	islclosure = function()
+		local f = function() end
+		assert(islclosure(f) == true, "Failed to detect basic Lua closure")
+		assert(islclosure(print) == false, "Roblox native function 'print' should not be a Lua closure")
+	end,
+	isexecutorclosure = function()
+		assert(isexecutorclosure(isexecutorclosure), "'isexecutorclosure' itself should return true")
+		assert(isexecutorclosure(newcclosure(function() end)) == true, "Executor C closure was not detected")
+		assert(isexecutorclosure(function() end) == true, "Executor Luau closure was not detected")
+		assert(isexecutorclosure(print) == false, "Roblox internal function incorrectly classified")
+	end,
+	isrenderobj = function()
+		local draw = Drawing.new("Text")
+		draw.Text = "Test"
+		draw.Visible = true
+		assert(isrenderobj(draw) == true, "Valid Drawing object not detected")
+		assert(isrenderobj({}) == false, "Plain table incorrectly detected as render object")
+	end,
+	getrenderproperty = function()
+		local draw = Drawing.new("Circle")
+		draw.Visible = true
+		local vis = getrenderproperty(draw, "Visible")
+		assert(type(vis) == "boolean", "Expected boolean from Visible property")
+		local success, result = pcall(function()
+			return getrenderproperty(draw, "Transparency")
+		end)
+		assert(success, "failed unexpectedly")
+		assert(type(result) == "number", "Expected number from Transparency property")
+	end,
+	setrenderproperty = function()
+		local draw = Drawing.new("Square")
+		setrenderproperty(draw, "Visible", false)
+		assert(draw.Visible == false, "did not update visibility")
+		setrenderproperty(draw, "Visible", true)
+	end,
+	cleardrawcache = function()
+		local test = Drawing.new("Text")
+		test.Text = "Test"
+		test.Visible = true
+		cleardrawcache()
+		assert(true, "cleardrawcache should not throw")
+	end,
+	getcustomasset = function()
+		-- Environment checks
+		assert(typeof(getcustomasset) == "function", "function is nil")
+		assert(typeof(writefile) == "function", "'writefile' is not available.")
+		assert(typeof(isfile) == "function", "'isfile' is not available.")
+		assert(typeof(game.HttpGet) == "function", "'HttpGet' is not supported.")
+		assert(crypt and typeof(crypt.base64decode) == "function", "'crypt.base64decode' not available")
+
+		local encoded = game:HttpGet("https://gitlab.com/sens3/nebunu/-/raw/main/encodedBytecode.txt")
+		assert(encoded and #encoded > 1000, "Encoded bytecode missing or corrupted.")
+
+		local decoded = crypt.base64decode(encoded)
+		assert(decoded and #decoded > 1000, "Decoding failed or too short")
+
+		writefile("ExampleSound.mp3", decoded)
+		assert(isfile("ExampleSound.mp3"), "File was not created")
+
+		local assetId = getcustomasset("ExampleSound.mp3")
+		assert(typeof(assetId) == "string" and assetId:find("rbxasset://") or assetId:find("ExampleSound"), "getcustomasset returned invalid path")
+
+		local sound = Instance.new("Sound")
+		sound.SoundId = assetId
+		sound.Volume = 0.5
+		sound.Parent = workspace
+		sound:Play()
+		task.delay(2, function()
+			sound:Destroy()
+		end)
+	end,
+	restorefunction = function()
+		local testFunc = function() return "original" end
+		local backup = clonefunction(testFunc)
+
+		hookfunction(testFunc, function() return "modified" end)
+		assert(testFunc() == "modified", "Hooking failed")
+
+		restorefunction(testFunc, backup)
+		assert(testFunc() == "original", "did not restore original behavior")
+	end,
+
+	getscripts = function()
+		local results = getscripts()
+		assert(type(results) == "table", "did not return a table")
+		local foundLocalScript = false
+		local foundModuleScript = false
+
+		for _, scriptObj in ipairs(results) do
+			if typeof(scriptObj) == "Instance" then
+				local className = scriptObj.ClassName
+				if className == "LocalScript" then foundLocalScript = true end
+				if className == "ModuleScript" then foundModuleScript = true end
+			end
+		end
+
+		assert(foundLocalScript, "No LocalScript found, spoofing or patching detected")
+		assert(foundModuleScript, "No ModuleScript found, spoofing or patching detected")
+	end,
+	--NEW FUNCTIONS
+	--[[Replicatesignal = function()
+		local replicatesignal = getgenv().replicatesignal
+	assert(type(replicatesignal) == "function", "replicatesignal is not available")
+
+	local bindable = --exe erererer when place has no server remote or something else it just doesnt work so custom game required to run
+	local received = false
+
+	local connection = bindable.Event:Connect(function()
+		received = true
+	end)
+
+	replicatesignal(bindable.Event)
+	bindable:Fire()
+
+	task.wait(0.1)
+	connection:Disconnect()
+
+	assert(received, "Signal did not replicate as expected")
+	end,--]]
+	isrbxfocused = function()
+		assert(type(isrbxfocused) == "function", "Function is nil")
+
+		local focused = isrbxfocused()
+		assert(type(focused) == "boolean", "Did not return a boolean")
+
+	end,
+	isrbxactive = function()
+		assert(type(isrbxactive) == "function", "Function is nil")
+
+		local active = isrbxactive()
+		assert(type(active) == "boolean", "Did not return a boolean")
+	end,
+	Clonefunction = function()
+		assert(type(clonefunction) == "function", "Function is nil")
+		local function world()
+			print("Hello world")
+		end
+		local cloned_function = clonefunction(world)
+		local line_defined = debug.info(cloned_function, "l")
+		assert(type(line_defined) == "number", "Failed to get line info")
+		local name_info = debug.info(cloned_function, "n")
+		assert(name_info == "world" or name_info == nil, "Function name mismatch")
+		assert(cloned_function ~= world, "Cloned function is the same as the original")
+		assert(getfenv(cloned_function) == getfenv(world), "Environments do not match")
+	end,
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
