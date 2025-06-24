@@ -1,4 +1,4 @@
-local TestFunctions = {
+return {
 	Print = function() 
 		if (isStudio) then
 			assert(isStudio, "Function Failed to test missing executorfunctions")
