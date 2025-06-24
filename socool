@@ -2444,42 +2444,44 @@ return {
 		part2:Destroy()
 	end,
 	FileFunctions = function()
-		makefolder("testRoot")
-		makefolder("testRoot/subFolder")
+	local HttpService = game:GetService("HttpService")
 
-		local testData = {
-			timestamp = os.time(),
-			array = {1, 2, 3},
-			nested = { key = "value" },
-		}
+	makefolder("testRoot")
+	makefolder("testRoot/subFolder")
 
-		local jsonData = HttpService:JSONEncode(testData)
-		writefile("testRoot/data.json", jsonData)
-		writefile("testRoot/log.txt", string.format("[%s] Log entry", os.date()))
+	local testData = {
+		timestamp = os.time(),
+		array = {1, 2, 3},
+		nested = { key = "value" },
+	}
 
-		for i = 1, 3 do
-			appendfile("testRoot/log.txt", string.format("[%s] Log entry %d\n", os.date(), i))
-		end
+	local jsonData = HttpService:JSONEncode(testData)
+	writefile("testRoot/data.json", jsonData)
+	writefile("testRoot/log.txt", string.format("[%s] Log entry", os.date()))
 
-		local readJson = HttpService:JSONDecode(readfile("testRoot/data.json"))
-		assert(readJson.timestamp == testData.timestamp, "Timestamp mismatch in read JSON")
+	for i = 1, 3 do
+		appendfile("testRoot/log.txt", string.format("[%s] Log entry %d\n", os.date(), i))
+	end
 
-		local files = listfiles("testRoot")
-		assert(#files >= 2, "Expected at least 2 files in testRoot")
+	local readJson = HttpService:JSONDecode(readfile("testRoot/data.json"))
+	assert(readJson.timestamp == testData.timestamp, "Timestamp mismatch in read JSON")
 
-		writefile("testRoot/script.lua", [[
+	local files = listfiles("testRoot")
+	assert(#files >= 2, "Expected at least 2 files in testRoot")
+
+	writefile("testRoot/script.lua", [[
 		return function(x) return x * 2 end
 	]])
 
-		local fn = loadfile("testRoot/script.lua")()
-		assert(fn(5) == 10, "Lua script did not return expected result")
+	local fn = loadfile("testRoot/script.lua")()
+	assert(fn(5) == 10, "Lua script did not return expected result")
 
-		delfile("testRoot/data.json")
-		delfile("testRoot/log.txt")
-		delfile("testRoot/script.lua")
-		delfolder("testRoot/subFolder")
-		delfolder("testRoot")
-	end,
+	delfile("testRoot/data.json")
+	delfile("testRoot/log.txt")
+	delfile("testRoot/script.lua")
+	delfolder("testRoot/subFolder")
+	delfolder("testRoot")
+        end,
 	LineDrawing = function()
 		local line = Drawing.new("Line")
 		line.Visible = true
