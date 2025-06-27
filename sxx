@@ -1,11 +1,1 @@
-return {
-   Print = function() 
-		if (isStudio) then
-			assert(isStudio, "Function Failed to test missing executorfunctions")
-		end
-		local testTable = {key = "value"}
-		local testFunc = function() return "func" end
-		print("PrintTestSomething >", 123, true, testTable, testFunc)
-	end,
-}
-
+return "vmtrollers"
