@@ -2006,18 +2006,12 @@
 
 return {
 	Print = function() 
-		if (isStudio) then
-			assert(isStudio, "Function Failed to test missing executorfunctions")
-		end
 		local testTable = {key = "value"}
 		local testFunc = function() return "func" end
 		print("PrintTestSomething >", 123, true, testTable, testFunc)
 	end,
 
 	Warn = function()
-		if (isStudio) then
-			assert(isStudio, "Function Failed to test missing executorfunctions")
-		end
 		local warningMessage = "⚠️ WarnTest"
 		local tb = debug.traceback(warningMessage, 2)
 		warn(tb)
@@ -2025,9 +2019,6 @@ return {
 	end,
 
 	Type = function()
-		if (isStudio) then
-			assert(isStudio, "Function Failed to test missing executorfunctions")
-		end
 		assert(typeof("test") == "string", "Expected string")
 		assert(typeof(123) == "number", "Expected number")
 		assert(typeof(true) == "boolean", "Expected boolean")
@@ -2036,19 +2027,84 @@ return {
 	end,
 
 	Loadstring = function()
-		local env = setmetatable({}, {__index = _G})
-		local code = "return function(x) return x * x end"
-		local loaded = assert(loadstring(code), "Failed to load string")
-		setfenv(loaded, env)
-		local func = loaded()
-		local result = func(6)
-		assert(result == 36, "Loadstring failed to compute square correctly")
+		local code1 = "return function(x) return x * x end"
+		local loaded1 = assert(loadstring(code1), "Failed to run basic loadstring function")
+		local square = loaded1()
+		local result1 = square(6)
+		assert(result1 == 36, "Basic loadstring returned incorrect result")
+		local code2 = [[
+		local factorial
+		factorial = function(n)
+			if n <= 1 then return 1 else return n * factorial(n - 1) end
+		end
+		return factorial
+	]]
+		local loaded2 = assert(loadstring(code2), "Failed to load factorial function")
+		local factorial = loaded2()
+		local result2 = factorial(5)
+		assert(result2 == 120, "Factorial function returned incorrect result")
+
+		local code3 = "return function() error('Intentional error') end"
+		local loaded3 = assert(loadstring(code3), "Failed to load error function")
+		local func3 = loaded3()
+		local ok3, err3 = pcall(func3)
+		assert(not ok3 and tostring(err3):find("Intentional error"), "Runtime error not triggered as expected")
+		local code4 = "return function( x return x + 1 end"
+		local ok4, err4 = pcall(loadstring, code4)
+		local code5 = [[
+		local function fibonacci(n)
+			local a, b = 0, 1
+			for i = 1, n do
+				a, b = b, a + b
+			end
+			return a
+		end
+		return fibonacci
+	]]
+		local loaded5 = assert(loadstring(code5), "Failed to run Short loadstring")
+		local fibonacci = loaded5()
+		local result5 = fibonacci(10)
+		assert(result5 == 55, "Short loadstring returned incorrect result")
+		
+		local shortCode = "return function(a, b) return a + b end"
+		local shortLoaded = assert(loadstring(shortCode), "Failed to load short code")
+		local add = shortLoaded()
+		assert(add(3, 4) == 7, "Short loadstring failed")
+
+		local longCode = [[
+		local function isPrime(n)
+			if n < 2 then return false end
+			for i = 2, math.floor(math.sqrt(n)) do
+				if n % i == 0 then return false end
+			end
+			return true
+		end
+
+		local function collectPrimes(upTo)
+			local results = {}
+			for i = 1, upTo do
+				if isPrime(i) then table.insert(results, i) end
+			end
+			return results
+		end
+
+		return collectPrimes
+	]]
+		local longLoaded = assert(loadstring(longCode), "Failed to run long loadstrings")
+		local collectPrimes = longLoaded()
+		local result = collectPrimes(10)
+		assert(#result == 4 and result[1] == 2 and result[#result] == 7, "Long loadstring result incorrect")
+
+		local obfuscatedCode = "return(function(x)for i=1,#x do x[i]=x[i]*2 end;return x end)"
+		local obfLoaded = assert(loadstring(obfuscatedCode), "Failed to run obfuscated code")
+		local doubleList = obfLoaded()
+		local testInput = {1,2,3}
+		local output = doubleList(testInput)
+		assert(output[1]==2 and output[2]==4 and output[3]==6, "Obfuscated loadstring result incorrect")
 	end,
 
+
 	Assert = function()
-		if (isStudio) then
-			assert(isStudio, "Function Failed to test missing executorfunctions")
-		end
 		assert(type(1) == "number" and 1 > 0, "Assert test failed: number")
 		assert(type("Roblox") == "string" and #"Roblox" >= 6, "Assert test failed: string")
 		assert(type(true) == "boolean" and not not true, "Assert test failed: boolean")
@@ -2057,9 +2113,6 @@ return {
 	end,
 
 	ErrorHandling = function()
-		if (isStudio) then
-			assert(isStudio, "Function Failed to test missing executorfunctions")
-		end
 		local function throwError()
 			error({ code = 500, message = "Intentional error for test" })
 		end
@@ -2094,9 +2147,6 @@ return {
 		assert(env.script == animate, "The script global is not identical to Character.Animate")
 	end,
 	SetFenv = function()
-		if (isStudio) then
-			assert(isStudio, "Function Failed to test missing executorfunctions")
-		end
 		assert(typeof(setfenv) == "function", "function is nil")
 		local newEnv = { print = print }
 		local testFunc = function()
@@ -2106,11 +2156,7 @@ return {
 		local currentEnv = getfenv(testFunc)
 		assert(currentEnv == newEnv, "setfenv failed to apply the environment")
 	end,
-
 	GetFenv = function()
-		if (isStudio) then
-			assert(isStudio, "Function Failed to test missing executorfunctions")
-		end
 		assert(typeof(getfenv) == "function", "function is nil")
 		local env = getfenv(1)
 		assert(typeof(env) == "table", "getfenv did not return a valid table")
@@ -2136,11 +2182,12 @@ return {
 	--	assert(type(luauEnabled) == "function", "Function is nil")
 	--end,
 	GetThreadIdentity = function()
-		assert(type(getthreadidentity) == "function", "Function is nil")
+		assert(typeof(getthreadidentity) == "function", "Function is nil")
 		local identity = getthreadidentity()
-		assert(type(identity) == "number", "Expected thread identity to be a number")
-		assert(identity >= 0, "Expected thread identity to be non-negative")
+		assert(typeof(identity) == "number", "getthreadidentity did not return a number")
+		assert(identity >= 0, "Thread identity must be non-negative, got: " .. tostring(identity))
 	end,
+
 	Setthreadidentity = function()
 		setthreadidentity(3)
 		assert(getthreadidentity() == 3, "Did not set the thread identity")
@@ -2444,44 +2491,42 @@ return {
 		part2:Destroy()
 	end,
 	FileFunctions = function()
-	local HttpService = game:GetService("HttpService")
+		makefolder("testRoot")
+		makefolder("testRoot/subFolder")
 
-	makefolder("testRoot")
-	makefolder("testRoot/subFolder")
+		local testData = {
+			timestamp = os.time(),
+			array = {1, 2, 3},
+			nested = { key = "value" },
+		}
 
-	local testData = {
-		timestamp = os.time(),
-		array = {1, 2, 3},
-		nested = { key = "value" },
-	}
+		local jsonData = HttpService:JSONEncode(testData)
+		writefile("testRoot/data.json", jsonData)
+		writefile("testRoot/log.txt", string.format("[%s] Log entry", os.date()))
 
-	local jsonData = HttpService:JSONEncode(testData)
-	writefile("testRoot/data.json", jsonData)
-	writefile("testRoot/log.txt", string.format("[%s] Log entry", os.date()))
+		for i = 1, 3 do
+			appendfile("testRoot/log.txt", string.format("[%s] Log entry %d\n", os.date(), i))
+		end
 
-	for i = 1, 3 do
-		appendfile("testRoot/log.txt", string.format("[%s] Log entry %d\n", os.date(), i))
-	end
+		local readJson = HttpService:JSONDecode(readfile("testRoot/data.json"))
+		assert(readJson.timestamp == testData.timestamp, "Timestamp mismatch in read JSON")
 
-	local readJson = HttpService:JSONDecode(readfile("testRoot/data.json"))
-	assert(readJson.timestamp == testData.timestamp, "Timestamp mismatch in read JSON")
+		local files = listfiles("testRoot")
+		assert(#files >= 2, "Expected at least 2 files in testRoot")
 
-	local files = listfiles("testRoot")
-	assert(#files >= 2, "Expected at least 2 files in testRoot")
-
-	writefile("testRoot/script.lua", [[
+		writefile("testRoot/script.lua", [[
 		return function(x) return x * 2 end
 	]])
 
-	local fn = loadfile("testRoot/script.lua")()
-	assert(fn(5) == 10, "Lua script did not return expected result")
+		local fn = loadfile("testRoot/script.lua")()
+		assert(fn(5) == 10, "Lua script did not return expected result")
 
-	delfile("testRoot/data.json")
-	delfile("testRoot/log.txt")
-	delfile("testRoot/script.lua")
-	delfolder("testRoot/subFolder")
-	delfolder("testRoot")
-        end,
+		delfile("testRoot/data.json")
+		delfile("testRoot/log.txt")
+		delfile("testRoot/script.lua")
+		delfolder("testRoot/subFolder")
+		delfolder("testRoot")
+	end,
 	LineDrawing = function()
 		local line = Drawing.new("Line")
 		line.Visible = true
