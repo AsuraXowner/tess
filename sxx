@@ -10,6 +10,7 @@
             end)
         ]])
     end)
+task.wait(2)
 	local constructingWeapon, viewingProfile = nil, nil
 	local lastUsedWeapon = nil
 	local equipped, favorites = {}, {}
